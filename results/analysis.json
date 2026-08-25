@@ -1,0 +1,390 @@
+[
+  {
+    "bits": 1,
+    "lambdas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "n_edges": 573440,
+    "entropy_bits": 0.984207778293182,
+    "codewords_used": 2,
+    "codewords_available": 2,
+    "mutual_information": {
+      "a_sr": {
+        "mi_bits": 0.03855900499694573,
+        "null_bits": 1.672173127620621e-05,
+        "null_std": 3.607087999821397e-06,
+        "excess_bits": 0.038542283265669525
+      },
+      "sender_direct": {
+        "mi_bits": 0.16497253552736116,
+        "null_bits": 1.6568117138858544e-05,
+        "null_std": 5.696219318041894e-06,
+        "excess_bits": 0.1649559674102223
+      },
+      "recv_direct": {
+        "mi_bits": 4.959626691573312e-05,
+        "null_bits": 1.9180290502085985e-05,
+        "null_std": 6.808189301077016e-06,
+        "excess_bits": 3.0415976413647133e-05
+      },
+      "lam": {
+        "mi_bits": 0.14280261932594668,
+        "null_bits": 3.5910001435999282e-06,
+        "null_std": 2.7508327884893436e-06,
+        "excess_bits": 0.14279902832580307
+      },
+      "a_rs": {
+        "mi_bits": 0.009019575015180411,
+        "null_bits": 1.7971014200030354e-05,
+        "null_std": 5.598280614434006e-06,
+        "excess_bits": 0.00900160400098038
+      }
+    },
+    "variance_explained": {
+      "a_sr": 0.031049900266952198,
+      "sender_direct": 0.19462601256435574,
+      "a_rs": 0.01107558839348722
+    },
+    "interval_purity_a_sr": 0.5987374441964286,
+    "budget_respected": true,
+    "entropy_within_budget": true,
+    "seed": 0,
+    "mean_ratio": 0.8796008626619974,
+    "codebook": {
+      "n_codewords": 2,
+      "note": "too few codewords to cluster"
+    }
+  },
+  {
+    "bits": 2,
+    "lambdas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "n_edges": 573440,
+    "entropy_bits": 1.9347603548234245,
+    "codewords_used": 4,
+    "codewords_available": 4,
+    "mutual_information": {
+      "a_sr": {
+        "mi_bits": 0.3894648063652274,
+        "null_bits": 5.552950677889075e-05,
+        "null_std": 9.920845842632164e-06,
+        "excess_bits": 0.3894092768584485
+      },
+      "sender_direct": {
+        "mi_bits": 0.40933403769977467,
+        "null_bits": 5.829794523911702e-05,
+        "null_std": 1.0131581269535412e-05,
+        "excess_bits": 0.4092757397545356
+      },
+      "recv_direct": {
+        "mi_bits": 0.0002621174576632176,
+        "null_bits": 5.8997322823339896e-05,
+        "null_std": 8.429676878483107e-06,
+        "excess_bits": 0.00020312013483987773
+      },
+      "lam": {
+        "mi_bits": 0.015650252460225854,
+        "null_bits": 1.3948962831914403e-05,
+        "null_std": 4.297575073899899e-06,
+        "excess_bits": 0.01563630349739394
+      },
+      "a_rs": {
+        "mi_bits": 0.07891994917769593,
+        "null_bits": 4.7232261330370644e-05,
+        "null_std": 4.838461467283897e-06,
+        "excess_bits": 0.07887271691636556
+      }
+    },
+    "variance_explained": {
+      "a_sr": 0.21687350946900408,
+      "sender_direct": 0.38501635900983144,
+      "a_rs": 0.09304156835149807
+    },
+    "interval_purity_a_sr": 0.46040562220982145,
+    "budget_respected": true,
+    "entropy_within_budget": true,
+    "seed": 0,
+    "mean_ratio": 0.9069632291793823,
+    "codebook": {
+      "n_codewords": 4,
+      "note": "too few codewords to cluster"
+    }
+  },
+  {
+    "bits": 3,
+    "lambdas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "n_edges": 573440,
+    "entropy_bits": 2.9685977253727724,
+    "codewords_used": 8,
+    "codewords_available": 8,
+    "mutual_information": {
+      "a_sr": {
+        "mi_bits": 1.0505155496453062,
+        "null_bits": 0.00014303934495134805,
+        "null_std": 1.3504447027935932e-05,
+        "excess_bits": 1.050372510300355
+      },
+      "sender_direct": {
+        "mi_bits": 0.7060559753583736,
+        "null_bits": 0.00013284968260136122,
+        "null_std": 1.3788904094801832e-05,
+        "excess_bits": 0.7059231256757722
+      },
+      "recv_direct": {
+        "mi_bits": 0.0005890339004375946,
+        "null_bits": 0.00012992282189509325,
+        "null_std": 1.883957057467243e-05,
+        "excess_bits": 0.00045911107854250134
+      },
+      "lam": {
+        "mi_bits": 0.0067873512012068815,
+        "null_bits": 4.1270451269214924e-05,
+        "null_std": 1.0212666288011294e-05,
+        "excess_bits": 0.0067460807499376664
+      },
+      "a_rs": {
+        "mi_bits": 0.2104698423127287,
+        "null_bits": 0.00012016710511355392,
+        "null_std": 1.3207704296520875e-05,
+        "excess_bits": 0.21034967520761513
+      }
+    },
+    "variance_explained": {
+      "a_sr": 0.677915995489946,
+      "sender_direct": 0.5851722291542856,
+      "a_rs": 0.24353302190637863
+    },
+    "interval_purity_a_sr": 0.37623291015625,
+    "budget_respected": true,
+    "entropy_within_budget": true,
+    "seed": 0,
+    "mean_ratio": 0.9278716444969177,
+    "codebook": {
+      "n_codewords": 8,
+      "n_clusters": 4,
+      "silhouette": 0.11749662458896637,
+      "cluster_sizes": [
+        1,
+        5,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "bits": 4,
+    "lambdas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "n_edges": 573440,
+    "entropy_bits": 3.9591489752787945,
+    "codewords_used": 16,
+    "codewords_available": 16,
+    "mutual_information": {
+      "a_sr": {
+        "mi_bits": 1.1554987006494315,
+        "null_bits": 0.00027418484078431957,
+        "null_std": 3.213162136558497e-05,
+        "excess_bits": 1.1552245158086472
+      },
+      "sender_direct": {
+        "mi_bits": 0.9583339819539954,
+        "null_bits": 0.0002910468037259972,
+        "null_std": 2.6120415926893723e-05,
+        "excess_bits": 0.9580429351502694
+      },
+      "recv_direct": {
+        "mi_bits": 0.001307247958164752,
+        "null_bits": 0.00028469524349266446,
+        "null_std": 1.3416658384351198e-05,
+        "excess_bits": 0.0010225527146720875
+      },
+      "lam": {
+        "mi_bits": 0.00513307934139511,
+        "null_bits": 8.712313195438656e-05,
+        "null_std": 1.3441891700565367e-05,
+        "excess_bits": 0.005045956209440723
+      },
+      "a_rs": {
+        "mi_bits": 0.22721261739922816,
+        "null_bits": 0.0002847403480266775,
+        "null_std": 1.7967029322186968e-05,
+        "excess_bits": 0.2269278770512015
+      }
+    },
+    "variance_explained": {
+      "a_sr": 0.7263521922718891,
+      "sender_direct": 0.699120443901033,
+      "a_rs": 0.26325708971914497
+    },
+    "interval_purity_a_sr": 0.26277553013392857,
+    "budget_respected": true,
+    "entropy_within_budget": true,
+    "seed": 0,
+    "mean_ratio": 0.9357211391131083,
+    "codebook": {
+      "n_codewords": 16,
+      "n_clusters": 4,
+      "silhouette": 0.11492741107940674,
+      "cluster_sizes": [
+        9,
+        1,
+        5,
+        1
+      ]
+    }
+  },
+  {
+    "bits": 6,
+    "lambdas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "n_edges": 573440,
+    "entropy_bits": 5.730840671513846,
+    "codewords_used": 62,
+    "codewords_available": 64,
+    "mutual_information": {
+      "a_sr": {
+        "mi_bits": 1.6935314261153982,
+        "null_bits": 0.001163967767549001,
+        "null_std": 5.188254140187018e-05,
+        "excess_bits": 1.6923674583478492
+      },
+      "sender_direct": {
+        "mi_bits": 1.3372619535023502,
+        "null_bits": 0.0011593892801929776,
+        "null_std": 5.0739537497590507e-05,
+        "excess_bits": 1.3361025642221573
+      },
+      "recv_direct": {
+        "mi_bits": 0.003921441914014609,
+        "null_bits": 0.001147316022898259,
+        "null_std": 3.385140291272442e-05,
+        "excess_bits": 0.00277412589111635
+      },
+      "lam": {
+        "mi_bits": 0.09281521886506058,
+        "null_bits": 0.00031185225694941926,
+        "null_std": 2.9128560621621415e-05,
+        "excess_bits": 0.09250336660811116
+      },
+      "a_rs": {
+        "mi_bits": 0.2616687812809809,
+        "null_bits": 0.0011324793391256972,
+        "null_std": 4.94163774952938e-05,
+        "excess_bits": 0.26053630194185523
+      }
+    },
+    "variance_explained": {
+      "a_sr": 0.8591824892388369,
+      "sender_direct": 0.8101051175683041,
+      "a_rs": 0.2966675380790769
+    },
+    "interval_purity_a_sr": 0.13802490234375,
+    "budget_respected": true,
+    "entropy_within_budget": true,
+    "seed": 0,
+    "mean_ratio": 0.9469161430994669,
+    "codebook": {
+      "n_codewords": 64,
+      "n_clusters": 4,
+      "silhouette": 0.09449635446071625,
+      "cluster_sizes": [
+        18,
+        28,
+        4,
+        14
+      ]
+    }
+  },
+  {
+    "bits": 8,
+    "lambdas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "n_edges": 573440,
+    "entropy_bits": 7.279017022324932,
+    "codewords_used": 232,
+    "codewords_available": 256,
+    "mutual_information": {
+      "a_sr": {
+        "mi_bits": 2.0539975868007354,
+        "null_bits": 0.0043715210591675005,
+        "null_std": 0.00014946543045341425,
+        "excess_bits": 2.0496260657415677
+      },
+      "sender_direct": {
+        "mi_bits": 1.6099983604156969,
+        "null_bits": 0.004284364883746531,
+        "null_std": 0.00011881491547520448,
+        "excess_bits": 1.6057139955319504
+      },
+      "recv_direct": {
+        "mi_bits": 0.010121857285671568,
+        "null_bits": 0.004323230121749793,
+        "null_std": 6.607969706249911e-05,
+        "excess_bits": 0.005798627163921774
+      },
+      "lam": {
+        "mi_bits": 0.24827741626582306,
+        "null_bits": 0.0011765276671581652,
+        "null_std": 3.7530861666748995e-05,
+        "excess_bits": 0.2471008885986649
+      },
+      "a_rs": {
+        "mi_bits": 0.2776228869591951,
+        "null_bits": 0.004387000169447576,
+        "null_std": 0.00012156111375012072,
+        "excess_bits": 0.27323588678974753
+      }
+    },
+    "variance_explained": {
+      "a_sr": 0.9051234506425369,
+      "sender_direct": 0.8517887573843358,
+      "a_rs": 0.305449240465795
+    },
+    "interval_purity_a_sr": 0.10166015625,
+    "budget_respected": true,
+    "entropy_within_budget": true,
+    "seed": 0,
+    "mean_ratio": 0.9478333989779154,
+    "codebook": {
+      "n_codewords": 256,
+      "n_clusters": 4,
+      "silhouette": 0.06425528973340988,
+      "cluster_sizes": [
+        98,
+        107,
+        44,
+        7
+      ]
+    }
+  }
+]

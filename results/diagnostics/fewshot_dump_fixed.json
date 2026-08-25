@@ -1,0 +1,1343 @@
+{
+  "summary": {
+    "n_test": 64,
+    "lam": 0.5,
+    "k_shots": 3,
+    "device": "cuda",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "mean_ratio": 0.4987259805202484,
+    "seconds_per_instance": 1.2455806644843754,
+    "parse_failures": 0,
+    "parse_failure_rate": 0.0,
+    "n_parsed_all_zero_vectors": 0,
+    "n_instances_with_zero_ratio": 0,
+    "ratio_min": 0.11561477184295654,
+    "ratio_max": 0.8962855339050293,
+    "bank_idx_used": [
+      64,
+      65,
+      66
+    ],
+    "exemplar_powers_mw_as_rendered": [
+      [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      [
+        4.0,
+        7.2,
+        4.5,
+        0.0,
+        0.0,
+        6.4,
+        0.0,
+        6.5
+      ],
+      [
+        0.0,
+        8.2,
+        6.7,
+        7.1,
+        7.5,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "exemplar_zero_fraction": 0.4583333333333333,
+    "shots_text": [
+      "N = 8 pairs. Transmit power range: 0 to 100 mW per transmitter.\nPreference weight lambda = 0.50 (1.0 = maximise total throughput, 0.0 = maximise energy efficiency).\n\nDirect link gain of each pair, dB:\n  pair 0: -109.8, pair 1: -83.4, pair 2: -87.0, pair 3: -86.4, pair 4: -103.4, pair 5: -95.9, pair 6: -83.8, pair 7: -95.6\n\nInterference gain from transmitter j to receiver i, dB (row i, column j):\n  receiver 0: -119.7, -119.3, -123.3, -90.2, -114.4, -107.0, -138.5\n  receiver 1: -110.9, -115.2, -117.5, -113.0, -127.2, -120.7, -138.0\n  receiver 2: -109.5, -123.5, -89.9, -115.4, -115.6, -99.0, -107.1\n  receiver 3: -117.5, -115.4, -89.6, -120.2, -115.3, -125.0, -92.9\n  receiver 4: -117.6, -121.0, -121.8, -122.1, -124.0, -109.2, -118.9\n  receiver 5: -103.5, -97.1, -148.3, -114.5, -121.0, -123.6, -115.3\n  receiver 6: -113.1, -114.6, -109.2, -115.5, -103.0, -119.7, -114.8\n  receiver 7: -118.4, -111.9, -98.6, -90.6, -119.9, -113.9, -115.9\n\nReply with exactly 8 numbers in mW to one decimal place, comma separated, inside square brackets. No other text.\n[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "N = 8 pairs. Transmit power range: 0 to 100 mW per transmitter.\nPreference weight lambda = 0.50 (1.0 = maximise total throughput, 0.0 = maximise energy efficiency).\n\nDirect link gain of each pair, dB:\n  pair 0: -91.1, pair 1: -92.8, pair 2: -91.9, pair 3: -103.2, pair 4: -97.6, pair 5: -72.1, pair 6: -94.9, pair 7: -90.3\n\nInterference gain from transmitter j to receiver i, dB (row i, column j):\n  receiver 0: -115.7, -113.4, -120.2, -122.8, -110.7, -103.3, -106.8\n  receiver 1: -105.0, -121.3, -115.7, -109.6, -105.3, -98.5, -113.1\n  receiver 2: -110.6, -120.4, -107.0, -134.8, -127.6, -120.6, -129.1\n  receiver 3: -97.7, -108.9, -105.9, -108.5, -118.7, -115.8, -87.2\n  receiver 4: -112.5, -109.2, -118.5, -111.9, -115.7, -102.6, -99.6\n  receiver 5: -110.1, -110.9, -114.7, -122.2, -117.4, -107.0, -118.4\n  receiver 6: -108.1, -94.6, -114.1, -109.5, -116.0, -100.3, -101.9\n  receiver 7: -101.0, -116.8, -100.7, -94.2, -95.2, -117.0, -118.2\n\nReply with exactly 8 numbers in mW to one decimal place, comma separated, inside square brackets. No other text.\n[4.0, 7.2, 4.5, 0.0, 0.0, 6.4, 0.0, 6.5]",
+      "N = 8 pairs. Transmit power range: 0 to 100 mW per transmitter.\nPreference weight lambda = 0.50 (1.0 = maximise total throughput, 0.0 = maximise energy efficiency).\n\nDirect link gain of each pair, dB:\n  pair 0: -93.6, pair 1: -86.4, pair 2: -88.4, pair 3: -78.8, pair 4: -81.1, pair 5: -97.5, pair 6: -94.1, pair 7: -99.9\n\nInterference gain from transmitter j to receiver i, dB (row i, column j):\n  receiver 0: -126.0, -97.4, -104.0, -109.6, -111.6, -95.4, -114.3\n  receiver 1: -101.5, -125.2, -128.1, -110.1, -133.1, -102.5, -118.4\n  receiver 2: -109.5, -122.5, -109.9, -117.0, -117.0, -99.8, -110.1\n  receiver 3: -114.2, -114.4, -109.9, -138.6, -95.5, -123.7, -89.9\n  receiver 4: -110.8, -113.9, -114.9, -119.4, -126.2, -109.7, -122.1\n  receiver 5: -120.1, -121.9, -115.8, -126.0, -122.0, -119.5, -102.8\n  receiver 6: -86.4, -105.3, -120.1, -114.1, -104.0, -118.8, -117.1\n  receiver 7: -114.7, -123.4, -115.6, -89.6, -121.4, -89.0, -111.5\n\nReply with exactly 8 numbers in mW to one decimal place, comma separated, inside square brackets. No other text.\n[0.0, 8.2, 6.7, 7.1, 7.5, 0.0, 0.0, 0.0]"
+    ],
+    "prompt_0": "N = 8 pairs. Transmit power range: 0 to 100 mW per transmitter.\nPreference weight lambda = 0.50 (1.0 = maximise total throughput, 0.0 = maximise energy efficiency).\n\nDirect link gain of each pair, dB:\n  pair 0: -109.8, pair 1: -83.4, pair 2: -87.0, pair 3: -86.4, pair 4: -103.4, pair 5: -95.9, pair 6: -83.8, pair 7: -95.6\n\nInterference gain from transmitter j to receiver i, dB (row i, column j):\n  receiver 0: -119.7, -119.3, -123.3, -90.2, -114.4, -107.0, -138.5\n  receiver 1: -110.9, -115.2, -117.5, -113.0, -127.2, -120.7, -138.0\n  receiver 2: -109.5, -123.5, -89.9, -115.4, -115.6, -99.0, -107.1\n  receiver 3: -117.5, -115.4, -89.6, -120.2, -115.3, -125.0, -92.9\n  receiver 4: -117.6, -121.0, -121.8, -122.1, -124.0, -109.2, -118.9\n  receiver 5: -103.5, -97.1, -148.3, -114.5, -121.0, -123.6, -115.3\n  receiver 6: -113.1, -114.6, -109.2, -115.5, -103.0, -119.7, -114.8\n  receiver 7: -118.4, -111.9, -98.6, -90.6, -119.9, -113.9, -115.9\n\nReply with exactly 8 numbers in mW to one decimal place, comma separated, inside square brackets. No other text.\n[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]\n\nN = 8 pairs. Transmit power range: 0 to 100 mW per transmitter.\nPreference weight lambda = 0.50 (1.0 = maximise total throughput, 0.0 = maximise energy efficiency).\n\nDirect link gain of each pair, dB:\n  pair 0: -91.1, pair 1: -92.8, pair 2: -91.9, pair 3: -103.2, pair 4: -97.6, pair 5: -72.1, pair 6: -94.9, pair 7: -90.3\n\nInterference gain from transmitter j to receiver i, dB (row i, column j):\n  receiver 0: -115.7, -113.4, -120.2, -122.8, -110.7, -103.3, -106.8\n  receiver 1: -105.0, -121.3, -115.7, -109.6, -105.3, -98.5, -113.1\n  receiver 2: -110.6, -120.4, -107.0, -134.8, -127.6, -120.6, -129.1\n  receiver 3: -97.7, -108.9, -105.9, -108.5, -118.7, -115.8, -87.2\n  receiver 4: -112.5, -109.2, -118.5, -111.9, -115.7, -102.6, -99.6\n  receiver 5: -110.1, -110.9, -114.7, -122.2, -117.4, -107.0, -118.4\n  receiver 6: -108.1, -94.6, -114.1, -109.5, -116.0, -100.3, -101.9\n  receiver 7: -101.0, -116.8, -100.7, -94.2, -95.2, -117.0, -118.2\n\nReply with exactly 8 numbers in mW to one decimal place, comma separated, inside square brackets. No other text.\n[4.0, 7.2, 4.5, 0.0, 0.0, 6.4, 0.0, 6.5]\n\nN = 8 pairs. Transmit power range: 0 to 100 mW per transmitter.\nPreference weight lambda = 0.50 (1.0 = maximise total throughput, 0.0 = maximise energy efficiency).\n\nDirect link gain of each pair, dB:\n  pair 0: -93.6, pair 1: -86.4, pair 2: -88.4, pair 3: -78.8, pair 4: -81.1, pair 5: -97.5, pair 6: -94.1, pair 7: -99.9\n\nInterference gain from transmitter j to receiver i, dB (row i, column j):\n  receiver 0: -126.0, -97.4, -104.0, -109.6, -111.6, -95.4, -114.3\n  receiver 1: -101.5, -125.2, -128.1, -110.1, -133.1, -102.5, -118.4\n  receiver 2: -109.5, -122.5, -109.9, -117.0, -117.0, -99.8, -110.1\n  receiver 3: -114.2, -114.4, -109.9, -138.6, -95.5, -123.7, -89.9\n  receiver 4: -110.8, -113.9, -114.9, -119.4, -126.2, -109.7, -122.1\n  receiver 5: -120.1, -121.9, -115.8, -126.0, -122.0, -119.5, -102.8\n  receiver 6: -86.4, -105.3, -120.1, -114.1, -104.0, -118.8, -117.1\n  receiver 7: -114.7, -123.4, -115.6, -89.6, -121.4, -89.0, -111.5\n\nReply with exactly 8 numbers in mW to one decimal place, comma separated, inside square brackets. No other text.\n[0.0, 8.2, 6.7, 7.1, 7.5, 0.0, 0.0, 0.0]\n\nN = 8 pairs. Transmit power range: 0 to 100 mW per transmitter.\nPreference weight lambda = 0.50 (1.0 = maximise total throughput, 0.0 = maximise energy efficiency).\n\nDirect link gain of each pair, dB:\n  pair 0: -96.9, pair 1: -88.9, pair 2: -98.4, pair 3: -83.8, pair 4: -78.7, pair 5: -102.9, pair 6: -98.4, pair 7: -89.0\n\nInterference gain from transmitter j to receiver i, dB (row i, column j):\n  receiver 0: -115.4, -116.4, -131.4, -83.5, -114.7, -114.0, -110.4\n  receiver 1: -117.0, -110.0, -113.6, -112.4, -105.7, -112.2, -120.8\n  receiver 2: -134.5, -115.4, -104.1, -130.3, -115.9, -108.9, -117.6\n  receiver 3: -118.8, -117.9, -99.0, -124.1, -112.1, -115.3, -105.5\n  receiver 4: -82.3, -120.9, -123.8, -114.9, -118.3, -111.3, -109.2\n  receiver 5: -114.5, -96.1, -111.2, -109.7, -113.9, -75.6, -116.3\n  receiver 6: -111.9, -101.9, -126.2, -111.9, -116.6, -84.1, -99.9\n  receiver 7: -119.6, -107.1, -119.1, -104.8, -110.9, -100.5, -97.2\n\nReply with exactly 8 numbers in mW to one decimal place, comma separated, inside square brackets. No other text."
+  },
+  "instances": [
+    {
+      "i": 0,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.47829657793045044
+    },
+    {
+      "i": 1,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.6808677911758423
+    },
+    {
+      "i": 2,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.869458794593811
+    },
+    {
+      "i": 3,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5720121264457703
+    },
+    {
+      "i": 4,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.49880868196487427
+    },
+    {
+      "i": 5,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.8120718002319336
+    },
+    {
+      "i": 6,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5473513603210449
+    },
+    {
+      "i": 7,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5388131141662598
+    },
+    {
+      "i": 8,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.48484984040260315
+    },
+    {
+      "i": 9,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.6346154808998108
+    },
+    {
+      "i": 10,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5100416541099548
+    },
+    {
+      "i": 11,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.38307127356529236
+    },
+    {
+      "i": 12,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.2965609133243561
+    },
+    {
+      "i": 13,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.6453650593757629
+    },
+    {
+      "i": 14,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.32004037499427795
+    },
+    {
+      "i": 15,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.24083448946475983
+    },
+    {
+      "i": 16,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.11561477184295654
+    },
+    {
+      "i": 17,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.4796977639198303
+    },
+    {
+      "i": 18,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5779101252555847
+    },
+    {
+      "i": 19,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.6647191643714905
+    },
+    {
+      "i": 20,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.184574693441391
+    },
+    {
+      "i": 21,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.39093220233917236
+    },
+    {
+      "i": 22,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.8352624177932739
+    },
+    {
+      "i": 23,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.3856625258922577
+    },
+    {
+      "i": 24,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.6039838790893555
+    },
+    {
+      "i": 25,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.6300603747367859
+    },
+    {
+      "i": 26,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.6755749583244324
+    },
+    {
+      "i": 27,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.49430185556411743
+    },
+    {
+      "i": 28,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.3086143136024475
+    },
+    {
+      "i": 29,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5070251226425171
+    },
+    {
+      "i": 30,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.3568432629108429
+    },
+    {
+      "i": 31,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.7224020957946777
+    },
+    {
+      "i": 32,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5115469098091125
+    },
+    {
+      "i": 33,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.8094738125801086
+    },
+    {
+      "i": 34,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.3998599946498871
+    },
+    {
+      "i": 35,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.16470052301883698
+    },
+    {
+      "i": 36,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.8962855339050293
+    },
+    {
+      "i": 37,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.1742836833000183
+    },
+    {
+      "i": 38,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.4778748154640198
+    },
+    {
+      "i": 39,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.36728617548942566
+    },
+    {
+      "i": 40,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.7584561109542847
+    },
+    {
+      "i": 41,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.7675523161888123
+    },
+    {
+      "i": 42,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.4561757743358612
+    },
+    {
+      "i": 43,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.3717491626739502
+    },
+    {
+      "i": 44,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.24475210905075073
+    },
+    {
+      "i": 45,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.27200666069984436
+    },
+    {
+      "i": 46,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5081046223640442
+    },
+    {
+      "i": 47,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.42721912264823914
+    },
+    {
+      "i": 48,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.4231347143650055
+    },
+    {
+      "i": 49,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.28867003321647644
+    },
+    {
+      "i": 50,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5670719146728516
+    },
+    {
+      "i": 51,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.4515025019645691
+    },
+    {
+      "i": 52,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5552109479904175
+    },
+    {
+      "i": 53,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.6776118278503418
+    },
+    {
+      "i": 54,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.18339167535305023
+    },
+    {
+      "i": 55,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.4497469365596771
+    },
+    {
+      "i": 56,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.37100711464881897
+    },
+    {
+      "i": 57,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.7749437093734741
+    },
+    {
+      "i": 58,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.30639755725860596
+    },
+    {
+      "i": 59,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.475467711687088
+    },
+    {
+      "i": 60,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5416271686553955
+    },
+    {
+      "i": 61,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.7632156610488892
+    },
+    {
+      "i": 62,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.5839621424674988
+    },
+    {
+      "i": 63,
+      "raw_generation": "[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]",
+      "raw_repr": "'[0.0, 6.4, 0.0, 11.6, 0.0, 4.8, 14.2, 0.0]'",
+      "parsed_ok": true,
+      "used_equal_power_fallback": false,
+      "parsed_mw": [
+        0.0,
+        6.4,
+        0.0,
+        11.6,
+        0.0,
+        4.8,
+        14.2,
+        0.0
+      ],
+      "parsed_all_zero": false,
+      "parsed_sum_mw": 37.0,
+      "ratio": 0.4519350826740265
+    }
+  ]
+}

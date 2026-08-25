@@ -1,0 +1,2105 @@
+[
+  {
+    "per_lambda": {
+      "0.0": 0.9650983810424805,
+      "0.25": 0.9639723300933838,
+      "0.5": 0.9608767032623291,
+      "0.75": 0.9523992538452148,
+      "1.0": 0.9388995170593262
+    },
+    "mean_ratio": 0.9562492370605469,
+    "se_by_lambda": [
+      18.68342399597168,
+      19.393760681152344,
+      20.39913558959961,
+      22.757240295410156,
+      24.970800399780273
+    ],
+    "ee_by_lambda": [
+      190.42520141601562,
+      189.53871154785156,
+      184.45758056640625,
+      149.59442138671875,
+      60.25830078125
+    ],
+    "signalling_bits_per_agent": Infinity,
+    "config": {
+      "bits": 0,
+      "mode": "continuous",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "continuous",
+    "bits": null,
+    "rho": 0.9879295846517838
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9655847549438477,
+      "0.25": 0.9640184640884399,
+      "0.5": 0.9610846638679504,
+      "0.75": 0.9519294500350952,
+      "1.0": 0.9376780986785889
+    },
+    "mean_ratio": 0.9560590863227845,
+    "se_by_lambda": [
+      18.681705474853516,
+      19.39756202697754,
+      20.38457489013672,
+      22.81619644165039,
+      24.941213607788086
+    ],
+    "ee_by_lambda": [
+      190.47885131835938,
+      189.49383544921875,
+      184.55856323242188,
+      147.79376220703125,
+      58.27678680419922
+    ],
+    "signalling_bits_per_agent": Infinity,
+    "config": {
+      "bits": 0,
+      "mode": "continuous",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "continuous",
+    "bits": null,
+    "rho": 0.9879295846517838
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9651883840560913,
+      "0.25": 0.9641572833061218,
+      "0.5": 0.9617165327072144,
+      "0.75": 0.9523983001708984,
+      "1.0": 0.9384098649024963
+    },
+    "mean_ratio": 0.9563740730285645,
+    "se_by_lambda": [
+      18.710655212402344,
+      19.386367797851562,
+      20.474319458007812,
+      22.84405517578125,
+      24.961164474487305
+    ],
+    "ee_by_lambda": [
+      190.44931030273438,
+      189.58978271484375,
+      184.12913513183594,
+      147.54710388183594,
+      58.17744445800781
+    ],
+    "signalling_bits_per_agent": Infinity,
+    "config": {
+      "bits": 0,
+      "mode": "continuous",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "continuous",
+    "bits": null,
+    "rho": 0.9879295846517838
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8630850911140442,
+      "0.25": 0.8605396151542664,
+      "0.5": 0.8566949367523193,
+      "0.75": 0.8439538478851318,
+      "1.0": 0.8328664302825928
+    },
+    "mean_ratio": 0.8514279842376709,
+    "se_by_lambda": [
+      16.956554412841797,
+      17.526615142822266,
+      18.38990592956543,
+      20.148006439208984,
+      22.282367706298828
+    ],
+    "ee_by_lambda": [
+      171.7210693359375,
+      170.32862854003906,
+      164.94638061523438,
+      136.1736602783203,
+      47.579559326171875
+    ],
+    "signalling_bits_per_agent": 0.0,
+    "config": {
+      "bits": 0,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 0
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8632547855377197,
+      "0.25": 0.8607298135757446,
+      "0.5": 0.8562774658203125,
+      "0.75": 0.8430956602096558,
+      "1.0": 0.8319955468177795
+    },
+    "mean_ratio": 0.8510706543922424,
+    "se_by_lambda": [
+      16.96672821044922,
+      17.52829360961914,
+      18.393787384033203,
+      20.154708862304688,
+      22.268993377685547
+    ],
+    "ee_by_lambda": [
+      171.74192810058594,
+      170.36700439453125,
+      164.90771484375,
+      135.70187377929688,
+      46.985408782958984
+    ],
+    "signalling_bits_per_agent": 0.0,
+    "config": {
+      "bits": 0,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 0
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8617176413536072,
+      "0.25": 0.8611088991165161,
+      "0.5": 0.8572614192962646,
+      "0.75": 0.843704104423523,
+      "1.0": 0.833054780960083
+    },
+    "mean_ratio": 0.8513693690299988,
+    "se_by_lambda": [
+      16.897659301757812,
+      17.53870964050293,
+      18.40665054321289,
+      20.09746551513672,
+      22.286422729492188
+    ],
+    "ee_by_lambda": [
+      171.47848510742188,
+      170.38475036621094,
+      165.01019287109375,
+      137.22373962402344,
+      47.01646041870117
+    ],
+    "signalling_bits_per_agent": 0.0,
+    "config": {
+      "bits": 0,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 0
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8724897503852844,
+      "0.25": 0.8811728954315186,
+      "0.5": 0.8832147121429443,
+      "0.75": 0.8857908844947815,
+      "1.0": 0.8824206590652466
+    },
+    "mean_ratio": 0.8810177803039551,
+    "se_by_lambda": [
+      16.693355560302734,
+      17.860902786254883,
+      19.115699768066406,
+      21.52535629272461,
+      23.516586303710938
+    ],
+    "ee_by_lambda": [
+      173.67721557617188,
+      173.8505859375,
+      167.73233032226562,
+      131.88473510742188,
+      50.14750671386719
+    ],
+    "signalling_bits_per_agent": 7.0,
+    "config": {
+      "bits": 1,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 1
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.876297652721405,
+      "0.25": 0.8799826502799988,
+      "0.5": 0.8834394812583923,
+      "0.75": 0.8833924531936646,
+      "1.0": 0.885530948638916
+    },
+    "mean_ratio": 0.8817286372184754,
+    "se_by_lambda": [
+      16.957273483276367,
+      17.862064361572266,
+      19.190837860107422,
+      21.547073364257812,
+      23.594100952148438
+    ],
+    "ee_by_lambda": [
+      174.05807495117188,
+      173.6599578857422,
+      167.19686889648438,
+      129.65185546875,
+      50.42462921142578
+    ],
+    "signalling_bits_per_agent": 7.0,
+    "config": {
+      "bits": 1,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 1
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8786715269088745,
+      "0.25": 0.8814930319786072,
+      "0.5": 0.8823467493057251,
+      "0.75": 0.8848155736923218,
+      "1.0": 0.884392499923706
+    },
+    "mean_ratio": 0.882343876361847,
+    "se_by_lambda": [
+      16.99254608154297,
+      17.88909339904785,
+      19.071189880371094,
+      21.5477294921875,
+      23.56391143798828
+    ],
+    "ee_by_lambda": [
+      174.5114288330078,
+      173.8602294921875,
+      167.84988403320312,
+      130.5872802734375,
+      50.18874740600586
+    ],
+    "signalling_bits_per_agent": 7.0,
+    "config": {
+      "bits": 1,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 1
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8732384443283081,
+      "0.25": 0.8716028928756714,
+      "0.5": 0.8678730130195618,
+      "0.75": 0.8567806482315063,
+      "1.0": 0.8445066213607788
+    },
+    "mean_ratio": 0.8628003239631653,
+    "se_by_lambda": [
+      17.223264694213867,
+      17.793880462646484,
+      18.674610137939453,
+      20.589073181152344,
+      22.55431365966797
+    ],
+    "ee_by_lambda": [
+      173.47036743164062,
+      172.07415771484375,
+      166.34356689453125,
+      134.41860961914062,
+      47.32924270629883
+    ],
+    "signalling_bits_per_agent": 7.0,
+    "config": {
+      "bits": 1,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 1
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8739767074584961,
+      "0.25": 0.8722184300422668,
+      "0.5": 0.868288516998291,
+      "0.75": 0.8575667142868042,
+      "1.0": 0.8454411029815674
+    },
+    "mean_ratio": 0.8634982943534851,
+    "se_by_lambda": [
+      17.238779067993164,
+      17.800735473632812,
+      18.69801139831543,
+      20.60653305053711,
+      22.577022552490234
+    ],
+    "ee_by_lambda": [
+      173.66595458984375,
+      172.26031494140625,
+      166.38308715820312,
+      134.57618713378906,
+      47.40008544921875
+    ],
+    "signalling_bits_per_agent": 7.0,
+    "config": {
+      "bits": 1,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 1
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8735049962997437,
+      "0.25": 0.8720300793647766,
+      "0.5": 0.8684560060501099,
+      "0.75": 0.8573748469352722,
+      "1.0": 0.8451444506645203
+    },
+    "mean_ratio": 0.8633020758628845,
+    "se_by_lambda": [
+      17.228118896484375,
+      17.78798484802246,
+      18.713016510009766,
+      20.57894515991211,
+      22.57106590270996
+    ],
+    "ee_by_lambda": [
+      173.50543212890625,
+      172.1851806640625,
+      166.25765991210938,
+      134.79116821289062,
+      47.85177230834961
+    ],
+    "signalling_bits_per_agent": 7.0,
+    "config": {
+      "bits": 1,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 1
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.91790771484375,
+      "0.25": 0.9158754348754883,
+      "0.5": 0.9120458960533142,
+      "0.75": 0.9020096063613892,
+      "1.0": 0.8902608156204224
+    },
+    "mean_ratio": 0.9076198935508728,
+    "se_by_lambda": [
+      17.738197326660156,
+      18.40255355834961,
+      19.38787841796875,
+      21.51070785522461,
+      23.707963943481445
+    ],
+    "ee_by_lambda": [
+      181.39389038085938,
+      180.53138732910156,
+      175.34255981445312,
+      143.0780029296875,
+      55.49665069580078
+    ],
+    "signalling_bits_per_agent": 14.0,
+    "config": {
+      "bits": 2,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 2
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9107610583305359,
+      "0.25": 0.9093497395515442,
+      "0.5": 0.906876802444458,
+      "0.75": 0.9001777172088623,
+      "1.0": 0.894058108329773
+    },
+    "mean_ratio": 0.9042446851730347,
+    "se_by_lambda": [
+      17.708572387695312,
+      18.33519744873047,
+      19.350467681884766,
+      21.6337833404541,
+      23.81080436706543
+    ],
+    "ee_by_lambda": [
+      180.08688354492188,
+      179.15541076660156,
+      173.86721801757812,
+      139.1293182373047,
+      53.7628173828125
+    ],
+    "signalling_bits_per_agent": 14.0,
+    "config": {
+      "bits": 2,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 2
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9176303148269653,
+      "0.25": 0.914860188961029,
+      "0.5": 0.9109993577003479,
+      "0.75": 0.9004595279693604,
+      "1.0": 0.8885526657104492
+    },
+    "mean_ratio": 0.9065004110336303,
+    "se_by_lambda": [
+      17.729976654052734,
+      18.390724182128906,
+      19.332950592041016,
+      21.574378967285156,
+      23.67234992980957
+    ],
+    "ee_by_lambda": [
+      181.34152221679688,
+      180.21484375,
+      175.30184936523438,
+      140.53012084960938,
+      53.56980895996094
+    ],
+    "signalling_bits_per_agent": 14.0,
+    "config": {
+      "bits": 2,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 2
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8721094131469727,
+      "0.25": 0.8707476854324341,
+      "0.5": 0.8675343990325928,
+      "0.75": 0.8569319248199463,
+      "1.0": 0.844641387462616
+    },
+    "mean_ratio": 0.8623929619789124,
+    "se_by_lambda": [
+      17.2220516204834,
+      17.804162979125977,
+      18.70602798461914,
+      20.68008041381836,
+      22.564346313476562
+    ],
+    "ee_by_lambda": [
+      173.37353515625,
+      171.9747314453125,
+      166.19715881347656,
+      132.63291931152344,
+      47.758304595947266
+    ],
+    "signalling_bits_per_agent": 14.0,
+    "config": {
+      "bits": 2,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 2
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8730313777923584,
+      "0.25": 0.871362566947937,
+      "0.5": 0.8683315515518188,
+      "0.75": 0.8576308488845825,
+      "1.0": 0.8455069065093994
+    },
+    "mean_ratio": 0.8631726503372192,
+    "se_by_lambda": [
+      17.214263916015625,
+      17.800304412841797,
+      18.73526954650879,
+      20.68613052368164,
+      22.585521697998047
+    ],
+    "ee_by_lambda": [
+      173.56985473632812,
+      172.13848876953125,
+      166.21495056152344,
+      133.04270935058594,
+      48.17344665527344
+    ],
+    "signalling_bits_per_agent": 14.0,
+    "config": {
+      "bits": 2,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 2
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8726295828819275,
+      "0.25": 0.8711732029914856,
+      "0.5": 0.8679100871086121,
+      "0.75": 0.8568230867385864,
+      "1.0": 0.8441920876502991
+    },
+    "mean_ratio": 0.8625456094741821,
+    "se_by_lambda": [
+      17.18755340576172,
+      17.804603576660156,
+      18.670394897460938,
+      20.668209075927734,
+      22.55901336669922
+    ],
+    "ee_by_lambda": [
+      173.51805114746094,
+      172.07443237304688,
+      166.65829467773438,
+      133.01437377929688,
+      48.04155731201172
+    ],
+    "signalling_bits_per_agent": 14.0,
+    "config": {
+      "bits": 2,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 2
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9401354193687439,
+      "0.25": 0.9383746385574341,
+      "0.5": 0.9340342283248901,
+      "0.75": 0.9228912591934204,
+      "1.0": 0.9093066453933716
+    },
+    "mean_ratio": 0.928948438167572,
+    "se_by_lambda": [
+      18.222124099731445,
+      18.89998435974121,
+      19.940601348876953,
+      22.139875411987305,
+      24.195205688476562
+    ],
+    "ee_by_lambda": [
+      185.70233154296875,
+      184.7083740234375,
+      178.72314453125,
+      142.8824920654297,
+      56.08927536010742
+    ],
+    "signalling_bits_per_agent": 21.0,
+    "config": {
+      "bits": 3,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 3
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9300448894500732,
+      "0.25": 0.9282888174057007,
+      "0.5": 0.9242337346076965,
+      "0.75": 0.9152923822402954,
+      "1.0": 0.9035155773162842
+    },
+    "mean_ratio": 0.92027508020401,
+    "se_by_lambda": [
+      18.069549560546875,
+      18.699846267700195,
+      19.712451934814453,
+      21.954221725463867,
+      24.041637420654297
+    ],
+    "ee_by_lambda": [
+      183.6915283203125,
+      182.66116333007812,
+      176.9390869140625,
+      141.91575622558594,
+      54.907005310058594
+    ],
+    "signalling_bits_per_agent": 21.0,
+    "config": {
+      "bits": 3,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 3
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9413097500801086,
+      "0.25": 0.9396687150001526,
+      "0.5": 0.9359598755836487,
+      "0.75": 0.9250812530517578,
+      "1.0": 0.9119430780410767
+    },
+    "mean_ratio": 0.9307925343513489,
+    "se_by_lambda": [
+      18.19244384765625,
+      18.91275405883789,
+      19.894010543823242,
+      22.197532653808594,
+      24.26605224609375
+    ],
+    "ee_by_lambda": [
+      185.8251190185547,
+      184.85073852539062,
+      179.60101318359375,
+      143.07614135742188,
+      55.41879653930664
+    ],
+    "signalling_bits_per_agent": 21.0,
+    "config": {
+      "bits": 3,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 3
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8727432489395142,
+      "0.25": 0.8712804317474365,
+      "0.5": 0.8680512309074402,
+      "0.75": 0.8567630648612976,
+      "1.0": 0.845141589641571
+    },
+    "mean_ratio": 0.8627959132194519,
+    "se_by_lambda": [
+      17.229310989379883,
+      17.811077117919922,
+      18.704509735107422,
+      20.713829040527344,
+      22.57537078857422
+    ],
+    "ee_by_lambda": [
+      173.36538696289062,
+      171.99264526367188,
+      166.37506103515625,
+      132.00115966796875,
+      48.135101318359375
+    ],
+    "signalling_bits_per_agent": 21.0,
+    "config": {
+      "bits": 3,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 3
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8717869520187378,
+      "0.25": 0.8700445294380188,
+      "0.5": 0.8666179776191711,
+      "0.75": 0.8558727502822876,
+      "1.0": 0.8437743186950684
+    },
+    "mean_ratio": 0.8616193056106567,
+    "se_by_lambda": [
+      17.21355628967285,
+      17.76827621459961,
+      18.68721580505371,
+      20.629566192626953,
+      22.558744430541992
+    ],
+    "ee_by_lambda": [
+      173.24459838867188,
+      171.88217163085938,
+      165.96517944335938,
+      133.35482788085938,
+      48.60376739501953
+    ],
+    "signalling_bits_per_agent": 21.0,
+    "config": {
+      "bits": 3,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 3
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8720701932907104,
+      "0.25": 0.8704748749732971,
+      "0.5": 0.8665280342102051,
+      "0.75": 0.855829119682312,
+      "1.0": 0.844574511051178
+    },
+    "mean_ratio": 0.8618953466415405,
+    "se_by_lambda": [
+      17.186561584472656,
+      17.79939842224121,
+      18.67613983154297,
+      20.680892944335938,
+      22.55771255493164
+    ],
+    "ee_by_lambda": [
+      173.30052185058594,
+      171.86355590820312,
+      166.1356201171875,
+      132.2401123046875,
+      47.67097854614258
+    ],
+    "signalling_bits_per_agent": 21.0,
+    "config": {
+      "bits": 3,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 3
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9456210732460022,
+      "0.25": 0.944527268409729,
+      "0.5": 0.9417276382446289,
+      "0.75": 0.9324150085449219,
+      "1.0": 0.9183858633041382
+    },
+    "mean_ratio": 0.936535370349884,
+    "se_by_lambda": [
+      18.356746673583984,
+      19.00672149658203,
+      20.034862518310547,
+      22.2974853515625,
+      24.430801391601562
+    ],
+    "ee_by_lambda": [
+      186.72219848632812,
+      185.87811279296875,
+      180.54470825195312,
+      145.90200805664062,
+      56.304412841796875
+    ],
+    "signalling_bits_per_agent": 28.0,
+    "config": {
+      "bits": 4,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 4
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.94228595495224,
+      "0.25": 0.9410483837127686,
+      "0.5": 0.9376821517944336,
+      "0.75": 0.9281761646270752,
+      "1.0": 0.9140027761459351
+    },
+    "mean_ratio": 0.9326390862464905,
+    "se_by_lambda": [
+      18.207317352294922,
+      18.90228271484375,
+      19.923952102661133,
+      22.206443786621094,
+      24.318143844604492
+    ],
+    "ee_by_lambda": [
+      186.01661682128906,
+      185.18624877929688,
+      179.90899658203125,
+      145.03546142578125,
+      56.284942626953125
+    ],
+    "signalling_bits_per_agent": 28.0,
+    "config": {
+      "bits": 4,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 4
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.947468638420105,
+      "0.25": 0.9463993906974792,
+      "0.5": 0.9442862868309021,
+      "0.75": 0.9347041249275208,
+      "1.0": 0.9209779500961304
+    },
+    "mean_ratio": 0.9387672781944275,
+    "se_by_lambda": [
+      18.285228729248047,
+      18.986886978149414,
+      20.066646575927734,
+      22.34721565246582,
+      24.512168884277344
+    ],
+    "ee_by_lambda": [
+      187.12217712402344,
+      186.40928649902344,
+      181.25657653808594,
+      146.53240966796875,
+      57.49736022949219
+    ],
+    "signalling_bits_per_agent": 28.0,
+    "config": {
+      "bits": 4,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 4
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8705731630325317,
+      "0.25": 0.8691699504852295,
+      "0.5": 0.8660315275192261,
+      "0.75": 0.8559152483940125,
+      "1.0": 0.8457753658294678
+    },
+    "mean_ratio": 0.8614930510520935,
+    "se_by_lambda": [
+      17.208694458007812,
+      17.761180877685547,
+      18.6959228515625,
+      20.684776306152344,
+      22.601688385009766
+    ],
+    "ee_by_lambda": [
+      173.02145385742188,
+      171.7237091064453,
+      165.74798583984375,
+      132.0224151611328,
+      49.4565315246582
+    ],
+    "signalling_bits_per_agent": 28.0,
+    "config": {
+      "bits": 4,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 4
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8723037242889404,
+      "0.25": 0.8704075813293457,
+      "0.5": 0.8671364784240723,
+      "0.75": 0.8571822643280029,
+      "1.0": 0.845180869102478
+    },
+    "mean_ratio": 0.8624421834945679,
+    "se_by_lambda": [
+      17.198535919189453,
+      17.79691505432129,
+      18.68138885498047,
+      20.694499969482422,
+      22.584503173828125
+    ],
+    "ee_by_lambda": [
+      173.38839721679688,
+      171.88339233398438,
+      166.2420654296875,
+      132.6663818359375,
+      48.45006561279297
+    ],
+    "signalling_bits_per_agent": 28.0,
+    "config": {
+      "bits": 4,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 4
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8713477849960327,
+      "0.25": 0.8698306083679199,
+      "0.5": 0.8665205836296082,
+      "0.75": 0.856024444103241,
+      "1.0": 0.8449114561080933
+    },
+    "mean_ratio": 0.861726975440979,
+    "se_by_lambda": [
+      17.154834747314453,
+      17.790847778320312,
+      18.639577865600586,
+      20.708106994628906,
+      22.572227478027344
+    ],
+    "ee_by_lambda": [
+      173.22299194335938,
+      171.70860290527344,
+      166.35150146484375,
+      131.58816528320312,
+      48.20941162109375
+    ],
+    "signalling_bits_per_agent": 28.0,
+    "config": {
+      "bits": 4,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 4
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9573978185653687,
+      "0.25": 0.9563544988632202,
+      "0.5": 0.9534114599227905,
+      "0.75": 0.9442184567451477,
+      "1.0": 0.9296112060546875
+    },
+    "mean_ratio": 0.9481986880302429,
+    "se_by_lambda": [
+      18.47225570678711,
+      19.156633377075195,
+      20.166893005371094,
+      22.490510940551758,
+      24.73343276977539
+    ],
+    "ee_by_lambda": [
+      188.987548828125,
+      188.30447387695312,
+      183.60655212402344,
+      149.79989624023438,
+      59.569549560546875
+    ],
+    "signalling_bits_per_agent": 42.0,
+    "config": {
+      "bits": 6,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 6
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9566124677658081,
+      "0.25": 0.9553785920143127,
+      "0.5": 0.9521885514259338,
+      "0.75": 0.9432436227798462,
+      "1.0": 0.928565502166748
+    },
+    "mean_ratio": 0.9471977472305297,
+    "se_by_lambda": [
+      18.47983169555664,
+      19.142141342163086,
+      20.177431106567383,
+      22.442874908447266,
+      24.708438873291016
+    ],
+    "ee_by_lambda": [
+      188.81373596191406,
+      188.12347412109375,
+      183.08290100097656,
+      150.27978515625,
+      58.87630844116211
+    ],
+    "signalling_bits_per_agent": 42.0,
+    "config": {
+      "bits": 6,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 6
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.957863450050354,
+      "0.25": 0.9573345184326172,
+      "0.5": 0.954750657081604,
+      "0.75": 0.9449338912963867,
+      "1.0": 0.9315633177757263
+    },
+    "mean_ratio": 0.9492891669273377,
+    "se_by_lambda": [
+      18.428234100341797,
+      19.157896041870117,
+      20.098770141601562,
+      22.401748657226562,
+      24.777931213378906
+    ],
+    "ee_by_lambda": [
+      189.10488891601562,
+      188.54818725585938,
+      184.58004760742188,
+      152.2598114013672,
+      59.89494323730469
+    ],
+    "signalling_bits_per_agent": 42.0,
+    "config": {
+      "bits": 6,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 6
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8716832399368286,
+      "0.25": 0.8695683479309082,
+      "0.5": 0.8658408522605896,
+      "0.75": 0.855553925037384,
+      "1.0": 0.8442434072494507
+    },
+    "mean_ratio": 0.8613779544830322,
+    "se_by_lambda": [
+      17.22369384765625,
+      17.77292251586914,
+      18.680294036865234,
+      20.695026397705078,
+      22.562091827392578
+    ],
+    "ee_by_lambda": [
+      173.24562072753906,
+      171.75,
+      165.83096313476562,
+      131.7203369140625,
+      48.020545959472656
+    ],
+    "signalling_bits_per_agent": 42.0,
+    "config": {
+      "bits": 6,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 6
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8712418079376221,
+      "0.25": 0.8694337606430054,
+      "0.5": 0.8660224676132202,
+      "0.75": 0.8557261228561401,
+      "1.0": 0.8449478149414062
+    },
+    "mean_ratio": 0.8614743947982788,
+    "se_by_lambda": [
+      17.179296493530273,
+      17.78255271911621,
+      18.686182022094727,
+      20.665199279785156,
+      22.57575798034668
+    ],
+    "ee_by_lambda": [
+      173.17022705078125,
+      171.64871215820312,
+      165.80642700195312,
+      132.46295166015625,
+      48.664512634277344
+    ],
+    "signalling_bits_per_agent": 42.0,
+    "config": {
+      "bits": 6,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 6
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8717530369758606,
+      "0.25": 0.8699094653129578,
+      "0.5": 0.866497278213501,
+      "0.75": 0.8554693460464478,
+      "1.0": 0.8441635370254517
+    },
+    "mean_ratio": 0.8615585327148437,
+    "se_by_lambda": [
+      17.16793441772461,
+      17.781721115112305,
+      18.700668334960938,
+      20.700424194335938,
+      22.567638397216797
+    ],
+    "ee_by_lambda": [
+      173.35311889648438,
+      171.82159423828125,
+      165.95091247558594,
+      131.55194091796875,
+      48.621761322021484
+    ],
+    "signalling_bits_per_agent": 42.0,
+    "config": {
+      "bits": 6,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 6
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.959396243095398,
+      "0.25": 0.9581183791160583,
+      "0.5": 0.9553166031837463,
+      "0.75": 0.9463450908660889,
+      "1.0": 0.9335502982139587
+    },
+    "mean_ratio": 0.95054532289505,
+    "se_by_lambda": [
+      18.441211700439453,
+      19.161787033081055,
+      20.19286346435547,
+      22.478403091430664,
+      24.833499908447266
+    ],
+    "ee_by_lambda": [
+      189.38583374023438,
+      188.76617431640625,
+      184.12826538085938,
+      151.55941772460938,
+      60.37043762207031
+    ],
+    "signalling_bits_per_agent": 56.0,
+    "config": {
+      "bits": 8,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 8
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.959538996219635,
+      "0.25": 0.9590761661529541,
+      "0.5": 0.9557755589485168,
+      "0.75": 0.9465103149414062,
+      "1.0": 0.932466983795166
+    },
+    "mean_ratio": 0.9506736040115357,
+    "se_by_lambda": [
+      18.449146270751953,
+      19.12694549560547,
+      20.13367462158203,
+      22.42477798461914,
+      24.802732467651367
+    ],
+    "ee_by_lambda": [
+      189.369384765625,
+      189.00106811523438,
+      184.67501831054688,
+      152.87234497070312,
+      59.56713104248047
+    ],
+    "signalling_bits_per_agent": 56.0,
+    "config": {
+      "bits": 8,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 8
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9588506817817688,
+      "0.25": 0.9578936100006104,
+      "0.5": 0.9550636410713196,
+      "0.75": 0.9460856318473816,
+      "1.0": 0.9316918849945068
+    },
+    "mean_ratio": 0.9499170899391174,
+    "se_by_lambda": [
+      18.41300392150879,
+      19.11087989807129,
+      20.10713768005371,
+      22.438770294189453,
+      24.784671783447266
+    ],
+    "ee_by_lambda": [
+      189.28640747070312,
+      188.7900848388672,
+      184.62303161621094,
+      152.22177124023438,
+      58.95623779296875
+    ],
+    "signalling_bits_per_agent": 56.0,
+    "config": {
+      "bits": 8,
+      "mode": "vq",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "learned",
+    "bits": 8
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8704633712768555,
+      "0.25": 0.8688280582427979,
+      "0.5": 0.8657734394073486,
+      "0.75": 0.8555227518081665,
+      "1.0": 0.8438642621040344
+    },
+    "mean_ratio": 0.8608903765678406,
+    "se_by_lambda": [
+      17.205312728881836,
+      17.762418746948242,
+      18.64181900024414,
+      20.667728424072266,
+      22.55082893371582
+    ],
+    "ee_by_lambda": [
+      172.9271697998047,
+      171.552734375,
+      166.03530883789062,
+      132.16773986816406,
+      48.32706069946289
+    ],
+    "signalling_bits_per_agent": 56.0,
+    "config": {
+      "bits": 8,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 8
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.8711068630218506,
+      "0.25": 0.8696902990341187,
+      "0.5": 0.8666263818740845,
+      "0.75": 0.856358528137207,
+      "1.0": 0.8440667986869812
+    },
+    "mean_ratio": 0.8615697741508483,
+    "se_by_lambda": [
+      17.194168090820312,
+      17.79151153564453,
+      18.656967163085938,
+      20.7061767578125,
+      22.55661964416504
+    ],
+    "ee_by_lambda": [
+      173.1280517578125,
+      171.67474365234375,
+      166.27886962890625,
+      131.83892822265625,
+      48.14186096191406
+    ],
+    "signalling_bits_per_agent": 56.0,
+    "config": {
+      "bits": 8,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 8
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.871277391910553,
+      "0.25": 0.8697630763053894,
+      "0.5": 0.8664933443069458,
+      "0.75": 0.8555819988250732,
+      "1.0": 0.8437758088111877
+    },
+    "mean_ratio": 0.8613783240318298,
+    "se_by_lambda": [
+      17.162029266357422,
+      17.776123046875,
+      18.68194580078125,
+      20.683406829833984,
+      22.54332160949707
+    ],
+    "ee_by_lambda": [
+      173.1478271484375,
+      171.7081298828125,
+      165.9672088623047,
+      131.85842895507812,
+      48.16332244873047
+    ],
+    "signalling_bits_per_agent": 56.0,
+    "config": {
+      "bits": 8,
+      "mode": "vq",
+      "messenger": "quantised",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 2,
+      "device": "cuda"
+    },
+    "arm": "quantised",
+    "bits": 8
+  }
+]

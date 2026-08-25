@@ -1,0 +1,5 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  zero-shot : 0.1604 of oracle      275.1 ms/instance   parse failures 7.8%
+  few-shot  : 0.0000 of oracle      928.8 ms/instance   parse failures 0.0%
+  retrieval : 0.1157 of oracle      938.6 ms/instance   parse failures 0.0%
+  equal power: 0.1774 of oracle   (reference)

@@ -1,0 +1,114 @@
++ python3 experiments.py adversarial
+  B=2 1 attacker(s) constant: objective   -5.6%  attacker   +4.2%  victims  -11.9%  detected 1.00 (false alarm 0.01)
+  B=2 1 attacker(s) permutation: objective   -0.0%  attacker   +0.0%  victims   -0.0%  detected 0.94 (false alarm 0.01)
+  B=2 1 attacker(s) matched : objective   -2.4%  attacker   -8.1%  victims   -2.5%  detected 0.00 (false alarm 0.01)
+  B=2 2 attacker(s) constant: objective   -1.8%  attacker   -9.9%  victims   +1.6%  detected 1.00 (false alarm 0.03)
+  B=2 2 attacker(s) permutation: objective   +0.0%  attacker   +0.0%  victims   +0.0%  detected 0.00 (false alarm 0.03)
+  B=2 2 attacker(s) matched : objective   -4.3%  attacker   -2.2%  victims   -6.1%  detected 0.53 (false alarm 0.03)
+  B=2 3 attacker(s) constant: objective   -2.8%  attacker   -9.4%  victims   +2.5%  detected 1.00 (false alarm 0.01)
+  B=2 3 attacker(s) permutation: objective   -0.2%  attacker   +0.2%  victims   +1.2%  detected 0.91 (false alarm 0.01)
+  B=2 3 attacker(s) matched : objective   -5.9%  attacker   +2.6%  victims  -11.0%  detected 0.81 (false alarm 0.01)
+  B=4 1 attacker(s) constant: objective  -23.3%  attacker  +13.1%  victims  -34.6%  detected 1.00 (false alarm 0.01)
+  B=4 1 attacker(s) permutation: objective   -0.0%  attacker   +0.0%  victims   -0.0%  detected 0.24 (false alarm 0.01)
+  B=4 1 attacker(s) matched : objective   -3.4%  attacker   -4.8%  victims   -4.7%  detected 0.00 (false alarm 0.01)
+  B=4 2 attacker(s) constant: objective   -4.4%  attacker  -11.9%  victims   -3.4%  detected 1.00 (false alarm 0.01)
+  B=4 2 attacker(s) permutation: objective   -0.0%  attacker   +0.0%  victims   +0.0%  detected 0.59 (false alarm 0.01)
+  B=4 2 attacker(s) matched : objective   -6.3%  attacker   -2.9%  victims   -8.8%  detected 1.00 (false alarm 0.01)
+  B=4 3 attacker(s) constant: objective   -7.3%  attacker  -12.2%  victims   -7.5%  detected 1.00 (false alarm 0.02)
+  B=4 3 attacker(s) permutation: objective   -0.1%  attacker   +0.1%  victims   +0.0%  detected 0.12 (false alarm 0.02)
+  B=4 3 attacker(s) matched : objective   -9.0%  attacker   +0.5%  victims  -14.7%  detected 1.00 (false alarm 0.02)
+  B=6 1 attacker(s) constant: objective  -40.3%  attacker  +18.2%  victims  -53.3%  detected 1.00 (false alarm 0.02)
+  B=6 1 attacker(s) permutation: objective   -0.0%  attacker   +0.0%  victims   -0.0%  detected 0.12 (false alarm 0.02)
+  B=6 1 attacker(s) matched : objective   -4.0%  attacker   -3.3%  victims   -5.7%  detected 0.06 (false alarm 0.02)
+  B=6 2 attacker(s) constant: objective  -10.8%  attacker  -12.1%  victims  -13.0%  detected 1.00 (false alarm 0.04)
+  B=6 2 attacker(s) permutation: objective   -0.0%  attacker   +0.1%  victims   +0.1%  detected 1.00 (false alarm 0.04)
+  B=6 2 attacker(s) matched : objective   -7.1%  attacker   -2.7%  victims  -10.3%  detected 1.00 (false alarm 0.04)
+  B=6 3 attacker(s) constant: objective   -9.0%  attacker  -13.8%  victims   -7.7%  detected 1.00 (false alarm 0.03)
+  B=6 3 attacker(s) permutation: objective   -0.1%  attacker   +0.2%  victims   +0.3%  detected 1.00 (false alarm 0.03)
+  B=6 3 attacker(s) matched : objective  -10.6%  attacker   -0.8%  victims  -16.7%  detected 1.00 (false alarm 0.03)
++ python3 experiments.py prior
+  full-CSI centralised, imitation (prior repo)  : 0.8123
+  full-CSI centralised, direct objective        : 0.9057
++ python3 experiments.py temporal
+  rho=0.00 slot 5: trend 0.8447  persistence 0.8556  shrunk 0.8958  genie 0.9998
+  rho=0.00 slot 6: trend 0.8136  persistence 0.8375  shrunk 0.9076  genie 1.0011
+  rho=0.00 slot 7: trend 0.8323  persistence 0.8545  shrunk 0.9104  genie 1.0020
+  rho=0.00 slot 8: trend 0.8270  persistence 0.8469  shrunk 0.9167  genie 0.9998
+  rho=0.00 slot 9: trend 0.8418  persistence 0.8652  shrunk 0.9105  genie 0.9989
+  rho=0.50 slot 5: trend 0.8630  persistence 0.8772  shrunk 0.9037  genie 1.0009
+  rho=0.50 slot 6: trend 0.8535  persistence 0.8611  shrunk 0.9116  genie 1.0003
+  rho=0.50 slot 7: trend 0.8497  persistence 0.8671  shrunk 0.9190  genie 1.0010
+  rho=0.50 slot 8: trend 0.8569  persistence 0.8659  shrunk 0.9140  genie 1.0001
+  rho=0.50 slot 9: trend 0.8672  persistence 0.8763  shrunk 0.9079  genie 0.9994
+  rho=0.90 slot 5: trend 0.9531  persistence 0.9496  shrunk 0.9554  genie 1.0020
+  rho=0.90 slot 6: trend 0.9375  persistence 0.9454  shrunk 0.9518  genie 1.0001
+  rho=0.90 slot 7: trend 0.9544  persistence 0.9582  shrunk 0.9556  genie 0.9998
+  rho=0.90 slot 8: trend 0.9445  persistence 0.9506  shrunk 0.9590  genie 0.9975
+  rho=0.90 slot 9: trend 0.9449  persistence 0.9455  shrunk 0.9579  genie 1.0034
+  rho=0.99 slot 5: trend 0.9926  persistence 0.9964  shrunk 0.9968  genie 1.0016
+  rho=0.99 slot 6: trend 0.9911  persistence 0.9888  shrunk 0.9936  genie 0.9998
+  rho=0.99 slot 7: trend 0.9941  persistence 0.9938  shrunk 0.9941  genie 1.0025
+  rho=0.99 slot 8: trend 0.9938  persistence 0.9937  shrunk 0.9939  genie 1.0009
+  rho=0.99 slot 9: trend 0.9882  persistence 0.9902  shrunk 0.9896  genie 0.9981
+
+==============================================================================
+   rho      trend   persistence     shrunk    genie  trend - persist
+------------------------------------------------------------------------------
+  0.00     0.8319        0.8520     0.9082   1.0003          -0.0201
+  0.50     0.8581        0.8695     0.9112   1.0004          -0.0115
+  0.90     0.9469        0.9499     0.9559   1.0006          -0.0030
+  0.99     0.9920        0.9926     0.9936   1.0006          -0.0006
+==============================================================================
+  rho=0.00: persistence wins   p=3.94e-13
+  rho=0.50: persistence wins   p=1.41e-05
+  rho=0.90: no difference      p=5.68e-02
+  rho=0.99: no difference      p=5.03e-01
++ python3 experiments.py pareto
+
+==============================================================================
+         arm     B   hypervolume   of oracle   non-dominated
+------------------------------------------------------------------------------
+      oracle    --        0.9133       1.000               5
+  continuous cont.        0.8477       0.928             5.0
+     learned     0        0.6780       0.742             5.0
+     learned     1        0.7266       0.796             4.7
+     learned     2        0.7627       0.835             5.0
+     learned     3        0.7970       0.873             5.0
+     learned     4        0.8123       0.889             5.0
+     learned     6        0.8325       0.912             5.0
+     learned     8        0.8356       0.915             5.0
+   quantised     1        0.6969       0.763             5.0
+   quantised     2        0.6977       0.764             5.0
+   quantised     3        0.6968       0.763             5.0
+   quantised     4        0.6969       0.763             5.0
+   quantised     6        0.6966       0.763             5.0
+   quantised     8        0.6956       0.762             5.0
+==============================================================================
+non-dominated = how many of the 5 preference points survive domination. A policy that
+ignores lambda collapses its front to a single point and reports 1.
+           perturbing a_{r,s} must not change what s transmits elsewhere
+[  ok  ] multi-objective: the regime admits a trade-off
+           oracle moves 35.1% in SE and 66.4% in EE from lambda 0 to 1
+[  ok  ] multi-objective: the policy responds to lambda
+           mean transmit power moves 95.0% across lambda (2.2mW, 3.6mW, 43.5mW)
+[  ok  ] tasks: hard success tracks the objective
+           ratio 0.887->0.943 with bits, but hard success 0.550->0.558
+[  ok  ] objectives: advert coverage
+           19/19 wired, 0 orphaned, 0 missing
+           
+[ warn ] evidence: stored results are newer than the code
+           sensing.json (14.6h older than the code); intent.json (15.9h older than the code); llm_tokens.json (5.7h older than the code); llm.json (3.0h older than the code); symbolic.json (16.0h older than the code); adversarial.json (0.0h older than the code); rho_sweep.json (15.5h older than the code); analysis.json (16.0h older than the code); bitsweep_fixed.json (16.2h older than the code); tasks.json (14.4h older than the code)  -- regenerate before citing
+[  ok  ] claims: every headline claim has evidence on disk
+           14/14 supported; unsupported: 
+
+==========================================================================
+  32 passed, 1 warnings, 1 failures
+
+  FAILURES:
+    - self-test: adversarial: AssertionError: the permutation attack should be invisible to a test on the symbol marginal
+
+  WARNINGS (known gaps, be honest about these):
+    - evidence: stored results are newer than the code: sensing.json (14.6h older than the code); intent.json (15.9h older than the code); llm_tokens.json (5.7h older than the code); llm.json (3.0h older than the code); symbolic.json (16.0h older than the code); adversarial.json (0.0h older than the code); rho_sweep.json (15.5h older than the code); analysis.json (16.0h older than the code); bitsweep_fixed.json (16.2h older than the code); tasks.json (14.4h older than the code)  -- regenerate before citing
+==========================================================================
+  completed in 143s
+!! qa.py --full FAILED (rc=1) -- paper NOT rebuilt.

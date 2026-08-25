@@ -1,0 +1,5 @@
+/home/ubuntu/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)
+  return torch._C._cuda_getDeviceCount() > 0
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  zero-shot : 0.3865 of oracle     3944.7 ms/instance   parse failures 10.9%
+  few-shot  : 0.0000 of oracle    18780.3 ms/instance   parse failures 0.0%

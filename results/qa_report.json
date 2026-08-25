@@ -1,0 +1,206 @@
+[
+  {
+    "name": "self-test: channel",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: metrics",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: baselines",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: env",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: solvers",
+    "kind": "technical",
+    "status": "SKIP",
+    "detail": "slow; run with --full"
+  },
+  {
+    "name": "self-test: dataset",
+    "kind": "technical",
+    "status": "SKIP",
+    "detail": "slow; run with --full"
+  },
+  {
+    "name": "self-test: agents",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: tasks",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: evaluator",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: sensing",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: analysis",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: symbolic",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: oran",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: intent",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: prior_methods",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: adversarial",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: regime",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "self-test: pareto",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "physics: WMMSE >= equal power (SE)",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": "0/10 violations"
+  },
+  {
+    "name": "physics: Dinkelbach >= equal power (EE)",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": "0/10 violations"
+  },
+  {
+    "name": "numerics: analytic vs finite-difference gradient",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": "max rel err 1.36e-05"
+  },
+  {
+    "name": "discreteness: transmitted symbols are exactly 0/1",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": "straight-through must not leak float residue"
+  },
+  {
+    "name": "robustness: all arms give finite in-range powers",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "reproducibility: same seed gives same output",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": ""
+  },
+  {
+    "name": "invariant: no result exceeds the oracle",
+    "kind": "technical",
+    "status": "PASS",
+    "detail": "0 of 540 cells above 1.0"
+  },
+  {
+    "name": "temporal: rho affects observation quality",
+    "kind": "technical",
+    "status": "SKIP",
+    "detail": "run with --full"
+  },
+  {
+    "name": "collapse: codebook entropy tracks the budget",
+    "kind": "technical",
+    "status": "SKIP",
+    "detail": "run with --full"
+  },
+  {
+    "name": "information: sender cannot see receiver-only measurements",
+    "kind": "conceptual",
+    "status": "PASS",
+    "detail": "perturbing a_{r,s} must not change what s transmits elsewhere"
+  },
+  {
+    "name": "multi-objective: the regime admits a trade-off",
+    "kind": "conceptual",
+    "status": "PASS",
+    "detail": "oracle moves 35.1% in SE and 66.6% in EE from lambda 0 to 1"
+  },
+  {
+    "name": "multi-objective: the policy responds to lambda",
+    "kind": "conceptual",
+    "status": "SKIP",
+    "detail": "run with --full"
+  },
+  {
+    "name": "tasks: hard success tracks the objective",
+    "kind": "conceptual",
+    "status": "SKIP",
+    "detail": "run with --full"
+  },
+  {
+    "name": "objectives: advert coverage",
+    "kind": "conceptual",
+    "status": "PASS",
+    "detail": "19/19 wired, 0 orphaned, 0 missing\n           "
+  },
+  {
+    "name": "evidence: stored results are newer than the code",
+    "kind": "conceptual",
+    "status": "WARN",
+    "detail": "sensing.json (15.4h older than the code); intent.json (16.7h older than the code); llm_tokens.json (6.5h older than the code); llm.json (0.3h older than the code); symbolic.json (16.8h older than the code); adversarial.json (0.8h older than the code); rho_sweep.json (16.3h older than the code); prior.json (0.8h older than the code); analysis.json (16.8h older than the code); temporal.json (0.8h older than the code); bitsweep_fixed.json (17.0h older than the code); tasks.json (15.2h older than the code)  -- regenerate before citing"
+  },
+  {
+    "name": "claims: every headline claim has evidence on disk",
+    "kind": "conceptual",
+    "status": "PASS",
+    "detail": "14/14 supported; unsupported: "
+  }
+]

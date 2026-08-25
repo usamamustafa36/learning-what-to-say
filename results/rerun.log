@@ -1,0 +1,204 @@
+regime: area 200 m, Pc 10 mW, p_max 100 mW, N 8
+
+
+==============================================================================
+  oran
+==============================================================================
+  [oran] done in 1s
+
+==============================================================================
+  temporal
+==============================================================================
+  rho=0.00 slot 5: trend 0.8449  persistence 0.8504  shrunk 0.8983  genie 0.9987
+  rho=0.00 slot 6: trend 0.8166  persistence 0.8400  shrunk 0.9065  genie 0.9980
+  rho=0.00 slot 7: trend 0.8377  persistence 0.8531  shrunk 0.9087  genie 0.9990
+  rho=0.00 slot 8: trend 0.8302  persistence 0.8462  shrunk 0.9207  genie 1.0003
+  rho=0.00 slot 9: trend 0.8407  persistence 0.8652  shrunk 0.9126  genie 1.0000
+  rho=0.50 slot 5: trend 0.8640  persistence 0.8768  shrunk 0.9090  genie 1.0057
+  rho=0.50 slot 6: trend 0.8489  persistence 0.8671  shrunk 0.9068  genie 0.9993
+  rho=0.50 slot 7: trend 0.8500  persistence 0.8643  shrunk 0.9175  genie 0.9995
+  rho=0.50 slot 8: trend 0.8566  persistence 0.8698  shrunk 0.9145  genie 0.9996
+  rho=0.50 slot 9: trend 0.8642  persistence 0.8765  shrunk 0.9122  genie 1.0009
+  rho=0.90 slot 5: trend 0.9537  persistence 0.9526  shrunk 0.9595  genie 1.0017
+  rho=0.90 slot 6: trend 0.9376  persistence 0.9452  shrunk 0.9491  genie 0.9978
+  rho=0.90 slot 7: trend 0.9500  persistence 0.9564  shrunk 0.9545  genie 1.0019
+  rho=0.90 slot 8: trend 0.9453  persistence 0.9537  shrunk 0.9573  genie 0.9990
+  rho=0.90 slot 9: trend 0.9415  persistence 0.9418  shrunk 0.9558  genie 0.9980
+  rho=0.99 slot 5: trend 0.9949  persistence 0.9977  shrunk 0.9986  genie 1.0015
+  rho=0.99 slot 6: trend 0.9920  persistence 0.9903  shrunk 0.9901  genie 1.0000
+  rho=0.99 slot 7: trend 0.9963  persistence 0.9977  shrunk 0.9978  genie 1.0058
+  rho=0.99 slot 8: trend 0.9928  persistence 0.9906  shrunk 0.9929  genie 0.9990
+  rho=0.99 slot 9: trend 0.9894  persistence 0.9903  shrunk 0.9921  genie 1.0006
+
+==============================================================================
+   rho      trend   persistence     shrunk    genie  trend - persist
+------------------------------------------------------------------------------
+  0.00     0.8340        0.8510     0.9093   0.9992          -0.0170
+  0.50     0.8567        0.8709     0.9120   1.0010          -0.0142
+  0.90     0.9456        0.9499     0.9552   0.9997          -0.0043
+  0.99     0.9931        0.9933     0.9943   1.0014          -0.0003
+==============================================================================
+  rho=0.00: persistence wins   p=8.84e-10
+  rho=0.50: persistence wins   p=2.21e-07
+  rho=0.90: persistence wins   p=4.34e-03
+  rho=0.99: no difference      p=7.70e-01
+  [temporal] done in 33s
+
+==============================================================================
+  prior
+==============================================================================
+  full-CSI centralised, imitation (prior repo)  : 0.8147
+  full-CSI centralised, direct objective        : 0.9064
+  [prior] done in 173s
+
+==============================================================================
+  llm
+==============================================================================
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  zero-shot : 0.3608 of oracle      281.5 ms/instance   parse failures 12.5%
+  few-shot  : 0.3411 of oracle     1057.5 ms/instance   parse failures 48.4%
+  retrieval : 0.3672 of oracle     1203.9 ms/instance   parse failures 0.0%
+  equal power: 0.3685 of oracle   (reference)
+  [llm] done in 171s
+
+==============================================================================
+  bitsweep
+==============================================================================
+building pools (N=8, area=200.0m)...
+  pools ready in 32s
+
+  continuous  seed 0: 0.9562
+  continuous  seed 1: 0.9561
+  continuous  seed 2: 0.9564
+  B=0 learned  : 0.8513 +/- 0.0002
+  B=1 learned  : 0.8817 +/- 0.0005
+  B=1 quantised: 0.8632 +/- 0.0003
+  B=2 learned  : 0.9061 +/- 0.0014
+  B=2 quantised: 0.8627 +/- 0.0003
+  B=3 learned  : 0.9267 +/- 0.0046
+  B=3 quantised: 0.8621 +/- 0.0005
+  B=4 learned  : 0.9360 +/- 0.0025
+  B=4 quantised: 0.8619 +/- 0.0004
+  B=6 learned  : 0.9482 +/- 0.0009
+  B=6 quantised: 0.8615 +/- 0.0001
+  B=8 learned  : 0.9504 +/- 0.0003
+  B=8 quantised: 0.8613 +/- 0.0003
+
+==============================================================================
+  budget            learned      quantised CSI       gap         p
+------------------------------------------------------------------------------
+  silent     0.8513 +/-0.000                   
+       1     0.8817 +/-0.001     0.8632 +/-0.000   +0.0185    0.0002
+       2     0.9061 +/-0.001     0.8627 +/-0.000   +0.0434    0.0008
+       3     0.9267 +/-0.005     0.8621 +/-0.001   +0.0646    0.0022
+       4     0.9360 +/-0.003     0.8619 +/-0.000   +0.0741    0.0008
+       6     0.9482 +/-0.001     0.8615 +/-0.000   +0.0868    0.0000
+       8     0.9504 +/-0.000     0.8613 +/-0.000   +0.0891    0.0000
+   cont.     0.9562 +/-0.000
+==============================================================================
+
+window attributable to messaging: 0.8513 -> 0.9562 (10.5 points)
+  B=1: recovers  29.0% of that window
+  B=2: recovers  52.3% of that window
+  B=3: recovers  71.8% of that window
+  B=4: recovers  80.7% of that window
+  B=6: recovers  92.4% of that window
+  B=8: recovers  94.4% of that window
+  [bitsweep] done in 2705s
+
+==============================================================================
+  abstraction
+==============================================================================
+  B=1 seed 0: H=0.98b  I(m;a_sr)=0.039b  I(m;a_rs)=0.009b (must be ~0)  purity=0.599  ratio=0.8796
+  B=2 seed 0: H=1.93b  I(m;a_sr)=0.389b  I(m;a_rs)=0.079b (must be ~0)  purity=0.460  ratio=0.9070
+  B=3 seed 0: H=2.97b  I(m;a_sr)=1.050b  I(m;a_rs)=0.210b (must be ~0)  purity=0.376  ratio=0.9279
+  B=4 seed 0: H=3.96b  I(m;a_sr)=1.155b  I(m;a_rs)=0.227b (must be ~0)  purity=0.263  ratio=0.9357
+  B=6 seed 0: H=5.73b  I(m;a_sr)=1.692b  I(m;a_rs)=0.261b (must be ~0)  purity=0.138  ratio=0.9469
+  B=8 seed 0: H=7.28b  I(m;a_sr)=2.050b  I(m;a_rs)=0.273b (must be ~0)  purity=0.102  ratio=0.9478
+
+============================================================================================
+  B    H(m)      used   I(m;a_sr)   I(m;a_ss)   I(m;lam)   I(m;a_rs)   purity      R2
+--------------------------------------------------------------------------------------------
+  1    0.98    2/2          0.039       0.165      0.143       0.009    0.599   0.031
+  2    1.93    4/4          0.389       0.409      0.016       0.079    0.460   0.217
+  3    2.97    8/8          1.050       0.706      0.007       0.210    0.376   0.678
+  4    3.96   16/16         1.155       0.958      0.005       0.227    0.263   0.726
+  6    5.73   62/64         1.692       1.336      0.093       0.261    0.138   0.859
+  8    7.28  232/256        2.050       1.606      0.247       0.273    0.102   0.905
+============================================================================================
+I(m;a_rs) is the receiver's private measurement: it must sit at the null (~0).
+purity: fraction of edges whose symbol matches a scalar-threshold rule on a_sr.
+  [abstraction] done in 714s
+
+==============================================================================
+  symbolic
+==============================================================================
+  B=2 depth=2: fidelity 0.638 (chance 0.335)  neural 0.9086 -> symbolic 0.8433 (92.8% retained)
+  B=2 depth=3: fidelity 0.697 (chance 0.335)  neural 0.9086 -> symbolic 0.8911 (98.1% retained)
+  B=2 depth=4: fidelity 0.747 (chance 0.335)  neural 0.9086 -> symbolic 0.8953 (98.5% retained)
+  B=2 depth=6: fidelity 0.834 (chance 0.335)  neural 0.9086 -> symbolic 0.9037 (99.5% retained)
+  B=3 depth=2: fidelity 0.461 (chance 0.148)  neural 0.9288 -> symbolic 0.8682 (93.5% retained)
+  B=3 depth=3: fidelity 0.537 (chance 0.148)  neural 0.9288 -> symbolic 0.8690 (93.6% retained)
+  B=3 depth=4: fidelity 0.614 (chance 0.148)  neural 0.9288 -> symbolic 0.9077 (97.7% retained)
+  B=3 depth=6: fidelity 0.751 (chance 0.148)  neural 0.9288 -> symbolic 0.9197 (99.0% retained)
+  B=4 depth=2: fidelity 0.259 (chance 0.087)  neural 0.9365 -> symbolic 0.8791 (93.9% retained)
+  B=4 depth=3: fidelity 0.348 (chance 0.087)  neural 0.9365 -> symbolic 0.8823 (94.2% retained)
+  B=4 depth=4: fidelity 0.478 (chance 0.087)  neural 0.9365 -> symbolic 0.9160 (97.8% retained)
+  B=4 depth=6: fidelity 0.633 (chance 0.087)  neural 0.9365 -> symbolic 0.9288 (99.2% retained)
+  B=6 depth=2: fidelity 0.113 (chance 0.042)  neural 0.9477 -> symbolic 0.8635 (91.1% retained)
+  B=6 depth=3: fidelity 0.191 (chance 0.042)  neural 0.9477 -> symbolic 0.8793 (92.8% retained)
+  B=6 depth=4: fidelity 0.270 (chance 0.042)  neural 0.9477 -> symbolic 0.9001 (95.0% retained)
+  B=6 depth=6: fidelity 0.420 (chance 0.042)  neural 0.9477 -> symbolic 0.9356 (98.7% retained)
+  [symbolic] done in 235s
+
+==============================================================================
+  intent
+==============================================================================
+  best-effort    floor 0.0 b/s/Hz x 54%: satisfied   lambda*=0.004  achieved 1.000  power   2.2 mW  (+94.8% vs lambda=1)
+  assured        floor 3.7 b/s/Hz x 36%: satisfied   lambda*=0.715  achieved 0.361  power   7.4 mW  (+83.0% vs lambda=1)
+  premium        floor 6.6 b/s/Hz x 18%: satisfied   lambda*=0.820  achieved 0.180  power  16.3 mW  (+62.3% vs lambda=1)
+  urllc-strict   floor 13.1 b/s/Hz x 95%: INFEASIBLE  lambda*=  n/a  achieved 0.002  power  29.8 mW  (+0.0% vs lambda=1)
+  [intent] done in 99s
+
+==============================================================================
+  rho
+==============================================================================
+  rho=0.00 B=0: 0.7701 +/- 0.0001
+  rho=0.00 B=6: 0.8394 +/- 0.0006
+  rho=0.50 B=0: 0.7823 +/- 0.0002
+  rho=0.50 B=6: 0.8572 +/- 0.0004
+  rho=0.90 B=0: 0.8284 +/- 0.0001
+  rho=0.90 B=6: 0.9174 +/- 0.0008
+  rho=0.99 B=0: 0.8522 +/- 0.0001
+  rho=0.99 B=6: 0.9491 +/- 0.0010
+  [rho] done in 1565s
+
+==============================================================================
+  sensing
+==============================================================================
+  rho=0.00 csi      : 0.8400 +/- 0.0005
+  rho=0.00 sensing  : 0.8672 +/- 0.0006
+  rho=0.00 shuffled : 0.8396 +/- 0.0010
+  rho=0.50 csi      : 0.8572 +/- 0.0004
+  rho=0.50 sensing  : 0.8778 +/- 0.0007
+  rho=0.50 shuffled : 0.8572 +/- 0.0007
+  rho=0.90 csi      : 0.9174 +/- 0.0008
+  rho=0.90 sensing  : 0.9227 +/- 0.0007
+  rho=0.90 shuffled : 0.9171 +/- 0.0018
+  rho=0.99 csi      : 0.9491 +/- 0.0010
+  rho=0.99 sensing  : 0.9502 +/- 0.0011
+  rho=0.99 shuffled : 0.9491 +/- 0.0007
+
+==========================================================================
+   rho     CSI only    + sensing   + shuffled  information   capacity
+--------------------------------------------------------------------------
+  0.00       0.8400       0.8672       0.8396      +0.0276    -0.0004
+  0.50       0.8572       0.8778       0.8572      +0.0205    +0.0000
+  0.90       0.9174       0.9227       0.9171      +0.0056    -0.0003
+  0.99       0.9491       0.9502       0.9491      +0.0010    +0.0000
+==========================================================================
+information = sensing - shuffled (what the modality tells the agent)
+capacity    = shuffled - CSI      (what two more input features buy on their own)
+  [sensing] done in 3351s
+
+all experiments finished in 150.8 min

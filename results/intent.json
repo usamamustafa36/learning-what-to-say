@@ -1,0 +1,402 @@
+[
+  {
+    "intent": {
+      "name": "best-effort",
+      "min_rate_bps_hz": 0.0,
+      "min_satisfied": 0.54,
+      "minimise": "energy",
+      "description": "40%-percentile rate, asked of 54% of links (60% clear it at lambda=1)"
+    },
+    "satisfied": true,
+    "lambda_star": 0.00390625,
+    "achieved_satisfaction": 1.0,
+    "achieved_se": 18.455842971801758,
+    "achieved_ee": 188.7488555908203,
+    "mean_power_w": 0.0022423334885388613,
+    "method": "bisection",
+    "grid": [
+      {
+        "lambda": 0.0,
+        "satisfaction": 1.0,
+        "se": 18.448476791381836,
+        "ee": 188.75511169433594,
+        "mean_power_w": 0.002237160224467516
+      },
+      {
+        "lambda": 0.1,
+        "satisfaction": 1.0,
+        "se": 18.682083129882812,
+        "ee": 188.75588989257812,
+        "mean_power_w": 0.0023887166753411293
+      },
+      {
+        "lambda": 0.2,
+        "satisfaction": 1.0,
+        "se": 18.967784881591797,
+        "ee": 188.42906188964844,
+        "mean_power_w": 0.002601279877126217
+      },
+      {
+        "lambda": 0.30000000000000004,
+        "satisfaction": 1.0,
+        "se": 19.310617446899414,
+        "ee": 187.63671875,
+        "mean_power_w": 0.0028885414358228445
+      },
+      {
+        "lambda": 0.4,
+        "satisfaction": 1.0,
+        "se": 19.708349227905273,
+        "ee": 186.11688232421875,
+        "mean_power_w": 0.0032750375103205442
+      },
+      {
+        "lambda": 0.5,
+        "satisfaction": 1.0,
+        "se": 20.142993927001953,
+        "ee": 183.51914978027344,
+        "mean_power_w": 0.003780296305194497
+      },
+      {
+        "lambda": 0.6000000000000001,
+        "satisfaction": 1.0,
+        "se": 20.66607666015625,
+        "ee": 178.83746337890625,
+        "mean_power_w": 0.004519938491284847
+      },
+      {
+        "lambda": 0.7000000000000001,
+        "satisfaction": 1.0,
+        "se": 21.752586364746094,
+        "ee": 163.73065185546875,
+        "mean_power_w": 0.0067749349400401115
+      },
+      {
+        "lambda": 0.8,
+        "satisfaction": 1.0,
+        "se": 23.297204971313477,
+        "ee": 127.54309844970703,
+        "mean_power_w": 0.01364831067621708
+      },
+      {
+        "lambda": 0.9,
+        "satisfaction": 1.0,
+        "se": 24.54863739013672,
+        "ee": 80.50076293945312,
+        "mean_power_w": 0.029818447306752205
+      },
+      {
+        "lambda": 1.0,
+        "satisfaction": 1.0,
+        "se": 24.735877990722656,
+        "ee": 59.23883819580078,
+        "mean_power_w": 0.04341130703687668
+      }
+    ],
+    "fixed_half_satisfaction": 1.0,
+    "fixed_one_satisfaction": 1.0,
+    "fixed_one_power_w": 0.04341130703687668,
+    "power_saved_vs_lambda_one": 0.9483467870102583,
+    "bits": 6
+  },
+  {
+    "intent": {
+      "name": "assured",
+      "min_rate_bps_hz": 3.71,
+      "min_satisfied": 0.36,
+      "minimise": "energy",
+      "description": "60%-percentile rate, asked of 36% of links (40% clear it at lambda=1)"
+    },
+    "satisfied": true,
+    "lambda_star": 0.71484375,
+    "achieved_satisfaction": 0.3612060546875,
+    "achieved_se": 21.965452194213867,
+    "achieved_ee": 159.96124267578125,
+    "mean_power_w": 0.0073751723393797874,
+    "method": "bisection",
+    "grid": [
+      {
+        "lambda": 0.0,
+        "satisfaction": 0.2987060546875,
+        "se": 18.448476791381836,
+        "ee": 188.75511169433594,
+        "mean_power_w": 0.002237160224467516
+      },
+      {
+        "lambda": 0.1,
+        "satisfaction": 0.3021240234375,
+        "se": 18.682083129882812,
+        "ee": 188.75588989257812,
+        "mean_power_w": 0.0023887166753411293
+      },
+      {
+        "lambda": 0.2,
+        "satisfaction": 0.30584716796875,
+        "se": 18.967784881591797,
+        "ee": 188.42906188964844,
+        "mean_power_w": 0.002601279877126217
+      },
+      {
+        "lambda": 0.30000000000000004,
+        "satisfaction": 0.31201171875,
+        "se": 19.310617446899414,
+        "ee": 187.63671875,
+        "mean_power_w": 0.0028885414358228445
+      },
+      {
+        "lambda": 0.4,
+        "satisfaction": 0.32135009765625,
+        "se": 19.708349227905273,
+        "ee": 186.11688232421875,
+        "mean_power_w": 0.0032750375103205442
+      },
+      {
+        "lambda": 0.5,
+        "satisfaction": 0.33221435546875,
+        "se": 20.142993927001953,
+        "ee": 183.51914978027344,
+        "mean_power_w": 0.003780296305194497
+      },
+      {
+        "lambda": 0.6000000000000001,
+        "satisfaction": 0.34014892578125,
+        "se": 20.66607666015625,
+        "ee": 178.83746337890625,
+        "mean_power_w": 0.004519938491284847
+      },
+      {
+        "lambda": 0.7000000000000001,
+        "satisfaction": 0.3575439453125,
+        "se": 21.752586364746094,
+        "ee": 163.73065185546875,
+        "mean_power_w": 0.0067749349400401115
+      },
+      {
+        "lambda": 0.8,
+        "satisfaction": 0.38238525390625,
+        "se": 23.297204971313477,
+        "ee": 127.54309844970703,
+        "mean_power_w": 0.01364831067621708
+      },
+      {
+        "lambda": 0.9,
+        "satisfaction": 0.39599609375,
+        "se": 24.54863739013672,
+        "ee": 80.50076293945312,
+        "mean_power_w": 0.029818447306752205
+      },
+      {
+        "lambda": 1.0,
+        "satisfaction": 0.39984130859375,
+        "se": 24.735877990722656,
+        "ee": 59.23883819580078,
+        "mean_power_w": 0.04341130703687668
+      }
+    ],
+    "fixed_half_satisfaction": 0.33221435546875,
+    "fixed_one_satisfaction": 0.39984130859375,
+    "fixed_one_power_w": 0.04341130703687668,
+    "power_saved_vs_lambda_one": 0.8301094152010953,
+    "bits": 6
+  },
+  {
+    "intent": {
+      "name": "premium",
+      "min_rate_bps_hz": 6.57,
+      "min_satisfied": 0.18,
+      "minimise": "energy",
+      "description": "80%-percentile rate, asked of 18% of links (20% clear it at lambda=1)"
+    },
+    "satisfied": true,
+    "lambda_star": 0.8203125,
+    "achieved_satisfaction": 0.18017578125,
+    "achieved_se": 23.63131332397461,
+    "achieved_ee": 117.03559112548828,
+    "mean_power_w": 0.01634882017970085,
+    "method": "bisection",
+    "grid": [
+      {
+        "lambda": 0.0,
+        "satisfaction": 0.08917236328125,
+        "se": 18.448476791381836,
+        "ee": 188.75511169433594,
+        "mean_power_w": 0.002237160224467516
+      },
+      {
+        "lambda": 0.1,
+        "satisfaction": 0.09454345703125,
+        "se": 18.682083129882812,
+        "ee": 188.75588989257812,
+        "mean_power_w": 0.0023887166753411293
+      },
+      {
+        "lambda": 0.2,
+        "satisfaction": 0.09967041015625,
+        "se": 18.967784881591797,
+        "ee": 188.42906188964844,
+        "mean_power_w": 0.002601279877126217
+      },
+      {
+        "lambda": 0.30000000000000004,
+        "satisfaction": 0.10540771484375,
+        "se": 19.310617446899414,
+        "ee": 187.63671875,
+        "mean_power_w": 0.0028885414358228445
+      },
+      {
+        "lambda": 0.4,
+        "satisfaction": 0.1090087890625,
+        "se": 19.708349227905273,
+        "ee": 186.11688232421875,
+        "mean_power_w": 0.0032750375103205442
+      },
+      {
+        "lambda": 0.5,
+        "satisfaction": 0.115478515625,
+        "se": 20.142993927001953,
+        "ee": 183.51914978027344,
+        "mean_power_w": 0.003780296305194497
+      },
+      {
+        "lambda": 0.6000000000000001,
+        "satisfaction": 0.12451171875,
+        "se": 20.66607666015625,
+        "ee": 178.83746337890625,
+        "mean_power_w": 0.004519938491284847
+      },
+      {
+        "lambda": 0.7000000000000001,
+        "satisfaction": 0.14459228515625,
+        "se": 21.752586364746094,
+        "ee": 163.73065185546875,
+        "mean_power_w": 0.0067749349400401115
+      },
+      {
+        "lambda": 0.8,
+        "satisfaction": 0.173828125,
+        "se": 23.297204971313477,
+        "ee": 127.54309844970703,
+        "mean_power_w": 0.01364831067621708
+      },
+      {
+        "lambda": 0.9,
+        "satisfaction": 0.197998046875,
+        "se": 24.54863739013672,
+        "ee": 80.50076293945312,
+        "mean_power_w": 0.029818447306752205
+      },
+      {
+        "lambda": 1.0,
+        "satisfaction": 0.19970703125,
+        "se": 24.735877990722656,
+        "ee": 59.23883819580078,
+        "mean_power_w": 0.04341130703687668
+      }
+    ],
+    "fixed_half_satisfaction": 0.115478515625,
+    "fixed_one_satisfaction": 0.19970703125,
+    "fixed_one_power_w": 0.04341130703687668,
+    "power_saved_vs_lambda_one": 0.6233971908329553,
+    "bits": 6
+  },
+  {
+    "intent": {
+      "name": "urllc-strict",
+      "min_rate_bps_hz": 13.13,
+      "min_satisfied": 0.95,
+      "minimise": "energy",
+      "description": "deliberately beyond the ceiling -- the compiler must refuse this one"
+    },
+    "satisfied": false,
+    "lambda_star": null,
+    "achieved_satisfaction": 0.001708984375,
+    "achieved_se": 24.54863739013672,
+    "achieved_ee": 80.50076293945312,
+    "mean_power_w": 0.029818447306752205,
+    "method": "infeasible",
+    "grid": [
+      {
+        "lambda": 0.0,
+        "satisfaction": 0.0,
+        "se": 18.448476791381836,
+        "ee": 188.75511169433594,
+        "mean_power_w": 0.002237160224467516
+      },
+      {
+        "lambda": 0.1,
+        "satisfaction": 0.0,
+        "se": 18.682083129882812,
+        "ee": 188.75588989257812,
+        "mean_power_w": 0.0023887166753411293
+      },
+      {
+        "lambda": 0.2,
+        "satisfaction": 0.0,
+        "se": 18.967784881591797,
+        "ee": 188.42906188964844,
+        "mean_power_w": 0.002601279877126217
+      },
+      {
+        "lambda": 0.30000000000000004,
+        "satisfaction": 0.0,
+        "se": 19.310617446899414,
+        "ee": 187.63671875,
+        "mean_power_w": 0.0028885414358228445
+      },
+      {
+        "lambda": 0.4,
+        "satisfaction": 0.0,
+        "se": 19.708349227905273,
+        "ee": 186.11688232421875,
+        "mean_power_w": 0.0032750375103205442
+      },
+      {
+        "lambda": 0.5,
+        "satisfaction": 0.0,
+        "se": 20.142993927001953,
+        "ee": 183.51914978027344,
+        "mean_power_w": 0.003780296305194497
+      },
+      {
+        "lambda": 0.6000000000000001,
+        "satisfaction": 0.0,
+        "se": 20.66607666015625,
+        "ee": 178.83746337890625,
+        "mean_power_w": 0.004519938491284847
+      },
+      {
+        "lambda": 0.7000000000000001,
+        "satisfaction": 0.0001220703125,
+        "se": 21.752586364746094,
+        "ee": 163.73065185546875,
+        "mean_power_w": 0.0067749349400401115
+      },
+      {
+        "lambda": 0.8,
+        "satisfaction": 0.00042724609375,
+        "se": 23.297204971313477,
+        "ee": 127.54309844970703,
+        "mean_power_w": 0.01364831067621708
+      },
+      {
+        "lambda": 0.9,
+        "satisfaction": 0.001708984375,
+        "se": 24.54863739013672,
+        "ee": 80.50076293945312,
+        "mean_power_w": 0.029818447306752205
+      },
+      {
+        "lambda": 1.0,
+        "satisfaction": 0.00146484375,
+        "se": 24.735877990722656,
+        "ee": 59.23883819580078,
+        "mean_power_w": 0.04341130703687668
+      }
+    ],
+    "fixed_half_satisfaction": 0.0,
+    "fixed_one_satisfaction": 0.00146484375,
+    "fixed_one_power_w": 0.04341130703687668,
+    "power_saved_vs_lambda_one": 0.0,
+    "bits": 6
+  }
+]

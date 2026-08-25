@@ -1,0 +1,30 @@
+[
+  {
+    "n": 4,
+    "zero_shot": 238,
+    "exemplar": 254,
+    "few_shot": 1000,
+    "per_edge": 19.833333333333332
+  },
+  {
+    "n": 8,
+    "zero_shot": 574,
+    "exemplar": 606,
+    "few_shot": 2392,
+    "per_edge": 10.25
+  },
+  {
+    "n": 16,
+    "zero_shot": 1866,
+    "exemplar": 1930,
+    "few_shot": 7656,
+    "per_edge": 7.775
+  },
+  {
+    "n": 32,
+    "zero_shot": 6920,
+    "exemplar": 7048,
+    "few_shot": 28064,
+    "per_edge": 6.975806451612903
+  }
+]

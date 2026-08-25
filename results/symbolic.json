@@ -1,0 +1,290 @@
+[
+  {
+    "max_depth": 2,
+    "fidelity_train": 0.637646484375,
+    "fidelity_held_out": 0.637548828125,
+    "majority_class_rate": 0.33462088448660715,
+    "n_leaves": 4,
+    "feature_importance": {
+      "a_sr": 0.4427331825882062,
+      "own_direct": 0.5572668174117937,
+      "own_interference": 0.0,
+      "lambda": 0.0
+    },
+    "bits": 2,
+    "seed": 0,
+    "neural_ratio": 0.908555555343628,
+    "symbolic_ratio": 0.8433143377304078,
+    "retained": 0.9281923738955675
+  },
+  {
+    "max_depth": 3,
+    "fidelity_train": 0.6986363002232143,
+    "fidelity_held_out": 0.6971296037946428,
+    "majority_class_rate": 0.33462088448660715,
+    "n_leaves": 8,
+    "feature_importance": {
+      "a_sr": 0.33863609765117325,
+      "own_direct": 0.5952864544771659,
+      "own_interference": 0.06607744787166092,
+      "lambda": 0.0
+    },
+    "bits": 2,
+    "seed": 0,
+    "neural_ratio": 0.908555555343628,
+    "symbolic_ratio": 0.8910600543022156,
+    "retained": 0.9807436089752427
+  },
+  {
+    "max_depth": 4,
+    "fidelity_train": 0.7486711774553572,
+    "fidelity_held_out": 0.7472307477678571,
+    "majority_class_rate": 0.33462088448660715,
+    "n_leaves": 16,
+    "feature_importance": {
+      "a_sr": 0.33800956033700275,
+      "own_direct": 0.5292643003511185,
+      "own_interference": 0.1327261393118787,
+      "lambda": 0.0
+    },
+    "bits": 2,
+    "seed": 0,
+    "neural_ratio": 0.908555555343628,
+    "symbolic_ratio": 0.895266318321228,
+    "retained": 0.9853732257271007
+  },
+  {
+    "max_depth": 6,
+    "fidelity_train": 0.8372837611607142,
+    "fidelity_held_out": 0.8344656808035714,
+    "majority_class_rate": 0.33462088448660715,
+    "n_leaves": 64,
+    "feature_importance": {
+      "a_sr": 0.3540474410460037,
+      "own_direct": 0.46469420960561486,
+      "own_interference": 0.17720095659739596,
+      "lambda": 0.0040573927509854795
+    },
+    "bits": 2,
+    "seed": 0,
+    "neural_ratio": 0.908555555343628,
+    "symbolic_ratio": 0.9036552309989929,
+    "retained": 0.994606467028005
+  },
+  {
+    "max_depth": 2,
+    "fidelity_train": 0.46238839285714284,
+    "fidelity_held_out": 0.4611083984375,
+    "majority_class_rate": 0.14782017299107142,
+    "n_leaves": 4,
+    "feature_importance": {
+      "a_sr": 0.44083921618183114,
+      "own_direct": 0.5591607838181688,
+      "own_interference": 0.0,
+      "lambda": 0.0
+    },
+    "bits": 3,
+    "seed": 0,
+    "neural_ratio": 0.9287892341613769,
+    "symbolic_ratio": 0.8681914687156678,
+    "retained": 0.9347561715652054
+  },
+  {
+    "max_depth": 3,
+    "fidelity_train": 0.5382847377232143,
+    "fidelity_held_out": 0.5371616908482143,
+    "majority_class_rate": 0.14782017299107142,
+    "n_leaves": 8,
+    "feature_importance": {
+      "a_sr": 0.4867983855570245,
+      "own_direct": 0.45815580174564957,
+      "own_interference": 0.05504581269732612,
+      "lambda": 0.0
+    },
+    "bits": 3,
+    "seed": 0,
+    "neural_ratio": 0.9287892341613769,
+    "symbolic_ratio": 0.8690128207206727,
+    "retained": 0.9356404970664011
+  },
+  {
+    "max_depth": 4,
+    "fidelity_train": 0.6157575334821429,
+    "fidelity_held_out": 0.6144845145089286,
+    "majority_class_rate": 0.14782017299107142,
+    "n_leaves": 16,
+    "feature_importance": {
+      "a_sr": 0.4007168600698261,
+      "own_direct": 0.45010462171827914,
+      "own_interference": 0.1491785182118947,
+      "lambda": 0.0
+    },
+    "bits": 3,
+    "seed": 0,
+    "neural_ratio": 0.9287892341613769,
+    "symbolic_ratio": 0.907728636264801,
+    "retained": 0.9773246748326148
+  },
+  {
+    "max_depth": 6,
+    "fidelity_train": 0.7532993861607142,
+    "fidelity_held_out": 0.7511090959821428,
+    "majority_class_rate": 0.14782017299107142,
+    "n_leaves": 64,
+    "feature_importance": {
+      "a_sr": 0.41033660457405163,
+      "own_direct": 0.4070871292943681,
+      "own_interference": 0.17435597599682706,
+      "lambda": 0.008220290134753349
+    },
+    "bits": 3,
+    "seed": 0,
+    "neural_ratio": 0.9287892341613769,
+    "symbolic_ratio": 0.9196544885635376,
+    "retained": 0.9901648885862816
+  },
+  {
+    "max_depth": 2,
+    "fidelity_train": 0.25973772321428573,
+    "fidelity_held_out": 0.2592145647321429,
+    "majority_class_rate": 0.08700474330357143,
+    "n_leaves": 4,
+    "feature_importance": {
+      "a_sr": 0.4085334421816105,
+      "own_direct": 0.5914665578183896,
+      "own_interference": 0.0,
+      "lambda": 0.0
+    },
+    "bits": 4,
+    "seed": 0,
+    "neural_ratio": 0.9364591836929321,
+    "symbolic_ratio": 0.8790915250778198,
+    "retained": 0.9387398195093964
+  },
+  {
+    "max_depth": 3,
+    "fidelity_train": 0.3493443080357143,
+    "fidelity_held_out": 0.3477783203125,
+    "majority_class_rate": 0.08700474330357143,
+    "n_leaves": 8,
+    "feature_importance": {
+      "a_sr": 0.49725349469998503,
+      "own_direct": 0.43612667242695397,
+      "own_interference": 0.06661983287306103,
+      "lambda": 0.0
+    },
+    "bits": 4,
+    "seed": 0,
+    "neural_ratio": 0.9364591836929321,
+    "symbolic_ratio": 0.8823177099227906,
+    "retained": 0.9421849080953701
+  },
+  {
+    "max_depth": 4,
+    "fidelity_train": 0.4784458705357143,
+    "fidelity_held_out": 0.47789481026785713,
+    "majority_class_rate": 0.08700474330357143,
+    "n_leaves": 16,
+    "feature_importance": {
+      "a_sr": 0.40274800349752327,
+      "own_direct": 0.5124373657804432,
+      "own_interference": 0.08481463072203362,
+      "lambda": 0.0
+    },
+    "bits": 4,
+    "seed": 0,
+    "neural_ratio": 0.9364591836929321,
+    "symbolic_ratio": 0.9160020828247071,
+    "retained": 0.9781548398216863
+  },
+  {
+    "max_depth": 6,
+    "fidelity_train": 0.6350690569196429,
+    "fidelity_held_out": 0.6328508649553571,
+    "majority_class_rate": 0.08700474330357143,
+    "n_leaves": 64,
+    "feature_importance": {
+      "a_sr": 0.40759801798373174,
+      "own_direct": 0.4390504688918216,
+      "own_interference": 0.1533515131244467,
+      "lambda": 0.0
+    },
+    "bits": 4,
+    "seed": 0,
+    "neural_ratio": 0.9364591836929321,
+    "symbolic_ratio": 0.9287612676620484,
+    "retained": 0.9917797634270327
+  },
+  {
+    "max_depth": 2,
+    "fidelity_train": 0.11392299107142857,
+    "fidelity_held_out": 0.11316615513392857,
+    "majority_class_rate": 0.04222760881696429,
+    "n_leaves": 4,
+    "feature_importance": {
+      "a_sr": 0.37855000286392876,
+      "own_direct": 0.6214499971360713,
+      "own_interference": 0.0,
+      "lambda": 0.0
+    },
+    "bits": 6,
+    "seed": 0,
+    "neural_ratio": 0.9476527094841003,
+    "symbolic_ratio": 0.8635196924209595,
+    "retained": 0.9112195678636928
+  },
+  {
+    "max_depth": 3,
+    "fidelity_train": 0.1917724609375,
+    "fidelity_held_out": 0.19052036830357144,
+    "majority_class_rate": 0.04222760881696429,
+    "n_leaves": 8,
+    "feature_importance": {
+      "a_sr": 0.6673438769823108,
+      "own_direct": 0.33265612301768915,
+      "own_interference": 0.0,
+      "lambda": 0.0
+    },
+    "bits": 6,
+    "seed": 0,
+    "neural_ratio": 0.9476527094841003,
+    "symbolic_ratio": 0.8793079257011414,
+    "retained": 0.9278799257375989
+  },
+  {
+    "max_depth": 4,
+    "fidelity_train": 0.27138671875,
+    "fidelity_held_out": 0.27049734933035713,
+    "majority_class_rate": 0.04222760881696429,
+    "n_leaves": 16,
+    "feature_importance": {
+      "a_sr": 0.48117274140632466,
+      "own_direct": 0.4721545962056725,
+      "own_interference": 0.04667266238800292,
+      "lambda": 0.0
+    },
+    "bits": 6,
+    "seed": 0,
+    "neural_ratio": 0.9476527094841003,
+    "symbolic_ratio": 0.9001054525375366,
+    "retained": 0.9498262850190675
+  },
+  {
+    "max_depth": 6,
+    "fidelity_train": 0.4194928850446429,
+    "fidelity_held_out": 0.4198067801339286,
+    "majority_class_rate": 0.04222760881696429,
+    "n_leaves": 64,
+    "feature_importance": {
+      "a_sr": 0.35915898576679783,
+      "own_direct": 0.4493938372114961,
+      "own_interference": 0.18212222999831887,
+      "lambda": 0.009324947023387152
+    },
+    "bits": 6,
+    "seed": 0,
+    "neural_ratio": 0.9476527094841003,
+    "symbolic_ratio": 0.9356375336647034,
+    "retained": 0.9873211191197481
+  }
+]

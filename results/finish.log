@@ -1,0 +1,97 @@
+=== main sweeps done, running adversarial ===
+  B=2 1 attacker(s) constant: objective   -4.8%  attacker   +3.7%  victims  -11.1%  detected 1.00 (false alarm 0.02)
+  B=2 1 attacker(s) permutation: objective   +0.0%  attacker   +0.0%  victims   +0.0%  detected 0.00 (false alarm 0.02)
+  B=2 1 attacker(s) matched : objective   -2.2%  attacker   -8.4%  victims   -2.3%  detected 0.00 (false alarm 0.02)
+  B=2 2 attacker(s) constant: objective  -10.6%  attacker   -9.5%  victims  -19.1%  detected 1.00 (false alarm 0.02)
+  B=2 2 attacker(s) permutation: objective   +0.0%  attacker   +0.0%  victims   +0.0%  detected 0.00 (false alarm 0.02)
+  B=2 2 attacker(s) matched : objective   -4.3%  attacker   -1.7%  victims   -6.3%  detected 0.66 (false alarm 0.02)
+  B=2 3 attacker(s) constant: objective   -3.0%  attacker   -9.4%  victims   +2.5%  detected 1.00 (false alarm 0.02)
+  B=2 3 attacker(s) permutation: objective   +0.0%  attacker   +0.0%  victims   +0.0%  detected 0.02 (false alarm 0.02)
+  B=2 3 attacker(s) matched : objective   -6.0%  attacker   +3.3%  victims  -11.6%  detected 0.93 (false alarm 0.02)
+  B=4 1 attacker(s) constant: objective  -22.8%  attacker  +12.6%  victims  -33.9%  detected 1.00 (false alarm 0.03)
+  B=4 1 attacker(s) permutation: objective   -0.0%  attacker   +0.0%  victims   -0.0%  detected 0.00 (false alarm 0.03)
+  B=4 1 attacker(s) matched : objective   -3.4%  attacker   -4.9%  victims   -4.6%  detected 0.02 (false alarm 0.03)
+  B=4 2 attacker(s) constant: objective   -4.6%  attacker  -12.1%  victims   -3.9%  detected 1.00 (false alarm 0.04)
+  B=4 2 attacker(s) permutation: objective   -0.0%  attacker   +0.0%  victims   +0.0%  detected 0.00 (false alarm 0.04)
+  B=4 2 attacker(s) matched : objective   -6.4%  attacker   -3.1%  victims   -8.9%  detected 0.42 (false alarm 0.04)
+  B=4 3 attacker(s) constant: objective   -7.6%  attacker  -12.5%  victims   -8.1%  detected 1.00 (false alarm 0.04)
+  B=4 3 attacker(s) permutation: objective   -0.0%  attacker   +0.1%  victims   +0.0%  detected 0.03 (false alarm 0.04)
+  B=4 3 attacker(s) matched : objective   -9.1%  attacker   +0.4%  victims  -14.8%  detected 0.21 (false alarm 0.04)
+  B=6 1 attacker(s) constant: objective  -41.3%  attacker  +18.1%  victims  -54.4%  detected 0.00 (false alarm 0.00)
+  B=6 1 attacker(s) permutation: objective   -0.1%  attacker   +0.1%  victims   -0.2%  detected 0.00 (false alarm 0.00)
+  B=6 1 attacker(s) matched : objective   -4.3%  attacker   -3.5%  victims   -6.0%  detected 0.00 (false alarm 0.00)
+  B=6 2 attacker(s) constant: objective   -7.8%  attacker  -12.2%  victims   -8.1%  detected 0.00 (false alarm 0.00)
+  B=6 2 attacker(s) permutation: objective   -0.3%  attacker   +0.1%  victims   -0.5%  detected 0.00 (false alarm 0.00)
+  B=6 2 attacker(s) matched : objective   -7.2%  attacker   -2.4%  victims  -10.6%  detected 0.00 (false alarm 0.00)
+  B=6 3 attacker(s) constant: objective   -7.0%  attacker  -13.6%  victims   -2.6%  detected 0.00 (false alarm 0.00)
+  B=6 3 attacker(s) permutation: objective   -0.0%  attacker   +0.1%  victims   +0.1%  detected 0.00 (false alarm 0.00)
+  B=6 3 attacker(s) matched : objective  -10.8%  attacker   -0.9%  victims  -17.0%  detected 0.00 (false alarm 0.00)
+=== tasks ===
+  B=0: task objective 0.8761 of task oracle, hard success 0.550
+  B=2: task objective 0.9188 of task oracle, hard success 0.551
+  B=4: task objective 0.9443 of task oracle, hard success 0.552
+  B=6: task objective 0.9487 of task oracle, hard success 0.549
+=== final QA (full) ===
+==========================================================================
+  TECHNICAL
+==========================================================================
+[  ok  ] self-test: channel
+[  ok  ] self-test: metrics
+[  ok  ] self-test: baselines
+[  ok  ] self-test: env
+[  ok  ] self-test: solvers
+[  ok  ] self-test: dataset
+[  ok  ] self-test: agents
+[  ok  ] self-test: tasks
+[  ok  ] self-test: evaluator
+[  ok  ] self-test: sensing
+[  ok  ] self-test: analysis
+[  ok  ] self-test: symbolic
+[  ok  ] self-test: oran
+[  ok  ] self-test: intent
+[  ok  ] self-test: prior_methods
+[  ok  ] self-test: adversarial
+[  ok  ] self-test: regime
+[  ok  ] physics: WMMSE >= equal power (SE)
+           0/10 violations
+[  ok  ] physics: Dinkelbach >= equal power (EE)
+           0/10 violations
+[  ok  ] numerics: analytic vs finite-difference gradient
+           max rel err 1.36e-05
+[  ok  ] discreteness: transmitted symbols are exactly 0/1
+           straight-through must not leak float residue
+[  ok  ] robustness: all arms give finite in-range powers
+[  ok  ] reproducibility: same seed gives same output
+[  ok  ] invariant: no result exceeds the oracle
+           0 of 540 cells above 1.0
+[  ok  ] temporal: rho affects observation quality
+           fading corr 0.950 at rho=0.99 vs 0.120 at rho=0
+[  ok  ] collapse: codebook entropy tracks the budget
+           H=4.69 bits of a 6-bit budget, 57/64 codewords used
+
+==========================================================================
+  CONCEPTUAL
+==========================================================================
+[  ok  ] information: sender cannot see receiver-only measurements
+           perturbing a_{r,s} must not change what s transmits elsewhere
+[  ok  ] multi-objective: the regime admits a trade-off
+           oracle moves 35.1% in SE and 66.4% in EE from lambda 0 to 1
+[  ok  ] multi-objective: the policy responds to lambda
+           mean transmit power moves 95.0% across lambda (2.2mW, 3.6mW, 43.5mW)
+[  ok  ] tasks: hard success tracks the objective
+           ratio 0.887->0.943 with bits, but hard success 0.550->0.558
+[  ok  ] objectives: advert coverage
+           19/19 wired, 0 orphaned, 0 missing
+           
+[ warn ] evidence: stored results are newer than the code
+           llm.json (0.7h older than the code); prior.json (0.7h older than the code); temporal.json (0.8h older than the code)  -- regenerate before citing
+[  ok  ] claims: every headline claim has evidence on disk
+           13/13 supported; unsupported: 
+
+==========================================================================
+  32 passed, 1 warnings, 0 failures
+
+  WARNINGS (known gaps, be honest about these):
+    - evidence: stored results are newer than the code: llm.json (0.7h older than the code); prior.json (0.7h older than the code); temporal.json (0.8h older than the code)  -- regenerate before citing
+==========================================================================
+  completed in 174s

@@ -1,0 +1,258 @@
+{
+  "inference": {
+    "device": "cpu",
+    "batch": 1,
+    "latency_ms": 0.6064429549951456,
+    "parameters": 25361,
+    "size_kb": 99.06640625
+  },
+  "signalling": [
+    {
+      "n_agents": 4,
+      "bits": 1,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 3.0,
+      "kbps_per_agent": 3.0,
+      "mbps_cell": 0.012,
+      "cheaper_than_raw_csi": 32.0
+    },
+    {
+      "n_agents": 4,
+      "bits": 2,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 6.0,
+      "kbps_per_agent": 6.0,
+      "mbps_cell": 0.024,
+      "cheaper_than_raw_csi": 16.0
+    },
+    {
+      "n_agents": 4,
+      "bits": 4,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 12.0,
+      "kbps_per_agent": 12.0,
+      "mbps_cell": 0.048,
+      "cheaper_than_raw_csi": 8.0
+    },
+    {
+      "n_agents": 4,
+      "bits": 6,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 18.0,
+      "kbps_per_agent": 18.0,
+      "mbps_cell": 0.072,
+      "cheaper_than_raw_csi": 5.333333333333333
+    },
+    {
+      "n_agents": 4,
+      "bits": 8,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 24.0,
+      "kbps_per_agent": 24.0,
+      "mbps_cell": 0.096,
+      "cheaper_than_raw_csi": 4.0
+    },
+    {
+      "n_agents": 8,
+      "bits": 1,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 7.0,
+      "kbps_per_agent": 7.0,
+      "mbps_cell": 0.056,
+      "cheaper_than_raw_csi": 32.0
+    },
+    {
+      "n_agents": 8,
+      "bits": 2,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 14.0,
+      "kbps_per_agent": 14.0,
+      "mbps_cell": 0.112,
+      "cheaper_than_raw_csi": 16.0
+    },
+    {
+      "n_agents": 8,
+      "bits": 4,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 28.0,
+      "kbps_per_agent": 28.0,
+      "mbps_cell": 0.224,
+      "cheaper_than_raw_csi": 8.0
+    },
+    {
+      "n_agents": 8,
+      "bits": 6,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 42.0,
+      "kbps_per_agent": 42.0,
+      "mbps_cell": 0.336,
+      "cheaper_than_raw_csi": 5.333333333333333
+    },
+    {
+      "n_agents": 8,
+      "bits": 8,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 56.0,
+      "kbps_per_agent": 56.0,
+      "mbps_cell": 0.448,
+      "cheaper_than_raw_csi": 4.0
+    },
+    {
+      "n_agents": 16,
+      "bits": 1,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 15.0,
+      "kbps_per_agent": 15.0,
+      "mbps_cell": 0.24,
+      "cheaper_than_raw_csi": 32.0
+    },
+    {
+      "n_agents": 16,
+      "bits": 2,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 30.0,
+      "kbps_per_agent": 30.0,
+      "mbps_cell": 0.48,
+      "cheaper_than_raw_csi": 16.0
+    },
+    {
+      "n_agents": 16,
+      "bits": 4,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 60.0,
+      "kbps_per_agent": 60.0,
+      "mbps_cell": 0.96,
+      "cheaper_than_raw_csi": 8.0
+    },
+    {
+      "n_agents": 16,
+      "bits": 6,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 90.0,
+      "kbps_per_agent": 90.0,
+      "mbps_cell": 1.44,
+      "cheaper_than_raw_csi": 5.333333333333333
+    },
+    {
+      "n_agents": 16,
+      "bits": 8,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 120.0,
+      "kbps_per_agent": 120.0,
+      "mbps_cell": 1.92,
+      "cheaper_than_raw_csi": 4.0
+    },
+    {
+      "n_agents": 32,
+      "bits": 1,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 31.0,
+      "kbps_per_agent": 31.0,
+      "mbps_cell": 0.992,
+      "cheaper_than_raw_csi": 32.0
+    },
+    {
+      "n_agents": 32,
+      "bits": 2,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 62.0,
+      "kbps_per_agent": 62.0,
+      "mbps_cell": 1.984,
+      "cheaper_than_raw_csi": 16.0
+    },
+    {
+      "n_agents": 32,
+      "bits": 4,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 124.0,
+      "kbps_per_agent": 124.0,
+      "mbps_cell": 3.968,
+      "cheaper_than_raw_csi": 8.0
+    },
+    {
+      "n_agents": 32,
+      "bits": 6,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 186.0,
+      "kbps_per_agent": 186.0,
+      "mbps_cell": 5.952,
+      "cheaper_than_raw_csi": 5.333333333333333
+    },
+    {
+      "n_agents": 32,
+      "bits": 8,
+      "rounds": 1,
+      "slot_ms": 1.0,
+      "bits_per_agent_slot": 248.0,
+      "kbps_per_agent": 248.0,
+      "mbps_cell": 7.936,
+      "cheaper_than_raw_csi": 4.0
+    }
+  ],
+  "placement": [
+    {
+      "component": "message encoder + power readout",
+      "loop": "du-realtime",
+      "where": "inside the DU, on the transmission fast path",
+      "cadence_s": 0.001,
+      "reason": "runs once per slot per agent; nothing above the DU is fast enough",
+      "within_loop_period": true,
+      "measured_latency_ms": 0.6064429549951456,
+      "budget_ms": 1.0,
+      "fits": true,
+      "slot_utilisation": 0.6064429549951456
+    },
+    {
+      "component": "message validator (symbolic.py)",
+      "loop": "near-rt-ric",
+      "where": "xApp over E2",
+      "cadence_s": 0.64,
+      "reason": "chi-square needs ~10 expected counts per codeword, so the window scales as 10*2^B slots: 640 ms at B=6, 1 ms slots",
+      "within_loop_period": true
+    },
+    {
+      "component": "symbolic distillation (symbolic.py)",
+      "loop": "non-rt-ric",
+      "where": "rApp over O1/A1",
+      "cadence_s": 3600.0,
+      "reason": "refits the specification from logged traffic; hours, not slots",
+      "within_loop_period": true
+    },
+    {
+      "component": "protocol training (train.py)",
+      "loop": "non-rt-ric",
+      "where": "rApp over O1/A1",
+      "cadence_s": 86400.0,
+      "reason": "gradient training over a pool of deployments; offline",
+      "within_loop_period": true
+    },
+    {
+      "component": "intent compilation (intent.py)",
+      "loop": "non-rt-ric",
+      "where": "rApp over O1/A1",
+      "cadence_s": 60.0,
+      "reason": "translates a declared SLO into the lambda the DU policy is conditioned on",
+      "within_loop_period": true
+    }
+  ],
+  "note": "a per-slot protocol is faster than the near-RT RIC loop; the fast path is a DU function and the RIC supervises and retrains it"
+}

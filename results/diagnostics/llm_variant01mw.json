@@ -1,0 +1,60 @@
+[
+  {
+    "arm": "llm-zero-shot",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "regime": "zero-shot",
+    "mean_ratio": 0.33400052785873413,
+    "parameters": 494032768,
+    "size_mb": 942.292724609375,
+    "seconds_per_instance": 0.24570054587500323,
+    "parse_failures": 51,
+    "parse_failure_rate": 0.796875,
+    "n_instances": 64,
+    "degenerate_zero_replies": 13,
+    "degenerate_zero_rate": 0.203125
+  },
+  {
+    "arm": "llm-few-shot",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "regime": "few-shot",
+    "mean_ratio": 0.4641321301460266,
+    "parameters": 494032768,
+    "size_mb": 942.292724609375,
+    "seconds_per_instance": 0.9734736235156234,
+    "parse_failures": 32,
+    "parse_failure_rate": 0.5,
+    "n_instances": 64,
+    "degenerate_zero_replies": 0,
+    "degenerate_zero_rate": 0.0
+  },
+  {
+    "arm": "llm-retrieval",
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "regime": "retrieval",
+    "mean_ratio": 0.5850903987884521,
+    "parameters": 494032768,
+    "size_mb": 942.292724609375,
+    "seconds_per_instance": 1.017112721250001,
+    "parse_failures": 11,
+    "parse_failure_rate": 0.171875,
+    "n_instances": 64,
+    "degenerate_zero_replies": 0,
+    "degenerate_zero_rate": 0.0
+  },
+  {
+    "arm": "equal-power",
+    "mean_ratio": 0.4241090416908264,
+    "parameters": 0,
+    "size_mb": 0.0,
+    "seconds_per_instance": 0.0,
+    "parse_failure_rate": 0.0
+  },
+  {
+    "arm": "protocol-6bit",
+    "mean_ratio": 0.9602420926094055,
+    "parameters": 25361,
+    "size_mb": 0.09674453735351562,
+    "seconds_per_instance": 1.7088203129844715e-05,
+    "parse_failure_rate": 0.0
+  }
+]

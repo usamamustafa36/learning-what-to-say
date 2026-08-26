@@ -95,6 +95,8 @@ def graph_inputs(
     lam: torch.Tensor,
     extra_node: torch.Tensor | None = None,
     norm: "Normaliser | None" = None,
+    full_csi: bool = False,
+    price: tuple[float, float] | None = None,
 ) -> tuple[torch.Tensor, torch.Tensor]:
     """
     Node and edge features under a *partial information* model.
@@ -131,6 +133,46 @@ def graph_inputs(
     lg = (torch.log10(gains + 1e-30) - nm.edge_mean) / nm.edge_std
     # entry [b, r, s] must be a_{s,r}: what sender s measured about receiver r's interference.
     edge = lg.transpose(1, 2).unsqueeze(-1)
+    if price is not None:
+        # Classical interference price, appended as a second edge channel.
+        #
+        # This is the quantity distributed pricing / WMMSE-style schemes actually put on the wire,
+        # and it is the arm the paper needs: nobody designing limited-feedback distributed power
+        # control ships raw quantised CSI. For receiver s with utility
+        # u_s = log(1 + a_ss p_s / (N0 + I_s)), the marginal cost of interference is
+        #
+        #     pi_s = -d u_s / d I_s = a_ss p_s / [(N0 + I_s)(N0 + I_s + a_ss p_s)]
+        #
+        # and the marginal cost that transmitter r imposes on s is pi_s * a_sr -- exactly what s
+        # would want to tell r, and exactly the classical analogue of the learned message.
+        #
+        # The price is evaluated at the equal-power reference p = P_max. A price depends on the
+        # operating point, and the honest reference is the one an agent can compute with *zero*
+        # signalling; anything else would quietly hand this arm a coordination round it did not pay
+        # for. At R > 1 rounds a pricing scheme would re-evaluate at the current iterate, which is
+        # the natural extension and is not exercised by the R = 1 sweep.
+        #
+        # The price is the sum-rate price and carries no lambda. That is not a handicap: lambda is
+        # already a node feature at every receiver, so the arm can weight the price locally. Only
+        # the transmitted quantity is classical, which is the comparison being drawn.
+        n0, p_ref = price
+        sig = torch.diagonal(gains, dim1=-2, dim2=-1) * p_ref          # (B, N) wanted signal at s
+        interf = (gains.sum(-1) - torch.diagonal(gains, dim1=-2, dim2=-1)) * p_ref
+        pi = sig / ((n0 + interf) * (n0 + interf + sig) + 1e-30)       # (B, N), indexed by s
+        # mu[b, r, s] = pi_s * a_{s,r}: what sender s would price receiver r's interference at.
+        mu = pi[:, None, :] * gains.transpose(1, 2)
+        # Left in the raw log domain deliberately. This channel exists only to be fed to the
+        # Lloyd-Max quantiser, which fits its own codebook on a training sample and is therefore
+        # scale-agnostic; standardising here with batch statistics would make the bin boundaries
+        # drift from batch to batch and would be exactly the test-set leakage the frozen
+        # Normaliser is designed to prevent.
+        edge = torch.cat([edge, torch.log10(mu + 1e-30).unsqueeze(-1)], dim=-1)
+    if full_csi:
+        # The centralised reference (CentralisedGNN) is the one arm allowed to break the partial
+        # information model: entry [b, r, s] carries both a_sr and a_rs, so after message passing
+        # every node has seen the whole gain matrix. Every other arm must be built with
+        # full_csi=False or the bit budget stops meaning anything.
+        edge = torch.cat([edge, lg.unsqueeze(-1)], dim=-1)
     return node, edge
 
 
@@ -367,3 +409,113 @@ if __name__ == "__main__":
         e = Environment(batch=8, n_pairs=n, device=dev, rng=rng)
         nd, eg = graph_inputs(e.gains, torch.rand(8, device=dev))
         print(f"    N={n:2d}: {tuple(net(nd, eg).shape)}, {net.signalling_bits(n):.0f} bits/agent/slot")
+
+
+class QuantisedCSIEmbedGNN(ProtocolGNN):
+    """
+    The *matched* classical control -- the one the paper's central claim actually rests on.
+
+    `QuantisedCSIGNN` above hands the receiver the raw binary expansion of the Lloyd-Max index and
+    then mean-pools it over neighbours. That is not a fair matched-budget comparison, and the
+    reason is visible without running anything: the mean of a bit-plane over N-1 neighbours is
+    informative for the MSB and converges to 0.5 for the low-order bits regardless of the gains, so
+    adding resolution adds near-constant noise dimensions instead of information. The learned arm
+    mean-pools a `msg_dim`-wide codebook vector that is *trained* to survive mean-pooling. The two
+    arms were therefore matched on nominal bit count and mismatched on representation, and a flat
+    -- indeed weakly decreasing -- quantised curve is what that mismatch predicts.
+
+    This class removes the mismatch. The Lloyd-Max index selects a row of the *same* learned
+    codebook the learned arm uses, of the same width, aggregated the same way. The only surviving
+    difference between the arms is what decides the index: a classical scalar quantiser of the
+    sender's measured gain, or a learned encoder. That is the difference the paper is about.
+
+    Keeping both classes is deliberate: the raw-bits variant is now an ablation that explains *why*
+    a naive matched-budget control looks flat, rather than an unexplained anomaly in the headline
+    table.
+    """
+
+    quantised_channel = 0      # which edge feature goes on the wire
+
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        assert self.channel.mode == "vq", "the matched control shares the vq codebook"
+        self.quantizer: LloydMaxQuantizer | None = None
+
+    def fit_quantizer(self, edge_sample: torch.Tensor) -> "QuantisedCSIEmbedGNN":
+        if self.bits > 0:
+            vals = edge_sample[..., self.quantised_channel].detach().cpu().numpy().ravel()
+            self.quantizer = LloydMaxQuantizer(self.bits).fit(vals)
+        return self
+
+    def forward(self, node: torch.Tensor, edge: torch.Tensor, return_symbols: bool = False,
+                symbol_fn=None):
+        b, n, _ = node.shape
+        h = self.embed(node)
+        eye = torch.eye(n, device=node.device, dtype=torch.bool).view(1, n, n, 1)
+
+        if self.bits > 0:
+            assert self.quantizer is not None, "call fit_quantizer() first"
+            v = edge[..., self.quantised_channel].detach().cpu().numpy()
+            idx = torch.as_tensor(
+                self.quantizer.indices(v.ravel()).reshape(v.shape).astype(np.int64),
+                device=edge.device,
+            )
+        symbols = []
+
+        for _ in range(self.rounds):
+            if self.bits > 0:
+                m = self.channel.codebook[idx]
+                m = m.masked_fill(eye, 0.0)
+                agg = m.sum(dim=2) / max(n - 1, 1)
+            else:
+                agg = h.new_zeros((b, n, 0))
+            h = h + self.upd(torch.cat([h, agg], dim=-1))
+            if return_symbols:
+                symbols.append(idx if self.bits > 0 else h.new_zeros((b, n, n), dtype=torch.long))
+
+        powers = self.p_max * torch.sigmoid(self.read(h).squeeze(-1))
+        return (powers, symbols) if return_symbols else powers
+
+
+class CentralisedGNN(ProtocolGNN):
+    """
+    The correct centralised reference: *this* architecture, with the whole gain matrix.
+
+    The prior repo's `SupervisedAllocator` is a flat MLP over the vectorised gain matrix with no
+    permutation equivariance. Scoring the message-passing arms against it does not measure what
+    communication buys -- it measures the difference between two inductive biases, and that is why
+    it produced the impossible ordering in which a bandwidth-limited decentralised policy beat a
+    full-CSI centralised one. A centralised allocator can simulate any decentralised one, so it
+    must weakly dominate it; when it does not, the reference is wrong.
+
+    Here the graph, the embedding, the update and the readout are byte-for-byte the decentralised
+    arm's. Two things change, and only these two: edges carry both directions (`full_csi=True`, so
+    a sender knows the harm it causes as well as the harm it suffers) and the message is
+    unquantised. With R >= 2 rounds on a complete graph every node has then seen the entire matrix,
+    which is what "centralised" means. It is the upper bound the bit-budget curve should be read
+    against.
+    """
+
+    def __init__(self, *args, **kwargs) -> None:
+        kwargs.setdefault("mode", "continuous")
+        kwargs.setdefault("edge_dim", 2)
+        super().__init__(*args, **kwargs)
+        assert self.channel.mode == "continuous", "the centralised reference is not bit-budgeted"
+
+
+class PricedCSIGNN(QuantisedCSIEmbedGNN):
+    """
+    The strong classical control: B bits spent on the *interference price*, not on raw CSI.
+
+    Quantised CSI is the weakest classical option available, and beating it says little. The
+    schemes an engineer would actually field -- distributed pricing, WMMSE, ADMM -- put a dual
+    variable on the wire. Section on what the messages encode already reports that the learned code
+    is largely encoding the interference price, which makes this the comparison the paper is
+    obliged to run: how much of the gap survives when the classical arm is allowed to send the
+    right quantity?
+
+    Everything is shared with `QuantisedCSIEmbedGNN` except which edge feature is quantised. Same
+    Lloyd-Max quantiser, same shared codebook, same width, same aggregation, same budget.
+    """
+
+    quantised_channel = 1      # the price channel appended by graph_inputs(price=...)

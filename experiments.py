@@ -91,6 +91,79 @@ def sweep(
     return results
 
 
+def sweep_v2(
+    bits_list=(0, 1, 2, 3, 4, 6, 8),
+    seeds=(0, 1, 2, 3, 4),
+    n_pairs=8,
+    area_m=AREA_M,
+    rounds=1,
+    steps=8000,
+    train_size=8192,
+    test_size=2048,
+    usage_bonus=0.2,
+    rho=None,
+    arms=("learned", "quantised_embed", "quantised"),
+    references=True,
+    tag="bitsweep_v2",
+) -> list[dict]:
+    """
+    The rebuilt bit-budget sweep. Three things change from `sweep`, all of them corrections.
+
+    1. **A matched classical control.** `quantised_embed` puts the Lloyd-Max index through the same
+       learned codebook, of the same width, aggregated the same way as the learned arm. The old
+       `quantised` arm mean-pooled raw bit-planes, which is why it was flat -- indeed weakly
+       decreasing -- in B. Both are run, so the flat curve becomes an explained ablation instead of
+       an unexplained anomaly.
+    2. **The right centralised reference.** `centralised` is this same GNN holding the whole gain
+       matrix with unquantised messages, not the prior repo's flat MLP. A centralised allocator can
+       simulate any decentralised one and must therefore weakly dominate the whole curve; the flat
+       MLP did not, which made it a measurement of inductive bias rather than of information.
+    3. **Five seeds, not three,** and per-instance ratios are retained so confidence intervals can
+       be taken over the test pool rather than over three numbers.
+    """
+    print(f"building pools (N={n_pairs}, area={area_m}m)...", flush=True)
+    t0 = time.time()
+    kw = {} if rho is None else {"rho": rho}
+    tr = build_pool(size=train_size, n_pairs=n_pairs, area_m=area_m, seed=0, **kw)
+    te = build_pool(size=test_size, n_pairs=n_pairs, area_m=area_m, seed=999, lambdas=LAMBDAS, **kw)
+    print(f"  pools ready in {time.time()-t0:.0f}s (test pool: {len(te)} instances)\n", flush=True)
+
+    results = []
+
+    def record(cfg, arm, bits):
+        r = run_one(cfg, tr, te)
+        r["arm"], r["bits"], r["seed"], r["rho"] = arm, bits, cfg.seed, te.rho
+        r["steps"], r["n_test"] = cfg.steps, len(te)
+        results.append(r)
+        return r
+
+    # Ceiling: continuous messages, no budget, still decentralised.
+    for seed in seeds if references else ():
+        r = record(Config(bits=0, mode="continuous", rounds=rounds, steps=steps, seed=seed,
+                          usage_bonus=usage_bonus), "continuous", None)
+        print(f"  continuous   seed {seed}: {r['mean_ratio']:.4f}", flush=True)
+
+    # The correct upper bound: same GNN, whole gain matrix. Two rounds so every node sees it all.
+    for seed in seeds if references else ():
+        r = record(Config(bits=0, mode="continuous", messenger="centralised", rounds=max(rounds, 2),
+                          steps=steps, seed=seed, usage_bonus=usage_bonus), "centralised", None)
+        print(f"  centralised  seed {seed}: {r['mean_ratio']:.4f}", flush=True)
+
+    for bits in bits_list:
+        for messenger in arms:
+            if bits == 0 and messenger != arms[0]:
+                continue                      # identical to the silent floor
+            for seed in seeds:
+                record(Config(bits=bits, mode="vq", messenger=messenger, rounds=rounds,
+                              steps=steps, seed=seed, usage_bonus=usage_bonus), messenger, bits)
+            got = [x["mean_ratio"] for x in results[-len(seeds):]]
+            print(f"  B={bits} {messenger:16s}: {np.mean(got):.4f} +/- {np.std(got):.4f}", flush=True)
+
+    RESULTS.mkdir(parents=True, exist_ok=True)
+    (RESULTS / f"{tag}.json").write_text(json.dumps(results, indent=2))
+    return results
+
+
 def summarise(results: list[dict]) -> None:
     def cell(arm, bits):
         return [r["mean_ratio"] for r in results if r["arm"] == arm and r["bits"] == bits]
@@ -192,6 +265,8 @@ def tasks_experiment(bits_list=(0, 2, 4, 6), steps: int = 8000, n_pairs: int = 8
 EXPERIMENTS = {
     "bitsweep": lambda a: summarise(sweep(seeds=tuple(range(a.seeds)), steps=a.steps,
                                           n_pairs=a.n_pairs, tag=a.tag)),
+    "bitsweep_v2": lambda a: sweep_v2(seeds=tuple(range(a.seeds)), steps=a.steps,
+                                      n_pairs=a.n_pairs, tag=a.tag),
     "rho": lambda a: rho_sweep(seeds=tuple(range(a.seeds)), steps=a.steps),
     "sensing": lambda a: sensing_sweep(seeds=tuple(range(a.seeds)), steps=a.steps,
                                        n_pairs=a.n_pairs),

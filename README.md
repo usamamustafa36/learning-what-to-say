@@ -30,19 +30,40 @@ learned.
 
 | | |
 |---|---|
-| Learned protocol, *B*=6 | **0.9482** of the centralised genie optimum |
+| Learned protocol, *B*=6 | **0.9481** of the centralised genie optimum |
 | No-communication floor (*B*=0) | 0.8513 |
-| Unquantised-message ceiling | 0.9562 |
-| Coordination gain recovered at 6 bits | **92%** |
+| Unquantised-message ceiling, decentralised | 0.9562 |
+| Same architecture, whole gain matrix (centralised) | 0.9804 |
+| Signalling window recovered at 6 bits | **92.3%** |
+| Centralisation gain recovered at 6 bits | **74.9%** |
 | Policy size | 25,361 parameters (99 KB) |
 
-**The control that carries the argument.** Spending the same budget classically — Lloyd–Max
-quantised CSI feedback — is *flat* in *B*: 0.8632 at one bit, 0.8613 at eight. The bits are not the
-constraint; what the agents choose to say with them is.
+Five seeds, 2048 test instances, 95% bootstrap intervals over instances.
 
-**Against centralisation.** An allocator holding the *complete* gain matrix, trained on the same
-objective, reaches 0.9057. Two learned bits per edge per slot, exchanged locally, already match it
-(0.9061); three exceed it (0.9267).
+**The control that carries the argument.** The strong classical arm is not quantised CSI, it is a
+*B*-bit quantised **interference price** — the dual variable a distributed pricing or WMMSE-derived
+scheme would actually put on the wire. The learned symbol leads it at every budget and the margin
+*widens* with *B*: +0.0259 at one bit, +0.0406 at six, every paired interval excluding zero.
+Quantised CSI is the weaker control: it saturates by three bits (0.8744) and recovers well under
+half of what the learned symbol does.
+
+**Why a naive matched-budget control looks flat.** An earlier version of this study reported
+quantised CSI as flat in *B* (0.8632 at one bit, 0.8613 at eight) and drew a conclusion from it.
+That was a property of the message *format*, not of limited feedback: writing the quantiser index
+out as raw bit-planes and mean-pooling over neighbours preserves the most significant bit and drives
+the low-order planes toward 1/2 regardless of the gains — a loss of 6.6 bits at *B*=4, measurable
+without training anything (`diagnostics/aggregation_capacity.py`). Routing the same index through
+the same learned codebook the learned arm uses removes the mismatch, and the curve rises. Both arms
+are reported.
+
+**Against centralisation — a correction.** An earlier version of this study compared against a
+feedforward network over the vectorised gain matrix, which reaches 0.9057, and concluded that two
+learned bits already matched full CSI. That was wrong. A centralised allocator can simulate any
+decentralised one and must weakly dominate it; that network simply is not permutation equivariant,
+so the comparison measured inductive bias rather than information. The correct reference is *the
+same graph network* holding the whole gain matrix, which reaches **0.9804** — above every
+decentralised arm at every budget. Six learned bits recover 74.9% of what full centralisation buys,
+which is the honest claim. `qa.py` now asserts this dominance so the error cannot recur silently.
 
 **What the code encodes.** Mutual-information and decision-tree analyses agree the emergent symbols
 carry both quantities a sender can measure — its own link quality and the interference price at its

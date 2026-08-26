@@ -21,7 +21,8 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from agents import Normaliser, ProtocolGNN, QuantisedCSIGNN, graph_inputs
+from agents import (CentralisedGNN, Normaliser, PricedCSIGNN, ProtocolGNN,
+                    QuantisedCSIEmbedGNN, QuantisedCSIGNN, graph_inputs)
 from dataset import Pool
 from env import ee_torch, se_torch
 from sensing import sensing_features
@@ -34,7 +35,14 @@ from regime import AREA_M, CIRCUIT_POWER_W, P_MAX_W
 class Config:
     bits: int = 4
     mode: str = "vq"                    # "vq" | "binary" | "continuous"
-    messenger: str = "learned"          # "learned" | "quantised"
+    # "learned"          : the learned VQ codebook (the proposed protocol)
+    # "quantised_embed"  : matched control -- Lloyd-Max index into the SAME codebook
+    # "quantised"        : raw-bit-plane control (the naive matched-budget arm; kept as the
+    #                      ablation that explains why a naive control looks flat in B)
+    # "priced"           : the strong classical control -- B bits of quantised
+    #                      interference price (the dual variable pricing/WMMSE ships)
+    # "centralised"      : the same GNN with the whole gain matrix and unquantised messages
+    messenger: str = "learned"
     rounds: int = 1
     hidden: int = 64
     msg_dim: int = 16
@@ -89,14 +97,38 @@ def node_extras(
     return torch.cat(parts, dim=-1) if parts else None
 
 
+MESSENGERS = {
+    "learned": ProtocolGNN,
+    "quantised": QuantisedCSIGNN,
+    "quantised_embed": QuantisedCSIEmbedGNN,
+    "priced": PricedCSIGNN,
+    "centralised": CentralisedGNN,
+}
+
+
+def wants_full_csi(cfg: Config) -> bool:
+    """Only the centralised reference sees both directions of every edge."""
+    return cfg.messenger == "centralised"
+
+
+def price_ref(cfg: Config, pool: Pool) -> tuple[float, float] | None:
+    """The classical arm needs the raw noise power and a reference operating point; nobody else."""
+    if cfg.messenger != "priced":
+        return None
+    return (float(pool.noise_power), float(cfg.p_max))
+
+
 def build(cfg: Config, edge_sample: torch.Tensor | None = None) -> ProtocolGNN:
-    cls = QuantisedCSIGNN if cfg.messenger == "quantised" else ProtocolGNN
-    net = cls(
+    cls = MESSENGERS[cfg.messenger]
+    kw = dict(
         bits=cfg.bits, p_max=cfg.p_max, rounds=cfg.rounds, hidden=cfg.hidden,
-        msg_dim=cfg.msg_dim, mode=cfg.mode, temperature=cfg.temp_start,
+        msg_dim=cfg.msg_dim, temperature=cfg.temp_start,
         node_dim=3 + extra_node_dim(cfg),        # +2 per local side channel: task, sensing
-    ).to(cfg.device)
-    if cfg.messenger == "quantised" and edge_sample is not None:
+    )
+    if cfg.messenger != "centralised":
+        kw["mode"] = cfg.mode                    # CentralisedGNN fixes mode and edge_dim itself
+    net = cls(**kw).to(cfg.device)
+    if hasattr(net, "fit_quantizer") and edge_sample is not None:
         net.fit_quantizer(edge_sample)
     return net
 
@@ -110,7 +142,8 @@ def train(cfg: Config, pool: Pool, verbose: bool = False) -> ProtocolGNN:
     # and no cross-agent coupling through the normaliser.
     _, _, _, g0_obs, _ = pool.sample(min(2048, len(pool)), gen)
     norm = Normaliser.fit(g0_obs)
-    _, edge0 = graph_inputs(g0_obs, torch.rand(g0_obs.shape[0], device=g0_obs.device), norm=norm)
+    _, edge0 = graph_inputs(g0_obs, torch.rand(g0_obs.shape[0], device=g0_obs.device), norm=norm,
+                            full_csi=wants_full_csi(cfg), price=price_ref(cfg, pool))
     net = build(cfg, edge0)
     net.norm = norm
 
@@ -132,7 +165,8 @@ def train(cfg: Config, pool: Pool, verbose: bool = False) -> ProtocolGNN:
         extra = node_extras(cfg, pg, task_feats, gen)
 
         # Observe the channel one slot in the past, be judged on the channel that actually occurs.
-        node, edge = graph_inputs(g_obs, lam, extra_node=extra, norm=net.norm)
+        node, edge = graph_inputs(g_obs, lam, extra_node=extra, norm=net.norm,
+                                  full_csi=wants_full_csi(cfg), price=price_ref(cfg, pool))
         p = net(node, edge)
         if cfg.use_tasks:
             obj = task_objective(
@@ -184,7 +218,8 @@ def evaluate_tasks(net: ProtocolGNN, cfg: Config, pool: Pool, seed: int = 4242) 
     out, succ = {}, {}
     for lam_val in (pool.oracle or {0.5: None}):
         lam = torch.full((m,), lam_val, device=dev)
-        node, edge = graph_inputs(pool.gains_obs, lam, extra_node=extra, norm=getattr(net, "norm", None))
+        node, edge = graph_inputs(pool.gains_obs, lam, extra_node=extra, norm=getattr(net, "norm", None),
+                                  full_csi=wants_full_csi(cfg), price=price_ref(cfg, pool))
         p = net(node, edge)
         ones = torch.ones(m, device=dev)
         obj = task_objective(p, pool.gains, pool.noise_power, lam, r_min, beta,
@@ -223,25 +258,34 @@ def evaluate(net: ProtocolGNN, cfg: Config, pool: Pool) -> dict:
     information and is not attributable to decentralisation alone. Stated, not hidden.
     """
     net.eval()
-    out, se_all, ee_all = {}, [], []
+    out, se_all, ee_all, per_instance = {}, [], [], []
     # One sensing realisation, shared across lambdas: the preference is a command, not a new slot,
     # so redrawing the sensor noise per lambda would average away exactly what is being measured.
     gen = torch.Generator(device=pool.gains.device).manual_seed(4242)
     extra = node_extras(cfg, pool.path_gain, None, gen)
     for lam_val, oracle_val in pool.oracle.items():
         lam = torch.full((len(pool),), lam_val, device=pool.gains.device)
-        node, edge = graph_inputs(pool.gains_obs, lam, extra_node=extra, norm=getattr(net, 'norm', None))
+        node, edge = graph_inputs(pool.gains_obs, lam, extra_node=extra, norm=getattr(net, 'norm', None),
+                                  full_csi=wants_full_csi(cfg), price=price_ref(cfg, pool))
         p = net(node, edge)
         obj = objective(p, pool.gains, lam, pool.se_ref, pool.ee_ref, pool.noise_power, cfg.circuit_power_w)
-        out[lam_val] = float((obj / oracle_val.clamp_min(1e-12)).mean())
+        ratio = obj / oracle_val.clamp_min(1e-12)
+        per_instance.append(ratio)
+        out[lam_val] = float(ratio.mean())
         se_all.append(float(se_torch(p, pool.gains, pool.noise_power).mean()))
         ee_all.append(float(ee_torch(p, pool.gains, pool.noise_power, cfg.circuit_power_w).mean()))
     net.train()
+    # Per-instance ratios, averaged over the preference grid, are retained so a confidence
+    # interval can be taken over the *test pool* rather than over a handful of seeds. A paired
+    # t-test on three numbers is not a statistic anyone should act on; 2048 paired instances is.
+    inst = torch.stack(per_instance).mean(dim=0) if per_instance else torch.zeros(0)
     return {
         "per_lambda": out,
         "mean_ratio": float(np.mean(list(out.values()))),
         "se_by_lambda": se_all,
         "ee_by_lambda": ee_all,
+        "per_instance_ratio": [round(float(v), 6) for v in inst.cpu()],
+        "n_instances": int(inst.numel()),
         "signalling_bits_per_agent": net.signalling_bits(pool.n_pairs),
     }
 

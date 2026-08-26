@@ -244,6 +244,40 @@ def check_oracle_invariant(rep: Report) -> None:
             "PASS" if viol == 0 else "FAIL", f"{viol} of {total} cells above 1.0")
 
 
+def check_centralised_dominance(rep: Report) -> None:
+    """
+    A centralised allocator can simulate any decentralised one, so it must weakly dominate every
+    decentralised arm on the same instances. This check exists because an earlier version of this
+    work violated it: the centralised reference was a flat MLP over the vectorised gain matrix
+    while the decentralised arms were permutation-equivariant graph networks, so the comparison
+    measured inductive bias rather than information and produced the impossible ordering in which a
+    three-bit decentralised policy beat full CSI at one place. The reference is now the same
+    architecture with the whole gain matrix, and this is the assertion that keeps it honest.
+    """
+    rows = []
+    for tag in ("bitsweep_v2", "bitsweep_v2_a", "bitsweep_v2_b"):
+        f = RESULTS / f"{tag}.json"
+        if f.exists():
+            try:
+                rows += json.loads(f.read_text())
+            except Exception:
+                pass
+    if not rows:
+        rep.add("invariant: centralised dominates every decentralised arm", "technical",
+                "SKIP", "no v2 sweep on disk")
+        return
+    central = [r["mean_ratio"] for r in rows if r["arm"] == "centralised"]
+    others = [r["mean_ratio"] for r in rows if r["arm"] != "centralised"]
+    if not central or not others:
+        rep.add("invariant: centralised dominates every decentralised arm", "technical",
+                "SKIP", "sweep incomplete")
+        return
+    c, best = float(np.mean(central)), max(others)
+    rep.add("invariant: centralised dominates every decentralised arm", "technical",
+            "PASS" if c >= best - 1e-6 else "FAIL",
+            f"centralised {c:.4f} vs best decentralised {best:.4f}")
+
+
 def check_codebook_health(rep: Report, full: bool) -> None:
     """Collapse detector: a budget of B bits that transmits ~1 bit is not measuring what it claims."""
     if not full:
@@ -483,6 +517,7 @@ def run(full: bool = False) -> int:
     check_determinism(rep)
     check_oracle_invariant(rep)
     check_temporal_is_live(rep, full)
+    check_centralised_dominance(rep)
     check_codebook_health(rep, full)
 
     print("\n" + "=" * 74)

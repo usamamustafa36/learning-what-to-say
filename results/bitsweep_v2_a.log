@@ -1,0 +1,26 @@
+building pools (N=8, area=200.0m)...
+  pools ready in 38s (test pool: 2048 instances)
+
+  continuous   seed 0: 0.9566
+  continuous   seed 1: 0.9560
+  continuous   seed 2: 0.9558
+  continuous   seed 3: 0.9560
+  continuous   seed 4: 0.9565
+  centralised  seed 0: 0.9800
+  centralised  seed 1: 0.9809
+  centralised  seed 2: 0.9800
+  centralised  seed 3: 0.9809
+  centralised  seed 4: 0.9803
+  B=0 learned         : 0.8513 +/- 0.0003
+  B=1 learned         : 0.8820 +/- 0.0008
+  B=1 quantised_embed : 0.8629 +/- 0.0006
+  B=2 learned         : 0.9072 +/- 0.0017
+  B=2 quantised_embed : 0.8712 +/- 0.0005
+  B=3 learned         : 0.9261 +/- 0.0058
+  B=3 quantised_embed : 0.8744 +/- 0.0009
+  B=4 learned         : 0.9370 +/- 0.0019
+  B=4 quantised_embed : 0.8743 +/- 0.0010
+  B=6 learned         : 0.9481 +/- 0.0012
+  B=6 quantised_embed : 0.8698 +/- 0.0014
+  B=8 learned         : 0.9498 +/- 0.0001
+  B=8 quantised_embed : 0.8579 +/- 0.0012

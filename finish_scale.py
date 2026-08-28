@@ -6,9 +6,9 @@ re-running a size recomputes everything. This loads the stored rows, works out w
 (arm, bits, seed) combinations are absent, rebuilds the pools with the arguments `scale_sweep.main`
 uses for that N so the new rows stay comparable, and refuses to run on CPU.
 
-Set N at the top to the size you want to finish.
+Usage:  python3 finish_scale.py 16
 
-Finish the N=8 row of the scale sweep without recomputing what is already on disk.
+Finish one size of the scale sweep without recomputing what is already on disk.
 
 scale_sweep.py starts from an empty row list and overwrites its JSON, so re-running it for N=8
 would redo the 21 rows already stored (about two hours) to get the three that are missing. This
@@ -18,7 +18,7 @@ only those.
 The pools are rebuilt with exactly the arguments scale_sweep.main uses for N=8, so the new rows are
 comparable with the old ones: train pool 8192 at seed 0, test pool 2048 at seed 999 over LAMBDAS.
 
-Run from the folder above code/:  python3 finish_scale_N8.py
+Usage:  python3 finish_scale.py <N>
 """
 
 from __future__ import annotations
@@ -29,7 +29,7 @@ import time
 from pathlib import Path
 
 HERE = Path(__file__).parent
-sys.path.insert(0, str(HERE / "code"))
+sys.path.insert(0, str(HERE))
 
 import torch  # noqa: E402
 
@@ -38,8 +38,8 @@ from regime import AREA_M, LAMBDAS  # noqa: E402
 from scale_sweep import BITS, POOLS, SEEDS  # noqa: E402
 from train import Config, run_one  # noqa: E402
 
-N = 8
-OUT = HERE / "code" / "results" / f"scale_N{N}.json"
+N = int(sys.argv[1]) if len(sys.argv) > 1 else 16
+OUT = HERE / "results" / f"scale_N{N}.json"
 
 
 def main() -> None:

@@ -1,0 +1,114 @@
+[
+  {
+    "per_lambda": {
+      "0.0": 0.9297921657562256,
+      "0.25": 0.9283356666564941,
+      "0.5": 0.9252768754959106,
+      "0.75": 0.9190771579742432,
+      "1.0": 0.9035351276397705
+    },
+    "mean_ratio": 0.9212033987045288,
+    "se_by_lambda": [
+      39.74394989013672,
+      40.53894805908203,
+      41.51579284667969,
+      42.912445068359375,
+      44.9666862487793
+    ],
+    "ee_by_lambda": [
+      111.91112518310547,
+      111.69821166992188,
+      110.08622741699219,
+      103.57144165039062,
+      59.91349411010742
+    ],
+    "n_instances": 1024,
+    "signalling_bits_per_agent": Infinity,
+    "config": {
+      "bits": 0,
+      "mode": "continuous",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "continuous",
+    "bits": null,
+    "seed": 0,
+    "n_pairs": 32,
+    "train_size": 4096,
+    "test_size": 1024,
+    "device": "cuda"
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9300023913383484,
+      "0.25": 0.9284545183181763,
+      "0.5": 0.9259812831878662,
+      "0.75": 0.9198757410049438,
+      "1.0": 0.9032065868377686
+    },
+    "mean_ratio": 0.9215041041374207,
+    "se_by_lambda": [
+      39.783206939697266,
+      40.561767578125,
+      41.59603500366211,
+      42.93326950073242,
+      44.948402404785156
+    ],
+    "ee_by_lambda": [
+      111.95246887207031,
+      111.72669982910156,
+      110.07234191894531,
+      103.8194580078125,
+      60.612274169921875
+    ],
+    "n_instances": 1024,
+    "signalling_bits_per_agent": Infinity,
+    "config": {
+      "bits": 0,
+      "mode": "continuous",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.2,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 1,
+      "device": "cuda"
+    },
+    "arm": "continuous",
+    "bits": null,
+    "seed": 1,
+    "n_pairs": 32,
+    "train_size": 4096,
+    "test_size": 1024,
+    "device": "cuda"
+  }
+]

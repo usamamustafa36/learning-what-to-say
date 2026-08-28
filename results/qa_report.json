@@ -147,7 +147,7 @@
     "name": "invariant: no result exceeds the oracle",
     "kind": "technical",
     "status": "PASS",
-    "detail": "0 of 1890 cells above 1.0"
+    "detail": "0 of 2185 cells above 1.0"
   },
   {
     "name": "temporal: rho affects observation quality",
@@ -177,7 +177,7 @@
     "name": "multi-objective: the regime admits a trade-off",
     "kind": "conceptual",
     "status": "PASS",
-    "detail": "oracle moves 35.1% in SE and 66.4% in EE from lambda 0 to 1"
+    "detail": "oracle moves 35.1% in SE and 66.6% in EE from lambda 0 to 1"
   },
   {
     "name": "multi-objective: the policy responds to lambda",
@@ -201,7 +201,7 @@
     "name": "evidence: stored results are newer than the code",
     "kind": "conceptual",
     "status": "WARN",
-    "detail": "sensing.json (63.6h older than the code); intent.json (65.0h older than the code); llm_tokens.json (54.8h older than the code); llm.json (48.5h older than the code); symbolic.json (65.0h older than the code); adversarial.json (49.1h older than the code); rho_sweep.json (64.5h older than the code); prior.json (49.0h older than the code); analysis.json (65.1h older than the code); temporal.json (49.0h older than the code); bitsweep_v2_a.json (0.0h older than the code); aggregation.json (1.9h older than the code); bitsweep_fixed.json (65.3h older than the code); tasks.json (63.5h older than the code); bitsweep_v2_b.json (0.6h older than the code)  -- regenerate before citing"
+    "detail": "overhead.json (0.6h older than the code); sensing.json (68.4h older than the code); intent.json (69.7h older than the code); llm_tokens.json (59.5h older than the code); llm.json (53.3h older than the code); symbolic.json (69.8h older than the code); params.json (0.6h older than the code); adversarial.json (53.8h older than the code); rho_sweep.json (69.3h older than the code); bitsweep_v2.json (4.8h older than the code); prior.json (53.8h older than the code); analysis.json (69.8h older than the code); temporal.json (53.8h older than the code); bitsweep_v2_a.json (4.8h older than the code); bitsweep_fixed.json (70.0h older than the code); tasks.json (68.2h older than the code); bitsweep_v2_summary.json (4.8h older than the code); bitsweep_v2_b.json (5.4h older than the code)  -- regenerate before citing"
   },
   {
     "name": "claims: every headline claim has evidence on disk",

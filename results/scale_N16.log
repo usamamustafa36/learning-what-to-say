@@ -1,0 +1,7 @@
+N=16 on cuda, 4 threads, pools 8192/2048
+  pools ready in 101s
+  continuous seed 0: 0.9387  (707s)
+  continuous seed 1: 0.9376  (1567s)
+  continuous seed 2: 0.9370  (2526s)
+  B=0 silent    : 0.8168
+  B=1 learned    : 0.8191 +/- 0.0009  (7570s)

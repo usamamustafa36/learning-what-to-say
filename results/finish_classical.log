@@ -1,0 +1,18 @@
+keeping [('dinkelbach', 'current'), ('pricing', 'current'), ('wmmse', 'current'), ('wmmse', 'stale')]
+to run: [('dinkelbach', 'stale'), ('pricing', 'stale')] on 1024 instances
+  dinkelbach solved 1024 instances once in 818s
+  dinkelbach  stale   lam=0.00 -> 0.9897  (818s)
+  dinkelbach  stale   lam=0.25 -> 0.9858  (819s)
+  dinkelbach  stale   lam=0.50 -> 0.9677  (819s)
+  dinkelbach  stale   lam=0.75 -> 0.9039  (819s)
+  dinkelbach  stale   lam=1.00 -> 0.7236  (819s)
+  -> dinkelbach/stale mean 0.9141
+
+  pricing     stale   lam=0.00 -> 0.9742  (35s)
+  pricing     stale   lam=0.25 -> 0.9730  (64s)
+  pricing     stale   lam=0.50 -> 0.9727  (92s)
+  pricing     stale   lam=0.75 -> 0.9726  (143s)
+  pricing     stale   lam=1.00 -> 0.9699  (187s)
+  -> pricing/stale mean 0.9725
+
+wrote /home/ubuntu/Projects/THESIS/completed/usama-phd/paper07-tccn-learning-what-to-say/code/results/standalone_classical.json

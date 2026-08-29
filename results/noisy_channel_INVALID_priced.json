@@ -1,0 +1,1289 @@
+[
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.9136402368545532,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.9136298537254334,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.9135878682136536,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.9133048772811889,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.9092778921127319,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8736435413360596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.9136402368545532,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.912809181213379,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.9087400674819947,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.9031617164611816,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.8829566359519958,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.9020242929458618,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.9020193576812744,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.902013897895813,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.9018726825714112,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.9003514528274537,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8856881856918335,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.9020242929458618,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.9013813018798829,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.8984721302986145,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.8942503213882447,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.8770190596580505,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.9262425303459167,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.9262420892715454,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.926192831993103,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.9258265733718872,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.9220487833023071,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8815836668014526,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.9262425303459167,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.9251736760139465,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.9207942485809326,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.9142307162284851,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.8914188981056214,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.9117720484733581,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.9117726683616638,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.9116828441619873,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.9110651135444641,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.906145703792572,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8692984104156494,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.9117720484733581,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.9110535740852356,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.9073627591133118,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.9020249843597412,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.8812940120697021,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.9113636612892151,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.9113579392433167,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.9113558292388916,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.9110577225685119,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.9083394527435302,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8818944811820983,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.9113636612892151,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.9106857776641846,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.9072146415710449,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.9019302129745483,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.881857180595398,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.9267963290214538,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.9267975807189941,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.9267324924468994,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.9259393334388732,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.919122064113617,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8652926325798035,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.9267963290214538,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.9256042599678039,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.9207194566726684,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.9133222460746765,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 4,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.8876269340515137,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.9286728739738465,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.9286826729774476,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.928552782535553,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.9278929591178894,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.9221868515014648,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8769220352172852,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.9286728739738465,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.9276939511299134,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.9224399447441101,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.914962637424469,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.888879120349884,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.9372865319252014,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.9372714519500732,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.9372360467910766,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.9368677377700806,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.9310510396957398,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.878568172454834,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.9372865319252014,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.9357569336891174,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.9301741600036622,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.921806001663208,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.8919851660728455,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.9397315382957458,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.939736521244049,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.9396103620529175,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.9390032649040222,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.9321647763252259,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8766209006309509,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.9397315382957458,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.9383540272712707,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.9326557159423828,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.9239306092262268,
+    "n_instances": 2048
+  },
+  {
+    "arm": "learned",
+    "bits": 6,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.8956725478172303,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.8840195178985596,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 1,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.8852861166000366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 2,
+    "seed": 2,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.8844815969467164,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.0,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 1e-05,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.0001,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.001,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.01,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "ber",
+    "level": 0.1,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.0,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.01,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.05,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.1,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  },
+  {
+    "arm": "priced",
+    "bits": 4,
+    "seed": 0,
+    "impairment": "erasure",
+    "level": 0.25,
+    "mean_ratio": 0.9000304460525512,
+    "n_instances": 2048
+  }
+]

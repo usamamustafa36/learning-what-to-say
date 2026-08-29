@@ -460,6 +460,11 @@ class QuantisedCSIEmbedGNN(ProtocolGNN):
                 self.quantizer.indices(v.ravel()).reshape(v.shape).astype(np.int64),
                 device=edge.device,
             )
+            # Honour the substitution hook here too. The signature accepted `symbol_fn` and then
+            # ignored it, so an impairment applied to this arm silently did nothing -- a BER sweep
+            # against it returned a perfectly flat line, which is what exposed the bug.
+            if symbol_fn is not None:
+                idx = symbol_fn(node, edge)
         symbols = []
 
         for _ in range(self.rounds):

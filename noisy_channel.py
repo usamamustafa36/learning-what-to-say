@@ -35,6 +35,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 from adversarial import honest_symbols                                 # noqa: E402
+import torch as _torch                                                  # noqa: E402
 from checkpoints import train_cached                                   # noqa: E402
 from dataset import cached_pool                                        # noqa: E402
 from regime import AREA_M, LAMBDAS                                     # noqa: E402
@@ -106,7 +107,13 @@ def main() -> None:
                         continue
                     cfg = Config(bits=bits, mode=mode, steps=8000, seed=seed)
                     net = train_cached(cfg, tr)
-                honest = honest_symbols(net)
+                # The learned arm's symbols come from its encoder; the quantised arms' come from a
+                # Lloyd-Max index. Ask the model for whatever it actually transmits, so the same
+                # corruption applies to both.
+                def honest(node, edge, _net=net):
+                    with _torch.no_grad():
+                        _, syms = _net(node, edge, return_symbols=True)
+                    return syms[0]
 
                 for kind, values in (("ber", BERS), ("erasure", ERASURES)):
                     for v in values:

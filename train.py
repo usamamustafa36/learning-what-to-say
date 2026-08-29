@@ -246,7 +246,7 @@ def evaluate_tasks(net: ProtocolGNN, cfg: Config, pool: Pool, seed: int = 4242) 
 
 
 @torch.no_grad()
-def evaluate(net: ProtocolGNN, cfg: Config, pool: Pool) -> dict:
+def evaluate(net: ProtocolGNN, cfg: Config, pool: Pool, symbol_fn=None) -> dict:
     """
     Ratio to the centralised oracle, per lambda.
 
@@ -267,7 +267,10 @@ def evaluate(net: ProtocolGNN, cfg: Config, pool: Pool) -> dict:
         lam = torch.full((len(pool),), lam_val, device=pool.gains.device)
         node, edge = graph_inputs(pool.gains_obs, lam, extra_node=extra, norm=getattr(net, 'norm', None),
                                   full_csi=wants_full_csi(cfg), price=price_ref(cfg, pool))
-        p = net(node, edge)
+        # `symbol_fn` substitutes the transmitted symbols without touching the codebook,
+        # aggregation or readout, which is how a noisy message channel is modelled without a
+        # second evaluation path that could drift from this one. Default None = unchanged.
+        p = net(node, edge) if symbol_fn is None else net(node, edge, symbol_fn=symbol_fn)
         obj = objective(p, pool.gains, lam, pool.se_ref, pool.ee_ref, pool.noise_power, cfg.circuit_power_w)
         ratio = obj / oracle_val.clamp_min(1e-12)
         per_instance.append(ratio)

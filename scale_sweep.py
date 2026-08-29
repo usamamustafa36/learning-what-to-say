@@ -32,7 +32,7 @@ from regime import AREA_M, LAMBDAS
 from train import Config, run_one
 
 RESULTS = Path(__file__).parent / "results"
-BITS = (1, 2, 3, 4, 6, 8)
+BITS = (1, 2, 3, 4, 5, 6, 7, 8)   # 5 and 7 added: B*(eps) is read off this ladder
 SEEDS = (0, 1, 2)
 
 # (train pool, test pool, torch threads) by network size.

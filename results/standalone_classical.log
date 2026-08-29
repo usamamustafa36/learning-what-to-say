@@ -1,0 +1,31 @@
+pool 2048 instances, N=8, lambdas (0.0, 0.25, 0.5, 0.75, 1.0)
+  wmmse       current lam=0.00 -> 0.3150  (68s)
+  wmmse       current lam=0.25 -> 0.5164  (135s)
+  wmmse       current lam=0.50 -> 0.7340  (162s)
+  wmmse       current lam=0.75 -> 0.9305  (172s)
+  wmmse       current lam=1.00 -> 0.9730  (181s)
+  -> wmmse/current mean 0.6938
+
+  dinkelbach  current lam=0.00 -> 0.9969  (380s)
+  dinkelbach  current lam=0.25 -> 0.9930  (690s)
+  dinkelbach  current lam=0.50 -> 0.9746  (1168s)
+  dinkelbach  current lam=0.75 -> 0.9105  (1905s)
+  dinkelbach  current lam=1.00 -> 0.7291  (4160s)
+  -> dinkelbach/current mean 0.9208
+
+  pricing     current lam=0.00 -> 0.9829  (16s)
+  pricing     current lam=0.25 -> 0.9824  (35s)
+  pricing     current lam=0.50 -> 0.9813  (58s)
+  pricing     current lam=0.75 -> 0.9805  (105s)
+  pricing     current lam=1.00 -> 0.9786  (141s)
+  -> pricing/current mean 0.9812
+
+  wmmse       stale   lam=0.00 -> 0.3122  (43s)
+  wmmse       stale   lam=0.25 -> 0.5125  (80s)
+  wmmse       stale   lam=0.50 -> 0.7288  (112s)
+  wmmse       stale   lam=0.75 -> 0.9239  (145s)
+  wmmse       stale   lam=1.00 -> 0.9663  (178s)
+  -> wmmse/stale mean 0.6887
+
+  dinkelbach  stale   lam=0.00 -> 0.9901  (1596s)
+  dinkelbach  stale   lam=0.25 -> 0.9863  (6887s)

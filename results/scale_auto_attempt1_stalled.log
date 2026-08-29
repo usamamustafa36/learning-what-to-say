@@ -1,0 +1,7 @@
+[2026-08-28T22:30:22+05:00] waiting for a usable GPU
+[2026-08-28T23:12:00+05:00] GPU is up, starting
+[2026-08-28T23:12:00+05:00] === finishing N=16 ===
+N=16 on cuda, 4 threads, pools 8192/2048
+  9 rows on disk, 15 to run: [('learned', 2, 0), ('learned', 2, 1), ('learned', 2, 2), ('learned', 3, 0), ('learned', 3, 1), ('learned', 3, 2), ('learned', 4, 0), ('learned', 4, 1), ('learned', 4, 2), ('learned', 6, 0), ('learned', 6, 1), ('learned', 6, 2), ('learned', 8, 0), ('learned', 8, 1), ('learned', 8, 2)]
+  pools ready in 29s
+  learned B=2 seed 0: 0.8495  (301s)

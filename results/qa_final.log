@@ -1,0 +1,68 @@
+==========================================================================
+  TECHNICAL
+==========================================================================
+[  ok  ] self-test: channel
+[  ok  ] self-test: metrics
+[  ok  ] self-test: baselines
+[  ok  ] self-test: env
+[ skip ] self-test: solvers
+           slow; run with --full
+[ skip ] self-test: dataset
+           slow; run with --full
+[  ok  ] self-test: agents
+[  ok  ] self-test: tasks
+[  ok  ] self-test: evaluator
+[  ok  ] self-test: sensing
+[  ok  ] self-test: analysis
+[  ok  ] self-test: symbolic
+[  ok  ] self-test: oran
+[  ok  ] self-test: intent
+[  ok  ] self-test: prior_methods
+[  ok  ] self-test: adversarial
+[  ok  ] self-test: regime
+[  ok  ] self-test: pareto
+[  ok  ] physics: WMMSE >= equal power (SE)
+           0/10 violations
+[  ok  ] physics: Dinkelbach >= equal power (EE)
+           0/10 violations
+[  ok  ] numerics: analytic vs finite-difference gradient
+           max rel err 1.36e-05
+[  ok  ] discreteness: transmitted symbols are exactly 0/1
+           straight-through must not leak float residue
+[  ok  ] robustness: all arms give finite in-range powers
+[  ok  ] reproducibility: same seed gives same output
+[  ok  ] invariant: no result exceeds the oracle
+           0 of 3702 cells above 1.0
+[ skip ] temporal: rho affects observation quality
+           run with --full
+[  ok  ] invariant: centralised dominates every decentralised arm
+           centralised 0.9804 vs best decentralised 0.9566
+[ skip ] collapse: codebook entropy tracks the budget
+           run with --full
+
+==========================================================================
+  CONCEPTUAL
+==========================================================================
+[  ok  ] information: sender cannot see receiver-only measurements
+           perturbing a_{r,s} must not change what s transmits elsewhere
+[  ok  ] multi-objective: the regime admits a trade-off
+           oracle moves 35.1% in SE and 66.4% in EE from lambda 0 to 1
+[ skip ] multi-objective: the policy responds to lambda
+           run with --full
+[ skip ] tasks: hard success tracks the objective
+           run with --full
+[  ok  ] objectives: advert coverage
+           19/19 wired, 0 orphaned, 0 missing
+           
+[ warn ] evidence: stored results are newer than the code
+           pricing_budget_partial.json (2.4h older than the code); scale_N32.json (15.8h older than the code); overhead.json (77.4h older than the code); sensing.json (145.2h older than the code); intent.json (146.6h older than the code); llm_tokens.json (136.3h older than the code); overhead_all.json (76.7h older than the code); llm.json (130.1h older than the code); symbolic.json (146.6h older than the code); params.json (77.4h older than the code); scale_N8.json (2.2h older than the code); adversarial.json (130.6h older than the code); scale_N16.json (0.7h older than the code); rho_sweep.json (146.1h older than the code); standalone_classical_partial.json (12.2h older than the code); standalone_classical.json (11.6h older than the code); bitsweep_v2.json (81.6h older than the code); prior.json (130.6h older than the code); analysis.json (146.6h older than the code); transfer.json (0.1h older than the code); temporal.json (130.6h older than the code); pricing_budget.json (1.9h older than the code); bitsweep_v2_a.json (81.6h older than the code); aggregation.json (76.7h older than the code); norm_drift.json (0.5h older than the code); bitsweep_fixed.json (146.8h older than the code); tasks.json (145.0h older than the code); bitsweep_v2_summary.json (81.6h older than the code); scale_N4.json (0.5h older than the code); bitsweep_v2_b.json (82.2h older than the code); price_dynamic_range.json (2.3h older than the code)  -- regenerate before citing
+[  ok  ] claims: every headline claim has evidence on disk
+           22/22 supported; unsupported: 
+
+==========================================================================
+  28 passed, 1 warnings, 0 failures
+
+  WARNINGS (known gaps, be honest about these):
+    - evidence: stored results are newer than the code: pricing_budget_partial.json (2.4h older than the code); scale_N32.json (15.8h older than the code); overhead.json (77.4h older than the code); sensing.json (145.2h older than the code); intent.json (146.6h older than the code); llm_tokens.json (136.3h older than the code); overhead_all.json (76.7h older than the code); llm.json (130.1h older than the code); symbolic.json (146.6h older than the code); params.json (77.4h older than the code); scale_N8.json (2.2h older than the code); adversarial.json (130.6h older than the code); scale_N16.json (0.7h older than the code); rho_sweep.json (146.1h older than the code); standalone_classical_partial.json (12.2h older than the code); standalone_classical.json (11.6h older than the code); bitsweep_v2.json (81.6h older than the code); prior.json (130.6h older than the code); analysis.json (146.6h older than the code); transfer.json (0.1h older than the code); temporal.json (130.6h older than the code); pricing_budget.json (1.9h older than the code); bitsweep_v2_a.json (81.6h older than the code); aggregation.json (76.7h older than the code); norm_drift.json (0.5h older than the code); bitsweep_fixed.json (146.8h older than the code); tasks.json (145.0h older than the code); bitsweep_v2_summary.json (81.6h older than the code); scale_N4.json (0.5h older than the code); bitsweep_v2_b.json (82.2h older than the code); price_dynamic_range.json (2.3h older than the code)  -- regenerate before citing
+==========================================================================
+  completed in 83s

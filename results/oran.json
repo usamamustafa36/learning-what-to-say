@@ -2,7 +2,7 @@
   "inference": {
     "device": "cpu",
     "batch": 1,
-    "latency_ms": 0.23515719502029242,
+    "latency_ms": 0.618771160079632,
     "parameters": 25361,
     "size_kb": 99.06640625
   },
@@ -216,10 +216,10 @@
       "cadence_s": 0.001,
       "reason": "runs once per slot per agent; nothing above the DU is fast enough",
       "within_loop_period": true,
-      "measured_latency_ms": 0.23515719502029242,
+      "measured_latency_ms": 0.618771160079632,
       "budget_ms": 1.0,
       "fits": true,
-      "slot_utilisation": 0.23515719502029242
+      "slot_utilisation": 0.618771160079632
     },
     {
       "component": "message validator (symbolic.py)",

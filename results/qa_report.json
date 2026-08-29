@@ -147,7 +147,7 @@
     "name": "invariant: no result exceeds the oracle",
     "kind": "technical",
     "status": "PASS",
-    "detail": "0 of 2185 cells above 1.0"
+    "detail": "0 of 3702 cells above 1.0"
   },
   {
     "name": "temporal: rho affects observation quality",
@@ -177,7 +177,7 @@
     "name": "multi-objective: the regime admits a trade-off",
     "kind": "conceptual",
     "status": "PASS",
-    "detail": "oracle moves 35.1% in SE and 66.6% in EE from lambda 0 to 1"
+    "detail": "oracle moves 35.1% in SE and 66.4% in EE from lambda 0 to 1"
   },
   {
     "name": "multi-objective: the policy responds to lambda",
@@ -201,12 +201,12 @@
     "name": "evidence: stored results are newer than the code",
     "kind": "conceptual",
     "status": "WARN",
-    "detail": "overhead.json (0.6h older than the code); sensing.json (68.4h older than the code); intent.json (69.7h older than the code); llm_tokens.json (59.5h older than the code); llm.json (53.3h older than the code); symbolic.json (69.8h older than the code); params.json (0.6h older than the code); adversarial.json (53.8h older than the code); rho_sweep.json (69.3h older than the code); bitsweep_v2.json (4.8h older than the code); prior.json (53.8h older than the code); analysis.json (69.8h older than the code); temporal.json (53.8h older than the code); bitsweep_v2_a.json (4.8h older than the code); bitsweep_fixed.json (70.0h older than the code); tasks.json (68.2h older than the code); bitsweep_v2_summary.json (4.8h older than the code); bitsweep_v2_b.json (5.4h older than the code)  -- regenerate before citing"
+    "detail": "pricing_budget_partial.json (2.4h older than the code); scale_N32.json (15.8h older than the code); overhead.json (77.4h older than the code); sensing.json (145.2h older than the code); intent.json (146.6h older than the code); llm_tokens.json (136.3h older than the code); overhead_all.json (76.7h older than the code); llm.json (130.1h older than the code); symbolic.json (146.6h older than the code); params.json (77.4h older than the code); scale_N8.json (2.2h older than the code); adversarial.json (130.6h older than the code); scale_N16.json (0.7h older than the code); rho_sweep.json (146.1h older than the code); standalone_classical_partial.json (12.2h older than the code); standalone_classical.json (11.6h older than the code); bitsweep_v2.json (81.6h older than the code); prior.json (130.6h older than the code); analysis.json (146.6h older than the code); transfer.json (0.1h older than the code); temporal.json (130.6h older than the code); pricing_budget.json (1.9h older than the code); bitsweep_v2_a.json (81.6h older than the code); aggregation.json (76.7h older than the code); norm_drift.json (0.5h older than the code); bitsweep_fixed.json (146.8h older than the code); tasks.json (145.0h older than the code); bitsweep_v2_summary.json (81.6h older than the code); scale_N4.json (0.5h older than the code); bitsweep_v2_b.json (82.2h older than the code); price_dynamic_range.json (2.3h older than the code)  -- regenerate before citing"
   },
   {
     "name": "claims: every headline claim has evidence on disk",
     "kind": "conceptual",
     "status": "PASS",
-    "detail": "14/14 supported; unsupported: "
+    "detail": "22/22 supported; unsupported: "
   }
 ]

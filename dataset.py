@@ -138,7 +138,10 @@ def cached_pool(tag: str, **kwargs) -> Pool:
     path = CACHE / f"{tag}.pt"
     if path.exists():
         blob = torch.load(path, weights_only=False)
-        return Pool(**blob)
+        # Honour the caller's device on a cache HIT as well as a miss. The cache stores CPU
+        # tensors, so without this a cached pool silently comes back on CPU while the model is
+        # built on CUDA, and training dies on a device mismatch several frames deep.
+        return Pool(**blob).to(kwargs.get("device", "cpu"))
     pool = build_pool(**kwargs)
     torch.save(
         dict(gains=pool.gains.cpu(), se_ref=pool.se_ref.cpu(), ee_ref=pool.ee_ref.cpu(),

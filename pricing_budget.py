@@ -113,11 +113,15 @@ def main() -> None:
     sample = np.concatenate(sample)
     levels = {b: fit_levels(sample, b) for b in (1, 2, 3, 4, 6, 8)}
 
-    rows = []
-    for bits in (1, 2, 3, 4, 6, 8):
+    K_CAP = 512          # the plateau is established well before this; beyond it is only cost
+    prior = RESULTS / "pricing_budget_partial.json"
+    rows = json.loads(prior.read_text()) if prior.exists() else []
+    done = {(r["price_bits"], r["total_bits"]) for r in rows}
+    print(f"resuming with {len(rows)} cells already measured", flush=True)
+    for bits in (2, 3, 4, 6, 8, 1):          # the informative widths first
         for total in (42, 84, 168, 336, 672, 1344, 2688, 5376, 11424, 22601):
             K = total / (bits * E)
-            if K < 1:
+            if K < 1 or K > K_CAP or (bits, total) in done:
                 continue
             t0 = time.time()
             per_lam_q, per_lam_u = {}, {}

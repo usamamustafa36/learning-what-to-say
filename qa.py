@@ -495,6 +495,15 @@ def check_claims_register(rep: Report) -> None:
         "LLM allocator cost and accuracy": RESULTS / "llm.json",
         "Pareto front and hypervolume vs budget": RESULTS / "pareto.json",
         "prior repo's trend predictor vs persistence": RESULTS / "temporal.json",
+        # --- the B* restructure -------------------------------------------------------------
+        "B*(eps,N): the empirical minimum communication budget": RESULTS / "bstar.json",
+        "the classical methods run as algorithms": RESULTS / "standalone_classical.json",
+        "pricing charged for every bit it sends": RESULTS / "pricing_budget.json",
+        "zero-shot transfer across network size": RESULTS / "transfer.json",
+        "normaliser statistics drift with N": RESULTS / "norm_drift.json",
+        "noisy symbol channel and packet loss": RESULTS / "noisy_channel.json",
+        "CSI estimation error against an information-free control": RESULTS / "csi_error.json",
+        "preference conditioning at unseen lambda": RESULTS / "lambda_grid.json",
     }
     unsupported = [c for c, p in register.items() if not p.exists()]
     rep.add("claims: every headline claim has evidence on disk", "conceptual",

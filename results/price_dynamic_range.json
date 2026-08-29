@@ -1,0 +1,44 @@
+{
+  "decades": 15.085027806565892,
+  "min": 2.8149830891738915e-11,
+  "max": 34237.622312619016,
+  "n_samples": 16384,
+  "levels": [
+    {
+      "bits": 1,
+      "n_levels": 2,
+      "median_rel_error": 68.4427732965851,
+      "p90_rel_error": 1886.476374057232
+    },
+    {
+      "bits": 2,
+      "n_levels": 4,
+      "median_rel_error": 0.8271901318859175,
+      "p90_rel_error": 15.68565006999958
+    },
+    {
+      "bits": 3,
+      "n_levels": 8,
+      "median_rel_error": 0.3789445810273297,
+      "p90_rel_error": 2.877148499209448
+    },
+    {
+      "bits": 4,
+      "n_levels": 16,
+      "median_rel_error": 0.1822800607335301,
+      "p90_rel_error": 0.8880895952532967
+    },
+    {
+      "bits": 6,
+      "n_levels": 64,
+      "median_rel_error": 0.04570610274313019,
+      "p90_rel_error": 0.230303759466397
+    },
+    {
+      "bits": 8,
+      "n_levels": 256,
+      "median_rel_error": 0.01143860258329911,
+      "p90_rel_error": 0.05740730180988286
+    }
+  ]
+}

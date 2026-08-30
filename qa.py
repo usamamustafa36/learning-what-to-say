@@ -479,6 +479,27 @@ def check_results_freshness(rep: Report) -> None:
             "; ".join(stale) + ("  -- regenerate before citing" if stale else ""))
 
 
+def check_sweeps_complete(rep: Report) -> None:
+    """A partial grid must never be summarised as if it were the whole grid.
+
+    Both revision sweeps write their JSON after every cell so a kill is survivable, which means a
+    half-finished run is indistinguishable on disk from a finished one. That matters in a specific
+    direction: the differential pricing arm improves with price width and the sweep visits widths in
+    increasing order, so summarising early understates the strongest baseline and flatters the
+    paper's own claim. make_numbers.py withholds the macros; this reports the same fact out loud.
+    """
+    for tag, want, script in (("pricing_budgeted_variants", 345, "pricing_variants.py"),
+                              ("learned_baselines", 51, "learned_baselines.py")):
+        path = RESULTS / f"{tag}.json"
+        name = f"sweeps: {tag} is a complete grid"
+        if not path.exists():
+            rep.add(name, "conceptual", None, f"{tag}.json not present -- run {script}")
+            continue
+        n = len(json.loads(path.read_text()))
+        rep.add(name, "conceptual", n >= want,
+                f"{n}/{want} cells" + ("" if n >= want else f" -- still running, or rerun {script}"))
+
+
 def check_single_objective_solvers(rep: Report) -> None:
     """At its own objective, each classical solver must nearly match the reference.
 
@@ -502,6 +523,13 @@ def check_single_objective_solvers(rep: Report) -> None:
         bad.append(f"WMMSE at lambda=1 is {w1:.4f}")
     if d0 is not None and d0 < 1 - tol:
         bad.append(f"Dinkelbach at lambda=0 is {d0:.4f}")
+    if w1 is None or d0 is None:
+        # per_lambda.py writes after each arm, so a run in progress has a partial file. That is not
+        # a failure, but it must not be reported as a pass either.
+        rep.add("solvers: each matches the reference at its own objective", "conceptual", None,
+                "per_lambda.json is incomplete (arms present: "
+                + ", ".join(sorted(d)) + ") -- rerun per_lambda.py")
+        return
     rep.add("solvers: each matches the reference at its own objective", "conceptual",
             not bad, "; ".join(bad) if bad else
             f"WMMSE(lam=1) {w1:.4f}, Dinkelbach(lam=0) {d0:.4f}, both within {tol:.0%}")
@@ -554,6 +582,12 @@ def check_claims_register(rep: Report) -> None:
         "noisy symbol channel and packet loss": RESULTS / "noisy_channel.json",
         "CSI estimation error against an information-free control": RESULTS / "csi_error.json",
         "preference conditioning at unseen lambda": RESULTS / "lambda_grid.json",
+        # --- the pre-submission revision ----------------------------------------------------
+        "pricing coded for a moving scalar, not a static one": (
+            RESULTS / "pricing_budgeted_variants.json"),
+        "single-objective solvers scored across the preference axis": RESULTS / "per_lambda.json",
+        "a learned competitor that is not a codebook, and rounds against bits": (
+            RESULTS / "learned_baselines.json"),
     }
     unsupported = [c for c, p in register.items() if not p.exists()]
     rep.add("claims: every headline claim has evidence on disk", "conceptual",
@@ -589,6 +623,7 @@ def run(full: bool = False) -> int:
     check_objective_coverage(rep)
     check_results_freshness(rep)
     check_single_objective_solvers(rep)
+    check_sweeps_complete(rep)
     check_table_captions_name_pool(rep)
     check_claims_register(rep)
 

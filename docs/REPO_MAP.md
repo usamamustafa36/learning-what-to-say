@@ -28,6 +28,7 @@ fails if a headline claim has no backing file.
 | `agents.py` | `Normaliser` (frozen feature statistics), `graph_inputs`, `MessageChannel` (the VQ codebook + Gumbel-softmax), `ProtocolGNN` (the learned arm), and the quantised subclasses: `QuantisedCSIGNN` (raw bit-planes), `QuantisedCSIEmbedGNN` (matched representation), `PricedCSIGNN` (quantised interference price), `CentralisedGNN`. |
 | `train.py` | `Config`, `train()` (returns the net), `evaluate()` (accepts any pool; takes an optional `symbol_fn` to substitute transmitted symbols), `run_one()`. |
 | `checkpoints.py` | `train_cached()` / `save_net` / `load_net`, keyed on config **and** a pool fingerprint. Stores `net.norm` explicitly because it is a dataclass attribute, not a registered buffer, and `state_dict()` drops it. |
+| `learned_baselines.py` | Learned competitors that differ in *how* the symbol is made: `binary` (DIAL/CommNet straight-through sigmoid, no codebook) and `vq-noent` (the codebook with the usage-entropy bonus off, reported with its realised entropy). Also the Phase 4 rounds-against-bits cells at a matched B*R*(N-1). -> `results/learned_baselines.json`. |
 
 ## Classical arms
 
@@ -38,6 +39,8 @@ fails if a headline claim has no backing file.
 | `standalone_classical.py` | WMMSE, Dinkelbach and `interference_pricing` run as *algorithms* to convergence, unquantised, on current and stale CSI. -> `results/standalone_classical.json`. |
 | `pricing_budget.py` | The K-round b-bit quantised pricing sweep. `fit_levels` / `quantise` / `priced_rounds`. -> `results/pricing_budget.json`. See the caveat below. |
 | `price_dynamic_range.py` | Measures the dynamic range of the marginal harm and the quantiser's relative error per bit width. -> `results/price_dynamic_range.json`. |
+| `pricing_variants.py` | The Phase 1 replacement for `pricing_budget.py`: the same K-round b-bit sweep, but with five ways of coding a *moving* scalar (`absolute`, `differential`, `sign` with Jayant step adaptation, `adaptive` log-uniform range tracking, `dithered`), b up to 12 and budgets to 22,601 bits. -> `results/pricing_budgeted_variants.json`. |
+| `per_lambda.py` | The classical solvers scored at each preference weight, with WMMSE given the reference's 16 restarts. Asserts WMMSE(lambda=1) and Dinkelbach(lambda=0) are within 2% of the reference; a failure means the reference or a solver is broken. Also records each winner's own (SE, EE). -> `results/per_lambda.json`. |
 
 ### Caveat on the existing budgeted-pricing quantiser
 
@@ -48,7 +51,9 @@ the equal-power reference `p = P_max * 1` (`pricing_budget.py:100-113`), and are
 loop starts at `0.5 * P_max` and moves the price distribution off that operating point immediately,
 so every round after the first quantises against a stale codebook. That is a memoryless quantiser
 applied to a moving distribution, and it is why more rounds do not help: b=1 plateaus near 0.56
-whether K is 6 or 192. Phase 1 addresses exactly this.
+whether K is 6 or 192. `pricing_variants.py` addresses exactly this and supersedes
+`pricing_budget.py` for every claim about what a budgeted classical baseline can reach; the older
+file is kept because Table II's `priced` column and the `PQ*` macros still come from it.
 
 ## Experiment drivers
 
@@ -61,7 +66,10 @@ survivable, and return `list[dict]`.
 |---|---|
 | `run_sweep_a.py` / `run_sweep_b.py` / `run_priced.py` | `bitsweep_v2_*.json` -> Table II |
 | `scale_sweep.py`, `finish_scale.py` | `scale_N{4,8,16,32}.json` |
-| `bstar.py` | `bstar.json` -> the B* table |
+| `bstar.py` | `bstar.json` -> the B* figure |
+| `pricing_variants.py` | `pricing_budgeted_variants.json` -> the Phase 1 claim and `figures/fig_pricing_budget_curve.tex` |
+| `per_lambda.py` | `per_lambda.json` -> Table IV |
+| `learned_baselines.py` | `learned_baselines.json` -> the learned-ablation table |
 | `generalisation.py` | `transfer.json`, `norm_drift.json` |
 | `noisy_channel.py`, `robustness.py` | `noisy_channel.json`, `csi_error.json`, `lambda_grid.json` |
 | `traffic.py` | `traffic.json` (evaluation-only queue; **not currently cited by the paper**) |
@@ -75,9 +83,14 @@ survivable, and return `list[dict]`.
 | `paper/numbers.tex` | Generated. Every number the paper prints. |
 | `paper/make_numbers.py` | Reads `code/results/*.json`, writes `numbers.tex`. Unresolved macros become `[NOT RUN]`. |
 | `code/dump_params.py` | Generates Table I from the code's own constants. |
+| `figures/make_figures.py` | Emits every data-driven figure as an includable TeX fragment from `code/results/*.json`: `fig_bstar_vs_N`, `fig_robustness`, `fig_pricing_budget_curve`, `fig_pareto_front`, `fig_architecture`. A figure whose result file is absent is skipped with a message, never drawn from stale data. |
 | `code/qa.py` | Test suite: gradient checks, discreteness, determinism, physics sanity, the no-result-above-reference invariant, partial-information leakage, and the claim -> evidence registry. |
 
 ## Rebuild
 
-    cd paper && PYTHONPATH=../code python3 make_numbers.py && pdflatex main.tex && pdflatex main.tex
-    cd code && python3 qa.py
+    cd figures && PYTHONPATH=../code python3 make_figures.py
+    cd paper   && PYTHONPATH=../code python3 make_numbers.py && pdflatex main.tex && pdflatex main.tex
+    cd code    && python3 qa.py
+
+Long runs: `code/run_full.sh {pricing|perlambda|learned|all}`. Every long script takes `--smoke`,
+which runs a tiny grid (64 instances, one seed) to prove the code path before the full pool.

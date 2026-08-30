@@ -17,3 +17,32 @@
   binary     B=4 R=1 s=1: 0.9353  (124s)
   binary     B=4 R=1 s=2: 0.9348  (131s)
   binary     B=4 R=1 s=3: 0.9362  (111s)
+  binary     B=4 R=1 s=4: 0.9350  (40s)
+  binary     B=6 R=1 s=0: 0.9413  (40s)
+  binary     B=6 R=1 s=1: 0.9401  (50s)
+  binary     B=6 R=1 s=2: 0.9424  (74s)
+  binary     B=6 R=1 s=3: 0.9418  (67s)
+  binary     B=6 R=1 s=4: 0.9413  (68s)
+  binary     B=8 R=1 s=0: 0.9446  (59s)
+  binary     B=8 R=1 s=1: 0.9432  (90s)
+  binary     B=8 R=1 s=2: 0.9454  (106s)
+  binary     B=8 R=1 s=3: 0.9455  (102s)
+  binary     B=8 R=1 s=4: 0.9431  (90s)
+  vq-noent   B=2 s=0: 0.9136 ent 1.73
+  vq-noent   B=2 s=1: 0.9020 ent 1.74
+  vq-noent   B=2 s=2: 0.9262 ent 1.71
+  vq-noent   B=4 s=0: 0.9118 ent 2.67
+  vq-noent   B=4 s=1: 0.9114 ent 2.73
+  vq-noent   B=4 s=2: 0.9268 ent 2.70
+  vq-noent   B=6 s=0: 0.9287 ent 3.46
+  vq-noent   B=6 s=1: 0.9373 ent 3.28
+  vq-noent   B=6 s=2: 0.9397 ent 3.42
+  rounds     B=6 R=1 s=0: 0.9287  (98s)
+  rounds     B=6 R=1 s=1: 0.9373  (98s)
+  rounds     B=6 R=1 s=2: 0.9397  (96s)
+  rounds     B=3 R=2 s=0: 0.9590  (128s)
+  rounds     B=3 R=2 s=1: 0.9505  (129s)
+  rounds     B=3 R=2 s=2: 0.9583  (131s)
+  rounds     B=2 R=3 s=0: 0.9604  (158s)
+  rounds     B=2 R=3 s=1: 0.9547  (158s)
+  rounds     B=2 R=3 s=2: 0.9562  (160s)

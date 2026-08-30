@@ -1,3 +1,20 @@
 /home/ubuntu/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:129: UserWarning: CUDA initialization: CUDA unknown error - this may be due to an incorrectly set up environment, e.g. changing env variable CUDA_VISIBLE_DEVICES after program start. Setting the available devices to be zero. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:109.)
   return torch._C._cuda_getDeviceCount() > 0
   wmmse       lam=0.00 -> 0.3990
+  wmmse       lam=0.25 -> 0.5818
+  wmmse       lam=0.50 -> 0.7800
+  wmmse       lam=0.75 -> 0.9579
+  wmmse       lam=1.00 -> 0.9910
+  dinkelbach  lam=0.00 -> 0.9901
+  dinkelbach  lam=0.25 -> 0.9863
+  dinkelbach  lam=0.50 -> 0.9680
+  dinkelbach  lam=0.75 -> 0.9044
+  dinkelbach  lam=1.00 -> 0.7243
+  pricing     lam=0.00 -> 0.9755
+  pricing     lam=0.25 -> 0.9746
+  pricing     lam=0.50 -> 0.9739
+  pricing     lam=0.75 -> 0.9732
+  pricing     lam=1.00 -> 0.9716
+
+sanity: WMMSE at lam=1 -> 0.9910; Dinkelbach at lam=0 -> 0.9901 (need >= 0.98)
+sanity OK

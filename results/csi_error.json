@@ -1,26 +1,866 @@
 [
   {
     "arm": "sensing",
+    "bits": 0,
+    "seed": 0,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.8512008428573609,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 0,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.8484329342842102,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 0,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.8497002601623536,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 0,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8424110770225525,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 0,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8444019436836243,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 0,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8337604761123657,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 0,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8332729816436768,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 0,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.7893795967102051,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 0,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.7877474546432495,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 1,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.8517420411109924,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 1,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.8497339010238647,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 1,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.8486944913864136,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 1,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8433065295219422,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 1,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8432607173919677,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 1,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8351694464683532,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 1,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8327539086341857,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 1,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.7926689863204956,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 1,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.7881279110908508,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 2,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.8514230489730835,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 2,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.8483637928962707,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 2,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.8494332551956176,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 2,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8410059571266174,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 2,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8446406364440918,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 2,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8321378111839295,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 2,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8349730014801026,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 0,
+    "seed": 2,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.7894778370857238,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 0,
+    "seed": 2,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.7916379570960999,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 0,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.9071639776229858,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 0,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9048088550567627,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 0,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9061944842338562,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 0,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8967952489852905,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 0,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8978866696357727,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 0,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8850452423095703,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 0,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8868589162826538,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 0,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.837563979625702,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 0,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8370508551597595,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 1,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.9036478400230408,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 1,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9015007734298706,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 1,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9018909811973572,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 1,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8945589780807495,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 1,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.895048201084137,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 1,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8853531002998352,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 1,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8842408418655395,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 1,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8397675633430481,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 1,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8351708650588989,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 2,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.9077305912971496,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 2,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9052721858024597,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 2,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9040566563606263,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 2,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8972378253936768,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 2,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.8965127229690552,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 2,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8860263586044311,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 2,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.8874366641044616,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 2,
+    "seed": 2,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8367785573005676,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 2,
+    "seed": 2,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8391974210739136,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 0,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.9369128942489624,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 0,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9343914270401001,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 0,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.934056556224823,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 0,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9262702703475952,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 0,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9262042284011841,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 0,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.912954580783844,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 0,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.9126057863235474,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 0,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8610257983207703,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 0,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8568708181381226,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 1,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.9335109710693359,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 1,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9310432076454163,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 1,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9323765873908997,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 1,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9247291922569275,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 1,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.923557710647583,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 1,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.9122375845909119,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 1,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.9114327907562256,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 1,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8566140055656433,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 1,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.854248321056366,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 2,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.9390680313110351,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 2,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9369563102722168,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 2,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9361760497093201,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 2,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9282801270484924,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 2,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9290606856346131,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 2,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.9157775998115539,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 2,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.9166152834892273,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 4,
+    "seed": 2,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8608666658401489,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 4,
+    "seed": 2,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8600173592567444,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
     "bits": 6,
     "seed": 0,
     "sigma_db": 0.0,
-    "mean_ratio": 0.83565673828125,
-    "n_instances": 64
+    "mean_ratio": 0.9482893228530884,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 0,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.945947241783142,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 0,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9452314019203186,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 0,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9385339379310608,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 0,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9373404383659363,
+    "n_instances": 2048
   },
   {
     "arm": "sensing",
     "bits": 6,
     "seed": 0,
     "sigma_db": 3.0,
-    "mean_ratio": 0.8256862878799438,
-    "n_instances": 64
+    "mean_ratio": 0.9252350807189942,
+    "n_instances": 2048
   },
   {
     "arm": "shuffled",
     "bits": 6,
     "seed": 0,
     "sigma_db": 3.0,
-    "mean_ratio": 0.8070827960968018,
-    "n_instances": 64
+    "mean_ratio": 0.9229302763938904,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 0,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8706112980842591,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 0,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8635671496391296,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 1,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.9471867442131042,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 1,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9437202215194702,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 1,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9460426449775696,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 1,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9377039313316345,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 1,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9384179830551147,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 1,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.9258735418319702,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 1,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.9264071583747864,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 1,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8668967962265015,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 1,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8669287323951721,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 2,
+    "sigma_db": 0.0,
+    "mean_ratio": 0.9492661356925964,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 2,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.9464022159576416,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 2,
+    "sigma_db": 1.0,
+    "mean_ratio": 0.944405484199524,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 2,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9383107423782349,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 2,
+    "sigma_db": 2.0,
+    "mean_ratio": 0.9366848468780518,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 2,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.9255844593048096,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 2,
+    "sigma_db": 3.0,
+    "mean_ratio": 0.9245247602462768,
+    "n_instances": 2048
+  },
+  {
+    "arm": "sensing",
+    "bits": 6,
+    "seed": 2,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.865470016002655,
+    "n_instances": 2048
+  },
+  {
+    "arm": "shuffled",
+    "bits": 6,
+    "seed": 2,
+    "sigma_db": 6.0,
+    "mean_ratio": 0.8669010400772095,
+    "n_instances": 2048
   }
 ]

@@ -5,7 +5,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.0,
-    "mean_ratio": 0.9136402368545532,
+    "mean_ratio": 0.9071639776229858,
     "n_instances": 2048
   },
   {
@@ -14,7 +14,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 1e-05,
-    "mean_ratio": 0.9136298537254334,
+    "mean_ratio": 0.9071633815765381,
     "n_instances": 2048
   },
   {
@@ -23,7 +23,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.0001,
-    "mean_ratio": 0.9135878682136536,
+    "mean_ratio": 0.907117223739624,
     "n_instances": 2048
   },
   {
@@ -32,7 +32,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.001,
-    "mean_ratio": 0.9133048772811889,
+    "mean_ratio": 0.9067916512489319,
     "n_instances": 2048
   },
   {
@@ -41,7 +41,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.01,
-    "mean_ratio": 0.9092778921127319,
+    "mean_ratio": 0.9040527820587159,
     "n_instances": 2048
   },
   {
@@ -50,7 +50,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.1,
-    "mean_ratio": 0.8736435413360596,
+    "mean_ratio": 0.8795413732528686,
     "n_instances": 2048
   },
   {
@@ -59,7 +59,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.0,
-    "mean_ratio": 0.9136402368545532,
+    "mean_ratio": 0.9071639776229858,
     "n_instances": 2048
   },
   {
@@ -68,7 +68,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.01,
-    "mean_ratio": 0.912809181213379,
+    "mean_ratio": 0.9065398693084716,
     "n_instances": 2048
   },
   {
@@ -77,7 +77,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.05,
-    "mean_ratio": 0.9087400674819947,
+    "mean_ratio": 0.9042213678359985,
     "n_instances": 2048
   },
   {
@@ -86,7 +86,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.1,
-    "mean_ratio": 0.9031617164611816,
+    "mean_ratio": 0.901149582862854,
     "n_instances": 2048
   },
   {
@@ -95,7 +95,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.25,
-    "mean_ratio": 0.8829566359519958,
+    "mean_ratio": 0.8900432705879211,
     "n_instances": 2048
   },
   {
@@ -104,7 +104,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.0,
-    "mean_ratio": 0.9020242929458618,
+    "mean_ratio": 0.9036478400230408,
     "n_instances": 2048
   },
   {
@@ -113,7 +113,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 1e-05,
-    "mean_ratio": 0.9020193576812744,
+    "mean_ratio": 0.9036436796188354,
     "n_instances": 2048
   },
   {
@@ -122,7 +122,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.0001,
-    "mean_ratio": 0.902013897895813,
+    "mean_ratio": 0.9036481022834778,
     "n_instances": 2048
   },
   {
@@ -131,7 +131,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.001,
-    "mean_ratio": 0.9018726825714112,
+    "mean_ratio": 0.9034051775932312,
     "n_instances": 2048
   },
   {
@@ -140,7 +140,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.01,
-    "mean_ratio": 0.9003514528274537,
+    "mean_ratio": 0.9011605501174926,
     "n_instances": 2048
   },
   {
@@ -149,7 +149,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.1,
-    "mean_ratio": 0.8856881856918335,
+    "mean_ratio": 0.8786087274551392,
     "n_instances": 2048
   },
   {
@@ -158,7 +158,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.0,
-    "mean_ratio": 0.9020242929458618,
+    "mean_ratio": 0.9036478400230408,
     "n_instances": 2048
   },
   {
@@ -167,7 +167,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.01,
-    "mean_ratio": 0.9013813018798829,
+    "mean_ratio": 0.9026613235473633,
     "n_instances": 2048
   },
   {
@@ -176,7 +176,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.05,
-    "mean_ratio": 0.8984721302986145,
+    "mean_ratio": 0.8986133933067322,
     "n_instances": 2048
   },
   {
@@ -185,7 +185,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.1,
-    "mean_ratio": 0.8942503213882447,
+    "mean_ratio": 0.8926825284957886,
     "n_instances": 2048
   },
   {
@@ -194,7 +194,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.25,
-    "mean_ratio": 0.8770190596580505,
+    "mean_ratio": 0.8712145686149597,
     "n_instances": 2048
   },
   {
@@ -203,7 +203,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.0,
-    "mean_ratio": 0.9262425303459167,
+    "mean_ratio": 0.9077305912971496,
     "n_instances": 2048
   },
   {
@@ -212,7 +212,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 1e-05,
-    "mean_ratio": 0.9262420892715454,
+    "mean_ratio": 0.9077319264411926,
     "n_instances": 2048
   },
   {
@@ -221,7 +221,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.0001,
-    "mean_ratio": 0.926192831993103,
+    "mean_ratio": 0.9076883316040039,
     "n_instances": 2048
   },
   {
@@ -230,7 +230,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.001,
-    "mean_ratio": 0.9258265733718872,
+    "mean_ratio": 0.9073391675949096,
     "n_instances": 2048
   },
   {
@@ -239,7 +239,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.01,
-    "mean_ratio": 0.9220487833023071,
+    "mean_ratio": 0.90433748960495,
     "n_instances": 2048
   },
   {
@@ -248,7 +248,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.1,
-    "mean_ratio": 0.8815836668014526,
+    "mean_ratio": 0.8806809544563293,
     "n_instances": 2048
   },
   {
@@ -257,7 +257,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.0,
-    "mean_ratio": 0.9262425303459167,
+    "mean_ratio": 0.9077305912971496,
     "n_instances": 2048
   },
   {
@@ -266,7 +266,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.01,
-    "mean_ratio": 0.9251736760139465,
+    "mean_ratio": 0.9070716857910156,
     "n_instances": 2048
   },
   {
@@ -275,7 +275,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.05,
-    "mean_ratio": 0.9207942485809326,
+    "mean_ratio": 0.9045454025268554,
     "n_instances": 2048
   },
   {
@@ -284,7 +284,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.1,
-    "mean_ratio": 0.9142307162284851,
+    "mean_ratio": 0.9003745317459106,
     "n_instances": 2048
   },
   {
@@ -293,7 +293,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.25,
-    "mean_ratio": 0.8914188981056214,
+    "mean_ratio": 0.8866893410682678,
     "n_instances": 2048
   },
   {
@@ -302,7 +302,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.0,
-    "mean_ratio": 0.9117720484733581,
+    "mean_ratio": 0.9369128942489624,
     "n_instances": 2048
   },
   {
@@ -311,7 +311,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 1e-05,
-    "mean_ratio": 0.9117726683616638,
+    "mean_ratio": 0.9368625164031983,
     "n_instances": 2048
   },
   {
@@ -320,7 +320,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.0001,
-    "mean_ratio": 0.9116828441619873,
+    "mean_ratio": 0.9367567300796509,
     "n_instances": 2048
   },
   {
@@ -329,7 +329,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.001,
-    "mean_ratio": 0.9110651135444641,
+    "mean_ratio": 0.9359567284584045,
     "n_instances": 2048
   },
   {
@@ -338,7 +338,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.01,
-    "mean_ratio": 0.906145703792572,
+    "mean_ratio": 0.9293552875518799,
     "n_instances": 2048
   },
   {
@@ -347,7 +347,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.1,
-    "mean_ratio": 0.8692984104156494,
+    "mean_ratio": 0.8740004301071167,
     "n_instances": 2048
   },
   {
@@ -356,7 +356,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.0,
-    "mean_ratio": 0.9117720484733581,
+    "mean_ratio": 0.9369128942489624,
     "n_instances": 2048
   },
   {
@@ -365,7 +365,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.01,
-    "mean_ratio": 0.9110535740852356,
+    "mean_ratio": 0.9338592052459717,
     "n_instances": 2048
   },
   {
@@ -374,7 +374,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.05,
-    "mean_ratio": 0.9073627591133118,
+    "mean_ratio": 0.9202346801757812,
     "n_instances": 2048
   },
   {
@@ -383,7 +383,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.1,
-    "mean_ratio": 0.9020249843597412,
+    "mean_ratio": 0.9016819953918457,
     "n_instances": 2048
   },
   {
@@ -392,7 +392,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.25,
-    "mean_ratio": 0.8812940120697021,
+    "mean_ratio": 0.8393040657043457,
     "n_instances": 2048
   },
   {
@@ -401,7 +401,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.0,
-    "mean_ratio": 0.9113636612892151,
+    "mean_ratio": 0.9335109710693359,
     "n_instances": 2048
   },
   {
@@ -410,7 +410,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 1e-05,
-    "mean_ratio": 0.9113579392433167,
+    "mean_ratio": 0.9334927082061768,
     "n_instances": 2048
   },
   {
@@ -419,7 +419,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.0001,
-    "mean_ratio": 0.9113558292388916,
+    "mean_ratio": 0.9334262132644653,
     "n_instances": 2048
   },
   {
@@ -428,7 +428,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.001,
-    "mean_ratio": 0.9110577225685119,
+    "mean_ratio": 0.9328112840652466,
     "n_instances": 2048
   },
   {
@@ -437,7 +437,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.01,
-    "mean_ratio": 0.9083394527435302,
+    "mean_ratio": 0.9251980900764465,
     "n_instances": 2048
   },
   {
@@ -446,7 +446,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.1,
-    "mean_ratio": 0.8818944811820983,
+    "mean_ratio": 0.8659955620765686,
     "n_instances": 2048
   },
   {
@@ -455,7 +455,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.0,
-    "mean_ratio": 0.9113636612892151,
+    "mean_ratio": 0.9335109710693359,
     "n_instances": 2048
   },
   {
@@ -464,7 +464,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.01,
-    "mean_ratio": 0.9106857776641846,
+    "mean_ratio": 0.930869746208191,
     "n_instances": 2048
   },
   {
@@ -473,7 +473,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.05,
-    "mean_ratio": 0.9072146415710449,
+    "mean_ratio": 0.9185461044311524,
     "n_instances": 2048
   },
   {
@@ -482,7 +482,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.1,
-    "mean_ratio": 0.9019302129745483,
+    "mean_ratio": 0.9007656455039978,
     "n_instances": 2048
   },
   {
@@ -491,7 +491,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.25,
-    "mean_ratio": 0.881857180595398,
+    "mean_ratio": 0.8418065071105957,
     "n_instances": 2048
   },
   {
@@ -500,7 +500,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.0,
-    "mean_ratio": 0.9267963290214538,
+    "mean_ratio": 0.9390680313110351,
     "n_instances": 2048
   },
   {
@@ -509,7 +509,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 1e-05,
-    "mean_ratio": 0.9267975807189941,
+    "mean_ratio": 0.9390602231025695,
     "n_instances": 2048
   },
   {
@@ -518,7 +518,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.0001,
-    "mean_ratio": 0.9267324924468994,
+    "mean_ratio": 0.93891841173172,
     "n_instances": 2048
   },
   {
@@ -527,7 +527,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.001,
-    "mean_ratio": 0.9259393334388732,
+    "mean_ratio": 0.9380296349525452,
     "n_instances": 2048
   },
   {
@@ -536,7 +536,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.01,
-    "mean_ratio": 0.919122064113617,
+    "mean_ratio": 0.9288505911827087,
     "n_instances": 2048
   },
   {
@@ -545,7 +545,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.1,
-    "mean_ratio": 0.8652926325798035,
+    "mean_ratio": 0.8575178623199463,
     "n_instances": 2048
   },
   {
@@ -554,7 +554,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.0,
-    "mean_ratio": 0.9267963290214538,
+    "mean_ratio": 0.9390680313110351,
     "n_instances": 2048
   },
   {
@@ -563,7 +563,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.01,
-    "mean_ratio": 0.9256042599678039,
+    "mean_ratio": 0.9380116581916809,
     "n_instances": 2048
   },
   {
@@ -572,7 +572,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.05,
-    "mean_ratio": 0.9207194566726684,
+    "mean_ratio": 0.9327166914939881,
     "n_instances": 2048
   },
   {
@@ -581,7 +581,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.1,
-    "mean_ratio": 0.9133222460746765,
+    "mean_ratio": 0.9255023837089539,
     "n_instances": 2048
   },
   {
@@ -590,7 +590,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.25,
-    "mean_ratio": 0.8876269340515137,
+    "mean_ratio": 0.9017704486846924,
     "n_instances": 2048
   },
   {
@@ -599,7 +599,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.0,
-    "mean_ratio": 0.9286728739738465,
+    "mean_ratio": 0.9482893228530884,
     "n_instances": 2048
   },
   {
@@ -608,7 +608,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 1e-05,
-    "mean_ratio": 0.9286826729774476,
+    "mean_ratio": 0.9482940793037414,
     "n_instances": 2048
   },
   {
@@ -617,7 +617,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.0001,
-    "mean_ratio": 0.928552782535553,
+    "mean_ratio": 0.9481086254119873,
     "n_instances": 2048
   },
   {
@@ -626,7 +626,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.001,
-    "mean_ratio": 0.9278929591178894,
+    "mean_ratio": 0.9465932250022888,
     "n_instances": 2048
   },
   {
@@ -635,7 +635,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.01,
-    "mean_ratio": 0.9221868515014648,
+    "mean_ratio": 0.935274875164032,
     "n_instances": 2048
   },
   {
@@ -644,7 +644,7 @@
     "seed": 0,
     "impairment": "ber",
     "level": 0.1,
-    "mean_ratio": 0.8769220352172852,
+    "mean_ratio": 0.8544443845748901,
     "n_instances": 2048
   },
   {
@@ -653,7 +653,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.0,
-    "mean_ratio": 0.9286728739738465,
+    "mean_ratio": 0.9482893228530884,
     "n_instances": 2048
   },
   {
@@ -662,7 +662,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.01,
-    "mean_ratio": 0.9276939511299134,
+    "mean_ratio": 0.9471006155014038,
     "n_instances": 2048
   },
   {
@@ -671,7 +671,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.05,
-    "mean_ratio": 0.9224399447441101,
+    "mean_ratio": 0.9409612894058228,
     "n_instances": 2048
   },
   {
@@ -680,7 +680,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.1,
-    "mean_ratio": 0.914962637424469,
+    "mean_ratio": 0.9326129078865051,
     "n_instances": 2048
   },
   {
@@ -689,7 +689,7 @@
     "seed": 0,
     "impairment": "erasure",
     "level": 0.25,
-    "mean_ratio": 0.888879120349884,
+    "mean_ratio": 0.9063707113265991,
     "n_instances": 2048
   },
   {
@@ -698,7 +698,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.0,
-    "mean_ratio": 0.9372865319252014,
+    "mean_ratio": 0.9471867442131042,
     "n_instances": 2048
   },
   {
@@ -707,7 +707,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 1e-05,
-    "mean_ratio": 0.9372714519500732,
+    "mean_ratio": 0.9471693754196167,
     "n_instances": 2048
   },
   {
@@ -716,7 +716,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.0001,
-    "mean_ratio": 0.9372360467910766,
+    "mean_ratio": 0.9470947504043579,
     "n_instances": 2048
   },
   {
@@ -725,7 +725,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.001,
-    "mean_ratio": 0.9368677377700806,
+    "mean_ratio": 0.9461782932281494,
     "n_instances": 2048
   },
   {
@@ -734,7 +734,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.01,
-    "mean_ratio": 0.9310510396957398,
+    "mean_ratio": 0.9365994453430175,
     "n_instances": 2048
   },
   {
@@ -743,7 +743,7 @@
     "seed": 1,
     "impairment": "ber",
     "level": 0.1,
-    "mean_ratio": 0.878568172454834,
+    "mean_ratio": 0.8632766127586364,
     "n_instances": 2048
   },
   {
@@ -752,7 +752,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.0,
-    "mean_ratio": 0.9372865319252014,
+    "mean_ratio": 0.9471867442131042,
     "n_instances": 2048
   },
   {
@@ -761,7 +761,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.01,
-    "mean_ratio": 0.9357569336891174,
+    "mean_ratio": 0.9458927035331726,
     "n_instances": 2048
   },
   {
@@ -770,7 +770,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.05,
-    "mean_ratio": 0.9301741600036622,
+    "mean_ratio": 0.9404987812042236,
     "n_instances": 2048
   },
   {
@@ -779,7 +779,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.1,
-    "mean_ratio": 0.921806001663208,
+    "mean_ratio": 0.9329235076904296,
     "n_instances": 2048
   },
   {
@@ -788,7 +788,7 @@
     "seed": 1,
     "impairment": "erasure",
     "level": 0.25,
-    "mean_ratio": 0.8919851660728455,
+    "mean_ratio": 0.9065538644790649,
     "n_instances": 2048
   },
   {
@@ -797,7 +797,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.0,
-    "mean_ratio": 0.9397315382957458,
+    "mean_ratio": 0.9492661356925964,
     "n_instances": 2048
   },
   {
@@ -806,7 +806,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 1e-05,
-    "mean_ratio": 0.939736521244049,
+    "mean_ratio": 0.9492658853530884,
     "n_instances": 2048
   },
   {
@@ -815,7 +815,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.0001,
-    "mean_ratio": 0.9396103620529175,
+    "mean_ratio": 0.9490565776824951,
     "n_instances": 2048
   },
   {
@@ -824,7 +824,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.001,
-    "mean_ratio": 0.9390032649040222,
+    "mean_ratio": 0.9476975083351136,
     "n_instances": 2048
   },
   {
@@ -833,7 +833,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.01,
-    "mean_ratio": 0.9321647763252259,
+    "mean_ratio": 0.9340345144271851,
     "n_instances": 2048
   },
   {
@@ -842,7 +842,7 @@
     "seed": 2,
     "impairment": "ber",
     "level": 0.1,
-    "mean_ratio": 0.8766209006309509,
+    "mean_ratio": 0.8466943264007568,
     "n_instances": 2048
   },
   {
@@ -851,7 +851,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.0,
-    "mean_ratio": 0.9397315382957458,
+    "mean_ratio": 0.9492661356925964,
     "n_instances": 2048
   },
   {
@@ -860,7 +860,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.01,
-    "mean_ratio": 0.9383540272712707,
+    "mean_ratio": 0.9479231119155884,
     "n_instances": 2048
   },
   {
@@ -869,7 +869,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.05,
-    "mean_ratio": 0.9326557159423828,
+    "mean_ratio": 0.9419993877410888,
     "n_instances": 2048
   },
   {
@@ -878,7 +878,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.1,
-    "mean_ratio": 0.9239306092262268,
+    "mean_ratio": 0.9339030027389527,
     "n_instances": 2048
   },
   {
@@ -887,7 +887,7 @@
     "seed": 2,
     "impairment": "erasure",
     "level": 0.25,
-    "mean_ratio": 0.8956725478172303,
+    "mean_ratio": 0.9091917991638183,
     "n_instances": 2048
   },
   {

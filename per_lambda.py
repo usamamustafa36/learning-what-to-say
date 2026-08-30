@@ -83,6 +83,9 @@ def best_of(fn, a, rng, n_start, p_max):
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--arms", default="wmmse,dinkelbach,pricing",
+                    help="comma-separated arms to (re)run; others are carried over from the "
+                         "existing file, so a cheap arm can be refreshed without the expensive ones")
     ap.add_argument("--csi", choices=("current", "stale"), default="current",
                     help="which measurement the solvers decide on; scoring is always on slot t")
     args = ap.parse_args()
@@ -99,13 +102,21 @@ def main() -> None:
     noise, pc = pool.noise_power, CIRCUIT_POWER_W
     oracle = {float(k): v.numpy()[:size] for k, v in pool.oracle.items()}
 
+    name = ("per_lambda_smoke" if args.smoke else
+            "per_lambda" if args.csi == "current" else "per_lambda_stale")
+    want = tuple(a.strip() for a in args.arms.split(",") if a.strip())
     rows = {}
-    for arm in ("wmmse", "dinkelbach", "pricing"):
+    if (RESULTS / f"{name}.json").exists() and not args.smoke:
+        rows = {k: v for k, v in json.loads((RESULTS / f"{name}.json").read_text()).items()
+                if k not in want}
+        if rows:
+            print(f"carrying {', '.join(rows)} from the existing file", flush=True)
+    for arm in want:
         t0 = time.time()
         per_lam, se_lam, ee_lam = {}, [], []
         for lam in LAMBDAS:
             rng = np.random.default_rng(11)
-            rs, ses, ees = [], [], []
+            rs, ses, ees, iters = [], [], [], []
             for m in range(size):
                 a, a_eval = A[m], A_eval[m]
                 sr, er = float(se_ref[m]), float(ee_ref[m])
@@ -115,7 +126,8 @@ def main() -> None:
                 elif arm == "dinkelbach":
                     cands = best_of(lambda i: dinkelbach(a, noise, P_MAX_W, pc), a, rng, 1, P_MAX_W)
                 else:
-                    cands = [interference_pricing(a, noise, P_MAX_W, lam, sr, er, pc)]
+                    p_pr, it = interference_pricing(a, noise, P_MAX_W, lam, sr, er, pc, count=True)
+                    cands, iters = [p_pr], iters + [it]
                 # argmax, not max: the winning allocation's own (SE, EE) is what the Pareto
                 # figure plots, so scoring and coordinates must come from the same p.
                 pb = max(cands, key=lambda p: score(p, a_eval, sr, er, noise, pc, lam))
@@ -130,12 +142,20 @@ def main() -> None:
                      "lambdas": list(LAMBDAS),
                      "se_by_lambda": se_lam, "ee_by_lambda": ee_lam,
                      "mean_ratio": float(np.mean(list(per_lam.values()))),
+                     # Iterations to convergence: the paper turns this into a bit count as
+                     # 32 * (N-1) * iters, so it must come from the same pool as the ratio it sits
+                     # beside rather than from a differently sized run.
+                     "pricing_iters_mean": float(np.mean(iters)) if iters else None,
+                     "pricing_iters_p95": float(np.percentile(iters, 95)) if iters else None,
                      "seconds": time.time() - t0}
         RESULTS.mkdir(parents=True, exist_ok=True)
-        name = ("per_lambda_smoke" if args.smoke else
-                "per_lambda" if args.csi == "current" else "per_lambda_stale")
         (RESULTS / f"{name}.json").write_text(json.dumps(rows, indent=2))
 
+    # The sanity conditions are about the two single-objective solvers; a run that did not include
+    # them (--arms pricing, say) has nothing to assert and must not pretend otherwise.
+    if not ({"wmmse", "dinkelbach"} <= set(rows)):
+        print("sanity: skipped, this run did not include both single-objective solvers")
+        return
     w1 = rows["wmmse"]["per_lambda"]["1.0"]
     d0 = rows["dinkelbach"]["per_lambda"]["0.0"]
     print(f"\nsanity: WMMSE at lam=1 -> {w1:.4f}; Dinkelbach at lam=0 -> {d0:.4f} (need >= {1-TOL})")

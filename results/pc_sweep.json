@@ -1,0 +1,34 @@
+[
+  {
+    "circuit_power_w": 0.01,
+    "circuit_power_mw": 10.0,
+    "se_lam0": 19.3930606842041,
+    "se_lam1": 26.41183090209961,
+    "ee_lam0": 196.54364013671875,
+    "ee_lam1": 65.05058288574219,
+    "se_move_pct": 36.192173748068484,
+    "ee_move_pct": 66.90272814704561,
+    "n_instances": 512,
+    "n_starts": 16,
+    "n_steps": 800,
+    "seed": 7,
+    "adopted": true,
+    "seconds": 50.01230454444885
+  },
+  {
+    "circuit_power_w": 0.1,
+    "circuit_power_mw": 100.0,
+    "se_lam0": 24.201356887817383,
+    "se_lam1": 26.411636352539062,
+    "ee_lam0": 27.200855255126953,
+    "ee_lam1": 23.302278518676758,
+    "se_move_pct": 9.132874139938421,
+    "ee_move_pct": 14.332552046191166,
+    "n_instances": 512,
+    "n_starts": 16,
+    "n_steps": 800,
+    "seed": 7,
+    "adopted": false,
+    "seconds": 52.735421895980835
+  }
+]

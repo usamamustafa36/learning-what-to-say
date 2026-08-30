@@ -1,1 +1,3 @@
   Pc= 10.0 mW -> SE moves  36.2%, EE moves  66.9%  (50s)
+  Pc=100.0 mW -> SE moves   9.1%, EE moves  14.3%  (53s)
+wrote /home/ubuntu/Projects/THESIS/completed/usama-phd/paper07-tccn-learning-what-to-say/code/results/pc_sweep.json; sanity OK at the adopted Pc

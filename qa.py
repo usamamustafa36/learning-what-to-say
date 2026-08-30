@@ -479,6 +479,30 @@ def check_results_freshness(rep: Report) -> None:
             "; ".join(stale) + ("  -- regenerate before citing" if stale else ""))
 
 
+def check_pricing_sweep_reproduces(rep: Report) -> None:
+    """The new pricing sweep must reproduce the old one where they overlap.
+
+    pricing_variants.py replaces pricing_budget.py and reaches a very different conclusion, so the
+    first question a reader will have is whether it is the same experiment. Its `absolute` arm is
+    the old coding, and restricted to the old sweep's price widths (b <= 8) it must land on the same
+    best. If it does not, one of the two is wrong and the claim built on the new one is unsafe.
+    """
+    old, new = RESULTS / "pricing_budget.json", RESULTS / "pricing_budgeted_variants.json"
+    name = "pricing: the new sweep reproduces the old one where they overlap"
+    if not (old.exists() and new.exists()):
+        rep.add(name, "conceptual", None, "one of the two pricing sweeps is missing")
+        return
+    a = max(r["mean_ratio"] for r in json.loads(old.read_text()))
+    sel = [r for r in json.loads(new.read_text())
+           if r["variant"] == "absolute" and r["price_bits"] <= 8]
+    if not sel:
+        rep.add(name, "conceptual", None, "the absolute arm has not reached b <= 8 yet")
+        return
+    b = max(r["mean_ratio"] for r in sel)
+    rep.add(name, "conceptual", abs(a - b) < 1e-6,
+            f"old best {a:.4f}, new absolute arm at b<=8 {b:.4f}, difference {abs(a-b):.2e}")
+
+
 def check_sweeps_complete(rep: Report) -> None:
     """A partial grid must never be summarised as if it were the whole grid.
 
@@ -625,6 +649,7 @@ def run(full: bool = False) -> int:
     check_results_freshness(rep)
     check_single_objective_solvers(rep)
     check_sweeps_complete(rep)
+    check_pricing_sweep_reproduces(rep)
     check_table_captions_name_pool(rep)
     check_claims_register(rep)
 

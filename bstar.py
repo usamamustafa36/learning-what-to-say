@@ -95,7 +95,9 @@ def b_star(c: dict, eps: float, ref: str = "central") -> dict:
         "eps": eps, "ref": ref,
         "b_star": hit,
         "censored": hit is None,
-        "display": str(hit) if hit is not None else f">{bits[-1]}",
+        # LaTeX renders a bare ">" in text mode as an inverted question mark under OT1 encoding,
+        # which silently corrupted every censored cell of the B* table. Emit it in math mode.
+        "display": str(hit) if hit is not None else f"$>${bits[-1]}",
         "b_star_isotonic": hit_iso,
         "monotone_agrees": hit == hit_iso,
         "grid": bits,

@@ -1,0 +1,5 @@
+  binary     B=1 R=1 s=0: 0.8924  (105s)
+  binary     B=1 R=1 s=1: 0.8927  (120s)
+  binary     B=1 R=1 s=2: 0.8958  (117s)
+  binary     B=1 R=1 s=3: 0.8925  (122s)
+  binary     B=1 R=1 s=4: 0.8918  (123s)

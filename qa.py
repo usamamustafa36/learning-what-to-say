@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 import time
@@ -478,6 +479,55 @@ def check_results_freshness(rep: Report) -> None:
             "; ".join(stale) + ("  -- regenerate before citing" if stale else ""))
 
 
+def check_single_objective_solvers(rep: Report) -> None:
+    """At its own objective, each classical solver must nearly match the reference.
+
+    WMMSE maximises sum rate, so at lambda = 1 it is solving the reference's problem and should come
+    within a couple of percent of it; Dinkelbach likewise at lambda = 0. A larger gap means either
+    the reference is loose or the solver is broken, and every ratio in the paper is a ratio to that
+    reference. This caught a real defect: the standalone arm ran wmmse() from a single
+    initialisation while the reference uses 16 restarts, which understated WMMSE by ~2.3 points at
+    lambda = 1 and dragged its preference-averaged score down.
+    """
+    path = RESULTS / "per_lambda.json"
+    if not path.exists():
+        rep.add("solvers: each matches the reference at its own objective", "conceptual",
+                None, "per_lambda.json not present -- run per_lambda.py")
+        return
+    d = json.loads(path.read_text())
+    tol, bad = 0.02, []
+    w1 = d.get("wmmse", {}).get("per_lambda", {}).get("1.0")
+    d0 = d.get("dinkelbach", {}).get("per_lambda", {}).get("0.0")
+    if w1 is not None and w1 < 1 - tol:
+        bad.append(f"WMMSE at lambda=1 is {w1:.4f}")
+    if d0 is not None and d0 < 1 - tol:
+        bad.append(f"Dinkelbach at lambda=0 is {d0:.4f}")
+    rep.add("solvers: each matches the reference at its own objective", "conceptual",
+            not bad, "; ".join(bad) if bad else
+            f"WMMSE(lam=1) {w1:.4f}, Dinkelbach(lam=0) {d0:.4f}, both within {tol:.0%}")
+
+
+def check_table_captions_name_pool(rep: Report) -> None:
+    """Every results table must name the pool and seed count it was measured on.
+
+    The same arm carries different numbers in different tables because each experiment evaluates on
+    the pool its own question needs. That is legitimate, but a reader comparing two tables can only
+    see it if each caption says so locally rather than deferring to the methodology section.
+    """
+    tex = Path(__file__).parent.parent / "paper" / "main.tex"
+    if not tex.exists():
+        rep.add("captions: every results table names its pool", "conceptual", None, "main.tex absent")
+        return
+    src = tex.read_text()
+    # Results tables are the ones printing a generated macro; Table I is constants, not results.
+    caps = re.findall(r"\\caption\{(.*?)\}\n\\label\{(tab:[^}]+)\}", src, re.S)
+    missing = [lbl for cap, lbl in caps
+               if lbl not in ("tab:params", "tab:related") and "Pool:" not in cap]
+    rep.add("captions: every results table names its pool", "conceptual",
+            not missing, f"missing in: {', '.join(missing)}" if missing
+            else f"{len(caps)} captions checked")
+
+
 def check_claims_register(rep: Report) -> None:
     """Headline claims must each point at evidence that exists."""
     register = {
@@ -538,6 +588,8 @@ def run(full: bool = False) -> int:
     check_task_calibration(rep, full)
     check_objective_coverage(rep)
     check_results_freshness(rep)
+    check_single_objective_solvers(rep)
+    check_table_captions_name_pool(rep)
     check_claims_register(rep)
 
     fails = rep.summary()

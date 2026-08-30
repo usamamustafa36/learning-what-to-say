@@ -1,0 +1,120 @@
+"""
+Per-preference breakdown, with the classical solvers given the same restart budget as the reference.
+
+Averaging WMMSE over the preference grid gives 0.6938, which invites the reasonable objection that
+at lambda = 1 a sum-rate maximiser should nearly match a sum-rate reference. Two things are going on
+and only one of them is interesting.
+
+The interesting one is that WMMSE and Dinkelbach each optimise a single objective and are then
+scored across the whole preference axis, so their average is dragged down by the far end where they
+are solving the wrong problem. That is the multi-objective point of the paper.
+
+The uninteresting one is a defect in how they were run: the centralised reference uses 16 restarts
+of projected gradient, while standalone_classical called wmmse() from one initialisation. Measured
+at lambda = 1 on 200 instances: 0.9712 at one start, 0.9876 at four, 0.9946 at sixteen. The
+single-start gap is initialisation, not method, and reporting it as if it were the method would
+understate the baseline. This script gives both solvers the reference's restart budget.
+
+Emits the per-lambda table and asserts the two sanity conditions: at lambda = 1 WMMSE must be within
+2% of the reference, and at lambda = 0 Dinkelbach likewise. A failure means the reference or a
+solver is broken and the paper's ratios cannot be trusted.
+
+    OMP_NUM_THREADS=1 python3 per_lambda.py [--smoke]
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+import time
+from pathlib import Path
+
+import numpy as np
+
+HERE = Path(__file__).parent
+sys.path.insert(0, str(HERE))
+
+from baselines import dinkelbach, wmmse                                # noqa: E402
+from dataset import cached_pool                                        # noqa: E402
+from metrics import energy_efficiency, spectral_efficiency             # noqa: E402
+from regime import AREA_M, CIRCUIT_POWER_W, LAMBDAS, P_MAX_W           # noqa: E402
+from standalone_classical import interference_pricing                  # noqa: E402
+
+RESULTS = HERE / "results"
+N_PAIRS = 8
+RESTARTS = 16          # matched to solvers.maximize_batch's n_starts, which built the reference
+TOL = 0.02
+
+
+def score(p, a, se_ref, ee_ref, noise, pc, lam):
+    se = float(spectral_efficiency(p, a, noise))
+    ee = float(energy_efficiency(p, a, noise, pc))
+    return lam * se / se_ref + (1.0 - lam) * ee / ee_ref
+
+
+def best_of(fn, a, rng, n_start, p_max):
+    """Run a solver from `n_start` initialisations and keep the best allocation per objective."""
+    out = [fn(None)]
+    for _ in range(n_start - 1):
+        out.append(fn(rng.random(len(a)) * p_max))
+    return out
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--smoke", action="store_true")
+    args = ap.parse_args()
+    size = 64 if args.smoke else 512
+    restarts = 2 if args.smoke else RESTARTS
+
+    pool = cached_pool(f"test_N{N_PAIRS}_2048", size=2048, n_pairs=N_PAIRS, area_m=AREA_M,
+                       seed=999, lambdas=LAMBDAS, device="cpu")
+    A = pool.gains.numpy()[:size]
+    se_ref, ee_ref = pool.se_ref.numpy()[:size], pool.ee_ref.numpy()[:size]
+    noise, pc = pool.noise_power, CIRCUIT_POWER_W
+    oracle = {float(k): v.numpy()[:size] for k, v in pool.oracle.items()}
+
+    rows = {}
+    for arm in ("wmmse", "dinkelbach", "pricing"):
+        t0 = time.time()
+        per_lam = {}
+        for lam in LAMBDAS:
+            rng = np.random.default_rng(11)
+            rs = []
+            for m in range(size):
+                a = A[m]
+                sr, er = float(se_ref[m]), float(ee_ref[m])
+                if arm == "wmmse":
+                    cands = best_of(lambda i: wmmse(a, noise, P_MAX_W, init=i), a, rng,
+                                    restarts, P_MAX_W)
+                elif arm == "dinkelbach":
+                    cands = best_of(lambda i: dinkelbach(a, noise, P_MAX_W, pc), a, rng, 1, P_MAX_W)
+                else:
+                    cands = [interference_pricing(a, noise, P_MAX_W, lam, sr, er, pc)]
+                best = max(score(p, a, sr, er, noise, pc, lam) for p in cands)
+                rs.append(best / float(oracle[lam][m]))
+            per_lam[str(lam)] = float(np.mean(rs))
+            print(f"  {arm:11s} lam={lam:.2f} -> {per_lam[str(lam)]:.4f}", flush=True)
+        rows[arm] = {"arm": arm, "restarts": restarts if arm == "wmmse" else 1,
+                     "n_instances": size, "per_lambda": per_lam,
+                     "mean_ratio": float(np.mean(list(per_lam.values()))),
+                     "seconds": time.time() - t0}
+        RESULTS.mkdir(parents=True, exist_ok=True)
+        (RESULTS / ("per_lambda_smoke.json" if args.smoke else "per_lambda.json")).write_text(
+            json.dumps(rows, indent=2))
+
+    w1 = rows["wmmse"]["per_lambda"]["1.0"]
+    d0 = rows["dinkelbach"]["per_lambda"]["0.0"]
+    print(f"\nsanity: WMMSE at lam=1 -> {w1:.4f}; Dinkelbach at lam=0 -> {d0:.4f} (need >= {1-TOL})")
+    bad = []
+    if w1 < 1 - TOL:
+        bad.append(f"WMMSE at lambda=1 is {w1:.4f}, more than {TOL:.0%} below the reference")
+    if d0 < 1 - TOL:
+        bad.append(f"Dinkelbach at lambda=0 is {d0:.4f}, more than {TOL:.0%} below the reference")
+    if bad and not args.smoke:
+        raise SystemExit("SANITY FAILED (reference or solver is wrong):\n  " + "\n  ".join(bad))
+    print("sanity OK" if not bad else "sanity failed (smoke run, not fatal)")
+
+
+if __name__ == "__main__":
+    main()

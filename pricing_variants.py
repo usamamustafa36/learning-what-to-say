@@ -158,14 +158,25 @@ def main() -> None:
     sample = np.concatenate(sample)
     levels = {b: fit_levels(sample, b) for b in bits_list}
 
-    rows = []
     out = RESULTS / ("pricing_variants_smoke.json" if args.smoke
                      else "pricing_budgeted_variants.json")
+    # Resume. The JSON is rewritten after every cell so a kill is survivable, but until now a
+    # restart recomputed the whole grid, which for a four-hour sweep makes that write pointless.
+    # Cells are keyed by (variant, price width, budget) and are independent of each other, so
+    # anything already on disk is kept verbatim: no cell is ever recomputed by a different code
+    # path than the one that produced its neighbours in the same file.
+    rows = []
+    if out.exists() and not args.smoke:
+        rows = json.loads(out.read_text())
+        print(f"resuming from {out.name}: {len(rows)} cells already done", flush=True)
+    have = {(r["variant"], r["price_bits"], r["total_bits"]) for r in rows}
     for variant in VARIANTS:
         for bits in bits_list:
             for total in budgets:
                 K = total / (bits * E)
                 if K < 1 or K > K_CAP:
+                    continue
+                if (variant, bits, total) in have:
                     continue
                 t0 = time.time()
                 per_lam = {}

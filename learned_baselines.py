@@ -116,7 +116,11 @@ def main() -> None:
             print(f"  {arm:10s} B={cfg.bits} R={cfg.rounds} s={cfg.seed}: SKIPPED (CUDA OOM)",
                   flush=True)
             return
-        r.pop("per_instance_ratio", None)
+        # Table II's brackets are a percentile bootstrap over instances, so the binary arm has to
+        # carry the same per-instance vector or its column cannot be built the same way. Kept only
+        # for the arm that reaches a table; the others stay summarised.
+        if arm != "binary":
+            r.pop("per_instance_ratio", None)
         r.update({"arm": arm, "bits": cfg.bits, "rounds": cfg.rounds, "seed": cfg.seed,
                   "mode": cfg.mode, "usage_bonus": cfg.usage_bonus,
                   "signalling_bits": cfg.bits * (N_PAIRS - 1) * cfg.rounds,

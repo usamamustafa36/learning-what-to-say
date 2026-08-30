@@ -147,7 +147,7 @@
     "name": "invariant: no result exceeds the oracle",
     "kind": "technical",
     "status": "PASS",
-    "detail": "0 of 5787 cells above 1.0"
+    "detail": "0 of 5798 cells above 1.0"
   },
   {
     "name": "temporal: rho affects observation quality",
@@ -201,13 +201,13 @@
     "name": "evidence: every result is younger than the script that makes it",
     "kind": "conceptual",
     "status": "WARN",
-    "detail": "22 results predate a script they depend on (mtime, not behaviour): adversarial.json (0.2h behind adversarial.py); aggregation.json (76.7h behind aggregation.py/agents.py); bitsweep_fixed.json (146.8h behind experiments.py/train.py/agents.py); bitsweep_v2.json (81.6h behind experiments.py/train.py/agents.py); bitsweep_v2_a.json (81.6h behind experiments.py/train.py/agents.py); bitsweep_v2_b.json (82.2h behind experiments.py/train.py/agents.py); bitsweep_v2_summary.json (81.6h behind experiments.py/train.py/agents.py); learned_baselines.json (2.1h behind learned_baselines.py/train.py/agents.py); llm.json (0.3h behind llm_agent.py); llm_tokens.json (6.5h behind llm_agent.py); overhead.json (94.8h behind oran.py); overhead_all.json (94.1h behind oran.py); prior.json (46.9h behind experiments.py/prior_methods.py); rho_sweep.json (146.1h behind experiments.py/train.py/agents.py); scale_N16.json (0.7h behind scale_sweep.py/train.py/agents.py); scale_N32.json (15.8h behind scale_sweep.py/train.py/agents.py); scale_N4.json (0.5h behind scale_sweep.py/train.py/agents.py); scale_N8.json (2.2h behind scale_sweep.py/train.py/agents.py); symbolic.json (10.0h behind symbolic.py); tasks.json (145.0h behind experiments.py/train.py/agents.py); temporal.json (46.9h behind experiments.py/prior_methods.py); transfer.json (0.1h behind generalisation.py/train.py/agents.py)"
+    "detail": "23 results predate a script they depend on (mtime, not behaviour): adversarial.json (0.2h behind adversarial.py); aggregation.json (76.7h behind aggregation.py/agents.py); bitsweep_fixed.json (146.8h behind experiments.py/train.py/agents.py); bitsweep_v2.json (81.6h behind experiments.py/train.py/agents.py); bitsweep_v2_a.json (81.6h behind experiments.py/train.py/agents.py); bitsweep_v2_b.json (82.2h behind experiments.py/train.py/agents.py); bitsweep_v2_summary.json (81.6h behind experiments.py/train.py/agents.py); llm.json (0.3h behind llm_agent.py); llm_tokens.json (6.5h behind llm_agent.py); noisy_channel_INVALID_priced.json (19.0h behind noisy_channel.py/train.py/agents.py); overhead.json (94.8h behind oran.py); overhead_all.json (94.1h behind oran.py); params.json (1.3h behind dump_params.py/regime.py); prior.json (46.9h behind experiments.py/prior_methods.py); rho_sweep.json (146.1h behind experiments.py/train.py/agents.py); scale_N16.json (0.7h behind scale_sweep.py/train.py/agents.py); scale_N32.json (15.8h behind scale_sweep.py/train.py/agents.py); scale_N4.json (0.5h behind scale_sweep.py/train.py/agents.py); scale_N8.json (2.2h behind scale_sweep.py/train.py/agents.py); symbolic.json (10.0h behind symbolic.py); tasks.json (145.0h behind experiments.py/train.py/agents.py); temporal.json (46.9h behind experiments.py/prior_methods.py); transfer.json (0.1h behind generalisation.py/train.py/agents.py)"
   },
   {
     "name": "solvers: each matches the reference at its own objective",
     "kind": "conceptual",
     "status": "PASS",
-    "detail": "WMMSE(lam=1) 0.9957, Dinkelbach(lam=0) 0.9966, both within 2%"
+    "detail": "WMMSE(lam=1) 0.9957, Dinkelbach(lam=0) 0.9969, both within 2%"
   },
   {
     "name": "sweeps: pricing_budgeted_variants is a complete grid",

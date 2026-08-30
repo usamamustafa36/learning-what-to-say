@@ -51,6 +51,10 @@ class Report:
     checks: list[Check] = field(default_factory=list)
 
     def add(self, name, kind, status, detail="") -> None:
+        # Call sites pass either a status string or a plain predicate. Accepting both matters more
+        # than it looks: a bool used to raise KeyError from the icon lookup *after* the check had
+        # run, so a check written this way never reported at all, and the suite still exited 0.
+        status = {True: "PASS", False: "FAIL", None: "SKIP"}.get(status, status)
         self.checks.append(Check(name, kind, status, detail))
         icon = {"PASS": "  ok  ", "FAIL": " FAIL ", "WARN": " warn ", "SKIP": " skip "}[status]
         print(f"[{icon}] {name}" + (f"\n           {detail}" if detail else ""), flush=True)
@@ -474,7 +478,7 @@ def check_results_freshness(rep: Report) -> None:
         if f.stat().st_mtime < code_mtime:
             age = (code_mtime - f.stat().st_mtime) / 3600
             stale.append(f"{f.name} ({age:.1f}h older than the code)")
-    rep.add("evidence: stored results are newer than the code", "conceptual",
+    rep.add("evidence: stored results are older than the code that makes them", "conceptual",
             "PASS" if not stale else "WARN",
             "; ".join(stale) + ("  -- regenerate before citing" if stale else ""))
 

@@ -179,10 +179,13 @@ author, not a side effect of this revision.
 - **`\todo{}` macros left: none**, and no number is typed. Macros whose sweep has not finished
   resolve to a red `[NOT RUN]` marker on the page rather than to a value, which is what
   `code/verify.sh` gates on.
-- **`learned_baselines.py` B=12, R=1 (3 runs)** was still training when the manuscript was
-  finalised: a 4096-word codebook trains ~100x slower than the B=6 arm. The manuscript does not cite
-  it — the anchor sentence was rewritten to avoid it — so this is an unfinished cell, not a
-  `[NOT RUN]` on the page.
+- **`learned_baselines.py` B=12, R=1 (3 runs) cannot run on this hardware.** Evaluation one-hots
+  every edge of the 2,048-instance test pool against 4096 codewords, about 2 GiB on top of the
+  model, and the card has 8 GiB: it died with `torch.cuda.OutOfMemoryError`. The other 48 runs
+  (binary 30, vq-noent 9, matched rounds 9) completed and are what the manuscript cites; the anchor
+  sentence was rewritten to avoid this cell before it failed. The script now records such a cell as
+  skipped instead of letting it take the arms that already ran with it. Running it needs chunked
+  evaluation — a smaller test pool would make the number incomparable to the rest of the grid.
 - **`figures/fig_pareto_front.tex` is generated but not included.** It plots the (SE, EE) plane for
   the centralised front and the learned arms at B=1,3,6. There is no page for it at 10, and Table III
   already carries the per-preference numbers. `per_lambda.py` now also records each classical

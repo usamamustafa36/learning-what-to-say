@@ -46,3 +46,29 @@
   rounds     B=2 R=3 s=0: 0.9604  (158s)
   rounds     B=2 R=3 s=1: 0.9547  (158s)
   rounds     B=2 R=3 s=2: 0.9562  (160s)
+Traceback (most recent call last):
+  File "/home/ubuntu/Projects/THESIS/completed/usama-phd/paper07-tccn-learning-what-to-say/code/learned_baselines.py", line 130, in <module>
+    main()
+  File "/home/ubuntu/Projects/THESIS/completed/usama-phd/paper07-tccn-learning-what-to-say/code/learned_baselines.py", line 125, in main
+    record(Config(bits=b, mode="vq", rounds=rnd, steps=steps, seed=seed), "rounds")
+  File "/home/ubuntu/Projects/THESIS/completed/usama-phd/paper07-tccn-learning-what-to-say/code/learned_baselines.py", line 88, in record
+    r = run_one(cfg, tr, te)
+  File "/home/ubuntu/Projects/THESIS/completed/usama-phd/paper07-tccn-learning-what-to-say/code/train.py", line 305, in run_one
+    res = evaluate_tasks(net, cfg, test_pool) if cfg.use_tasks else evaluate(net, cfg, test_pool)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ubuntu/Projects/THESIS/completed/usama-phd/paper07-tccn-learning-what-to-say/code/train.py", line 273, in evaluate
+    p = net(node, edge) if symbol_fn is None else net(node, edge, symbol_fn=symbol_fn)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/Projects/THESIS/completed/usama-phd/paper07-tccn-learning-what-to-say/code/agents.py", line 298, in forward
+    m, sym = self.channel(raw)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ubuntu/Projects/THESIS/completed/usama-phd/paper07-tccn-learning-what-to-say/code/agents.py", line 227, in forward
+    onehot = nn.functional.one_hot(idx, self.n_codes).to(logits.dtype)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 GiB. GPU 0 has a total capacity of 7.75 GiB of which 1.52 GiB is free. Including non-PyTorch memory, this process has 6.22 GiB memory in use. Of the allocated memory 6.07 GiB is allocated by PyTorch, and 29.00 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

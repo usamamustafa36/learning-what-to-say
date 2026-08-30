@@ -17,6 +17,11 @@ Phase 4 sweeps rounds against bits at a matched product: (B,R) in {(6,1),(3,2),(
 B*R*(N-1) = 42 bits per agent per slot, with (12,1) as an unmatched anchor at double the budget.
 R > 1 is otherwise untouched in this study, and the overhead accounting assumes R = 1.
 
+The (12,1) anchor does not fit an 8 GiB card: evaluation one-hots every edge of the test pool
+against 4096 codewords, about 2 GiB, on top of the model. It is recorded as skipped rather than
+allowed to kill the arms that already ran. Running it needs chunked evaluation; a smaller test pool
+would make the number incomparable to the rest of the grid. The manuscript does not cite it.
+
     python3 learned_baselines.py [--smoke]
 """
 from __future__ import annotations
@@ -83,9 +88,24 @@ def main() -> None:
     out = RESULTS / ("learned_baselines_smoke.json" if args.smoke else "learned_baselines.json")
     rows = []
 
+    skipped = []
+
     def record(cfg, arm, extra=None):
         t0 = time.time()
-        r = run_one(cfg, tr, te)
+        try:
+            r = run_one(cfg, tr, te)
+        except torch.cuda.OutOfMemoryError as e:
+            # A 12-bit codebook is 4096 codewords, and evaluation one-hots every edge of the test
+            # pool against all of them: 2048 x 8 x 7 x 4096 floats, about 2 GiB on an 8 GiB card.
+            # One cell that will not fit must not take the arms that already ran with it, so the
+            # failure is recorded and the sweep continues. Fixing it needs chunked evaluation, not
+            # a smaller pool, or the number stops being comparable to the rest of the grid.
+            torch.cuda.empty_cache()
+            skipped.append({"arm": arm, "bits": cfg.bits, "rounds": cfg.rounds, "seed": cfg.seed,
+                            "reason": "CUDA OOM", "detail": str(e).split("\n")[0]})
+            print(f"  {arm:10s} B={cfg.bits} R={cfg.rounds} s={cfg.seed}: SKIPPED (CUDA OOM)",
+                  flush=True)
+            return
         r.pop("per_instance_ratio", None)
         r.update({"arm": arm, "bits": cfg.bits, "rounds": cfg.rounds, "seed": cfg.seed,
                   "mode": cfg.mode, "usage_bonus": cfg.usage_bonus,
@@ -124,6 +144,11 @@ def main() -> None:
         for seed in (seeds if args.smoke else (0, 1, 2)):
             record(Config(bits=b, mode="vq", rounds=rnd, steps=steps, seed=seed), "rounds")
     print(f"wrote {out} ({len(rows)} rows)")
+    if skipped:
+        (RESULTS / (out.stem + "_skipped.json")).write_text(json.dumps(skipped, indent=2))
+        print(f"{len(skipped)} cells skipped and recorded in {out.stem}_skipped.json:")
+        for sk in skipped:
+            print(f"  {sk['arm']} B={sk['bits']} R={sk['rounds']} s={sk['seed']}: {sk['reason']}")
 
 
 if __name__ == "__main__":

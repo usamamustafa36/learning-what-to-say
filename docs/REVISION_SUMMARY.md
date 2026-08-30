@@ -64,7 +64,22 @@ it with bandwidth, the overhead accounting assumes R=1, and this is now named as
 direction in which the operating point could be improved. The corresponding open-problem bullet in
 Section X is removed, since it is no longer open.
 
-### 1.4 Remark 1's percentages were wrong
+### 1.4 A latency number contradicted the claim it was supporting
+
+`oran.py` timed inference as a **mean** over repetitions on a shared machine, so it measured the
+other jobs on the box as much as this one: 0.2–0.55 ms idle, 8.00 ms while eleven cores were busy
+elsewhere. The 8.00 ms figure reached the manuscript, printed next to a 1 ms slot cadence and a
+claim that the protocol is a DU-side per-slot function. `oran.py`'s own self-test asserts exactly
+this ("the per-slot claim fails on its own latency measurement") and was failing — silently, because
+`Report.add` raised `KeyError` on a bool *after* the check had run and the suite still exited 0.
+
+It is now timed per repetition, reporting the minimum (the uncontended cost of the computation) with
+the median, p90 and mean stored beside it. The manuscript reports the range and says plainly that an
+unoptimised forward pass sits at the edge of a 1 ms slot and a deployment would need a compiled
+path, rather than implying the claim is demonstrated. The placement argument rests where it should:
+on the cadence being an order of magnitude below the near-RT RIC window, and on the parameter count.
+
+### 1.5 Remark 1's percentages were wrong
 
 Remark 1 justifies the choice of circuit power by showing that a larger `P_c` flattens the two
 objectives. Its four percentages were typed by hand. `pc_sweep.py` computes them: at the adopted
@@ -83,10 +98,17 @@ is reworded so "roughly four times as far" carries the argument rather than the 
 | `results/per_lambda.json` | `per_lambda.py` | 512 instances x 3 arms x 5 lambda, CPU, ~7 min |
 | `results/learned_baselines.json` | `learned_baselines.py` | 51 runs, GPU, ~3 h |
 | `results/pc_sweep.json` | `pc_sweep.py` | 2 oracle sweeps, CPU, ~2 min |
+| `results/oran.json` | `oran.py` | regenerated for the corrected timing, seconds |
 
 `code/run_full.sh {pricing|perlambda|learned|pc|all}` runs them, and every script takes `--smoke`
 (64 instances, one seed) to prove the code path before the full pool. All four write their JSON
-after each cell, so a kill costs one cell.
+after each cell, so a kill costs one cell, and `pricing_variants.py` now resumes from what is
+already on disk rather than recomputing the grid.
+
+`code/verify.sh` is the single gate afterwards: it regenerates every figure and number, rebuilds the
+manuscript, and fails unless the result is 10 pages with 0 overfull boxes, 0 undefined references
+and 0 unresolved `[NOT RUN]` macros. It also checks `numbers.tex` is byte-identical on a second
+generation, so no number can depend on anything outside `results/`.
 
 ## 3. Guards added, and why
 
@@ -114,6 +136,15 @@ after each cell, so a kill costs one cell.
   is now decided outside the axis, so a missing result is loud in Table III rather than fatal.
 - `check_single_objective_solvers` in `qa.py` crashed with a `TypeError` on a `per_lambda.json`
   written by a run still in progress. It now reports incompleteness instead of passing or crashing.
+- **`Report.add` rejected a plain predicate.** Several checks pass `cond` rather than `"PASS"`, and
+  the icon lookup raised `KeyError` *after* the check had run — so a check written that way never
+  reported at all, and the suite still exited 0. It now accepts both. This is what hid 1.4.
+- **`check_table_captions_name_pool` had a regex bug**: one non-greedy pattern over the whole file
+  let a table's caption reach across into the next table's label, so `tab:transfer` passed on
+  `tab:budget`'s text. It scans each table environment separately now, which immediately found that
+  neither `tab:classical` nor `tab:transfer` named its pool. Both now do.
+- A macro name containing digits is silently renamed (`OranLatencyP90` → `OranLatencyPNineZero`),
+  so `\OranLatencyP90` in the manuscript parsed as an undefined `\OranLatencyP` followed by "90".
 
 ## 5. Manuscript structure
 
@@ -145,7 +176,9 @@ author, not a side effect of this revision.
 
 ## 7. Known gaps
 
-- **`\todo{}` macros left: none.** Every macro the manuscript uses resolves from a result file.
+- **`\todo{}` macros left: none**, and no number is typed. Macros whose sweep has not finished
+  resolve to a red `[NOT RUN]` marker on the page rather than to a value, which is what
+  `code/verify.sh` gates on.
 - **`learned_baselines.py` B=12, R=1 (3 runs)** was still training when the manuscript was
   finalised: a 4096-word codebook trains ~100x slower than the B=6 arm. The manuscript does not cite
   it — the anchor sentence was rewritten to avoid it — so this is an unfinished cell, not a

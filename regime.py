@@ -34,6 +34,14 @@ a working population of active links.
 
 Nothing else moved. `p_max` is unchanged, the channel model is unchanged, and the bit budgets, the
 message channel and the training recipe are all as they were.
+
+**Why the entropy bonus is here too.** The same failure recurred, exactly as this docstring warned.
+`Config.usage_bonus` defaults to 0.0, the main bit-budget sweep passed 0.2, and three scripts written
+afterwards -- `robustness.py`, `noisy_channel.py` and the rounds arm of `learned_baselines.py` --
+took the default. Nothing failed: `train_cached` served them a perfectly good network trained under
+a different recipe, and Section VIII went on to characterise a policy scoring 0.9352 clean while the
+results section reported 0.9481. A default that is silently wrong for every caller but one is the
+defect this module exists to prevent, so the value lives here and every experiment imports it.
 """
 
 from __future__ import annotations
@@ -43,11 +51,14 @@ CIRCUIT_POWER_W = 0.01     # per-agent circuit power; see above
 P_MAX_W = 0.1              # per-agent transmit power ceiling
 N_PAIRS = 8                # default number of transmitter-receiver pairs
 LAMBDAS = (0.0, 0.25, 0.5, 0.75, 1.0)     # the preference grid every evaluation reports over
+USAGE_BONUS = 0.2          # entropy bonus on codeword usage; counters codebook collapse. Any
+                           # experiment evaluating "the learned arm" must train with this value,
+                           # or it is characterising a different policy. See above.
 
 
 def summary() -> str:
     return (f"area {AREA_M:.0f} m, Pc {CIRCUIT_POWER_W*1e3:.0f} mW, "
-            f"p_max {P_MAX_W*1e3:.0f} mW, N {N_PAIRS}")
+            f"p_max {P_MAX_W*1e3:.0f} mW, N {N_PAIRS}, alpha {USAGE_BONUS}")
 
 
 if __name__ == "__main__":

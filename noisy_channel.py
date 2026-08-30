@@ -38,11 +38,12 @@ from adversarial import honest_symbols                                 # noqa: E
 import torch as _torch                                                  # noqa: E402
 from checkpoints import train_cached                                   # noqa: E402
 from dataset import cached_pool                                        # noqa: E402
-from regime import AREA_M, LAMBDAS                                     # noqa: E402
+from regime import AREA_M, LAMBDAS, USAGE_BONUS  # noqa: E402
 from train import Config, evaluate                                     # noqa: E402
 
 RESULTS = HERE / "results"
 N_PAIRS, TEST_SIZE = 8, 2048
+STEPS = 8000
 BITS = (2, 4, 6)
 SEEDS = (0, 1, 2)
 BERS = (0.0, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1)
@@ -83,7 +84,22 @@ class ErasureChannel:
         return torch.where(lost, torch.full_like(sym, int(modal)), sym)
 
 
+def _smoke() -> None:
+    """Tiny grid, one seed, short training: proves the code path before the real pool."""
+    global TEST_SIZE, STEPS, BITS, SEEDS, BERS, ERASURES
+    TEST_SIZE, STEPS = 64, 200
+    BITS, SEEDS, BERS, ERASURES = (6,), (0,), (0.0, 1e-2), (0.0, 0.1)
+    print("SMOKE: 64 instances, 200 steps, one seed, one budget", flush=True)
+
+
 def main() -> None:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--smoke", action="store_true",
+                    help="64 instances, 200 steps, one seed, one budget: proves the path runs")
+    args = ap.parse_args()
+    if args.smoke:
+        _smoke()
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     if dev != "cuda":
         print("refusing to run on CPU", flush=True)
@@ -97,7 +113,8 @@ def main() -> None:
     for arm, mode in (("learned", "vq"), ("priced", "vq")):
         for bits in BITS:
             for seed in SEEDS:
-                cfg = Config(bits=bits, mode=mode, steps=8000, seed=seed,
+                cfg = Config(bits=bits, mode=mode, steps=STEPS, seed=seed,
+                             usage_bonus=USAGE_BONUS,
                              messenger="priced" if arm == "priced" else "learned")
                 try:
                     net = train_cached(cfg, tr)
@@ -105,7 +122,8 @@ def main() -> None:
                     # Config has no `messenger` field in this build: only the learned arm applies.
                     if arm == "priced":
                         continue
-                    cfg = Config(bits=bits, mode=mode, steps=8000, seed=seed)
+                    cfg = Config(bits=bits, mode=mode, steps=STEPS, seed=seed,
+                                     usage_bonus=USAGE_BONUS)
                     net = train_cached(cfg, tr)
                 # The learned arm's symbols come from its encoder; the quantised arms' come from a
                 # Lloyd-Max index. Ask the model for whatever it actually transmits, so the same

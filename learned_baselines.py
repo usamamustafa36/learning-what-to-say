@@ -39,7 +39,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 from dataset import cached_pool                                        # noqa: E402
-from regime import AREA_M, LAMBDAS                                     # noqa: E402
+from regime import AREA_M, LAMBDAS, USAGE_BONUS  # noqa: E402
 from train import Config, run_one                                      # noqa: E402
 
 RESULTS = HERE / "results"
@@ -142,7 +142,8 @@ def main() -> None:
     # --- Phase 4: rounds against bits at matched budget --------------------------------------
     for (b, rnd) in cells:
         for seed in (seeds if args.smoke else (0, 1, 2)):
-            record(Config(bits=b, mode="vq", rounds=rnd, steps=steps, seed=seed), "rounds")
+            record(Config(bits=b, mode="vq", rounds=rnd, steps=steps, seed=seed,
+                          usage_bonus=USAGE_BONUS), "rounds")
     print(f"wrote {out} ({len(rows)} rows)")
     if skipped:
         (RESULTS / (out.stem + "_skipped.json")).write_text(json.dumps(skipped, indent=2))

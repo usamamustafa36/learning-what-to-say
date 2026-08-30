@@ -575,13 +575,25 @@ def check_table_captions_name_pool(rep: Report) -> None:
         rep.add("captions: every results table names its pool", "conceptual", None, "main.tex absent")
         return
     src = tex.read_text()
-    # Results tables are the ones printing a generated macro; Table I is constants, not results.
-    caps = re.findall(r"\\caption\{(.*?)\}\n\\label\{(tab:[^}]+)\}", src, re.S)
-    missing = [lbl for cap, lbl in caps
-               if lbl not in ("tab:params", "tab:related") and "Pool:" not in cap]
+    # Scan each table environment separately. A single regex over the whole file with a non-greedy
+    # (.*?) lets one table's caption reach across into another's label, so a table with no pool
+    # named could "pass" on the text of the table above it. Table I is constants, not results.
+    envs = re.findall(r"\\begin\{table\*?\}(.*?)\\end\{table\*?\}", src, re.S)
+    checked, missing = [], []
+    for env in envs:
+        lbl = re.search(r"\\label\{(tab:[^}]+)\}", env)
+        cap = re.search(r"\\caption\{", env)
+        if not (lbl and cap):
+            continue
+        lbl = lbl.group(1)
+        if lbl in ("tab:params", "tab:related"):
+            continue
+        checked.append(lbl)
+        if "Pool:" not in env[cap.start():]:
+            missing.append(lbl)
     rep.add("captions: every results table names its pool", "conceptual",
             not missing, f"missing in: {', '.join(missing)}" if missing
-            else f"{len(caps)} captions checked")
+            else f"{len(checked)} results captions checked: {', '.join(checked)}")
 
 
 def check_claims_register(rep: Report) -> None:

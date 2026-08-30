@@ -74,8 +74,8 @@
   {
     "name": "self-test: oran",
     "kind": "technical",
-    "status": "PASS",
-    "detail": ""
+    "status": "FAIL",
+    "detail": "AssertionError: the per-slot claim fails on its own latency measurement"
   },
   {
     "name": "self-test: intent",
@@ -147,7 +147,7 @@
     "name": "invariant: no result exceeds the oracle",
     "kind": "technical",
     "status": "PASS",
-    "detail": "0 of 3702 cells above 1.0"
+    "detail": "0 of 5432 cells above 1.0"
   },
   {
     "name": "temporal: rho affects observation quality",
@@ -198,15 +198,45 @@
     "detail": "19/19 wired, 0 orphaned, 0 missing\n           "
   },
   {
-    "name": "evidence: stored results are newer than the code",
+    "name": "evidence: stored results are older than the code that makes them",
     "kind": "conceptual",
     "status": "WARN",
-    "detail": "pricing_budget_partial.json (2.4h older than the code); scale_N32.json (15.8h older than the code); overhead.json (77.4h older than the code); sensing.json (145.2h older than the code); intent.json (146.6h older than the code); llm_tokens.json (136.3h older than the code); overhead_all.json (76.7h older than the code); llm.json (130.1h older than the code); symbolic.json (146.6h older than the code); params.json (77.4h older than the code); scale_N8.json (2.2h older than the code); adversarial.json (130.6h older than the code); scale_N16.json (0.7h older than the code); rho_sweep.json (146.1h older than the code); standalone_classical_partial.json (12.2h older than the code); standalone_classical.json (11.6h older than the code); bitsweep_v2.json (81.6h older than the code); prior.json (130.6h older than the code); analysis.json (146.6h older than the code); transfer.json (0.1h older than the code); temporal.json (130.6h older than the code); pricing_budget.json (1.9h older than the code); bitsweep_v2_a.json (81.6h older than the code); aggregation.json (76.7h older than the code); norm_drift.json (0.5h older than the code); bitsweep_fixed.json (146.8h older than the code); tasks.json (145.0h older than the code); bitsweep_v2_summary.json (81.6h older than the code); scale_N4.json (0.5h older than the code); bitsweep_v2_b.json (82.2h older than the code); price_dynamic_range.json (2.3h older than the code)  -- regenerate before citing"
+    "detail": "pricing_budget_partial.json (17.4h older than the code); scale_N32.json (30.8h older than the code); overhead.json (92.4h older than the code); sensing.json (160.2h older than the code); intent.json (161.6h older than the code); llm_tokens.json (151.4h older than the code); overhead_all.json (91.7h older than the code); llm.json (145.1h older than the code); symbolic.json (161.6h older than the code); params.json (92.4h older than the code); scale_N8.json (17.2h older than the code); noisy_channel_INVALID_priced.json (15.0h older than the code); adversarial.json (145.7h older than the code); learned_baselines_smoke.json (2.3h older than the code); scale_N16.json (15.7h older than the code); rho_sweep.json (161.1h older than the code); learned_baselines.json (1.1h older than the code); per_lambda_smoke.json (1.8h older than the code); standalone_classical_partial.json (27.3h older than the code); standalone_classical.json (26.6h older than the code); bitsweep_v2.json (96.6h older than the code); prior.json (145.6h older than the code); analysis.json (161.7h older than the code); transfer.json (15.1h older than the code); temporal.json (145.6h older than the code); pricing_budget.json (16.9h older than the code); bitsweep_v2_a.json (96.6h older than the code); traffic.json (14.8h older than the code); lambda_grid.json (14.9h older than the code); aggregation.json (91.7h older than the code); per_lambda.json (1.6h older than the code); norm_drift.json (15.5h older than the code); bstar.json (4.5h older than the code); bitsweep_fixed.json (161.9h older than the code); tasks.json (160.0h older than the code); bitsweep_v2_summary.json (96.6h older than the code); noisy_channel.json (14.8h older than the code); scale_N4.json (15.5h older than the code); csi_error.json (14.9h older than the code); pricing_variants_smoke.json (3.0h older than the code); bitsweep_v2_b.json (97.2h older than the code); price_dynamic_range.json (17.3h older than the code)  -- regenerate before citing"
+  },
+  {
+    "name": "solvers: each matches the reference at its own objective",
+    "kind": "conceptual",
+    "status": "PASS",
+    "detail": "WMMSE(lam=1) 0.9957, Dinkelbach(lam=0) 0.9966, both within 2%"
+  },
+  {
+    "name": "sweeps: pricing_budgeted_variants is a complete grid",
+    "kind": "conceptual",
+    "status": "FAIL",
+    "detail": "274/345 cells -- still running, or rerun pricing_variants.py"
+  },
+  {
+    "name": "sweeps: learned_baselines is a complete grid",
+    "kind": "conceptual",
+    "status": "FAIL",
+    "detail": "48/51 cells -- still running, or rerun learned_baselines.py"
+  },
+  {
+    "name": "pricing: the new sweep reproduces the old one where they overlap",
+    "kind": "conceptual",
+    "status": "PASS",
+    "detail": "old best 0.7681, new absolute arm at b<=8 0.7681, difference 0.00e+00"
+  },
+  {
+    "name": "captions: every results table names its pool",
+    "kind": "conceptual",
+    "status": "FAIL",
+    "detail": "missing in: tab:classical"
   },
   {
     "name": "claims: every headline claim has evidence on disk",
     "kind": "conceptual",
     "status": "PASS",
-    "detail": "22/22 supported; unsupported: "
+    "detail": "26/26 supported; unsupported: "
   }
 ]

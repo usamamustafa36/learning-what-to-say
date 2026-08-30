@@ -107,6 +107,14 @@ def measure_inference(net, n_agents: int, device: str = "cpu", reps: int = 200,
     CPU by default and batch 1 by default, because that is the deployment case: one DU, one slot,
     no batching to hide behind. Reporting a GPU throughput number here would measure the wrong
     thing entirely.
+
+    Timed per repetition and reported as the **minimum**, not the mean. A mean over a shared machine
+    measures the other jobs on it as much as this one: the same benchmark read 0.34 ms on an idle
+    box and 8.00 ms while eleven cores were busy elsewhere, and the 8.00 ms figure reached the
+    manuscript, where it contradicted the per-slot claim it was meant to support. The minimum over
+    many repetitions is the uncontended cost of the computation, which is the quantity the placement
+    argument needs. The spread is returned alongside it so the contention is visible rather than
+    hidden.
     """
     from agents import graph_inputs
 
@@ -116,21 +124,27 @@ def measure_inference(net, n_agents: int, device: str = "cpu", reps: int = 200,
     lam = torch.full((batch,), 0.5, device=dev)
     node, edge = graph_inputs(g, lam, norm=getattr(net, "norm", None))
 
+    times = []
     with torch.no_grad():
         for _ in range(20):                                    # warm up
             net(node, edge)
         if device == "cuda":
             torch.cuda.synchronize()
-        t0 = time.perf_counter()
         for _ in range(reps):
+            t0 = time.perf_counter()
             net(node, edge)
-        if device == "cuda":
-            torch.cuda.synchronize()
-        dt = (time.perf_counter() - t0) / reps
+            if device == "cuda":
+                torch.cuda.synchronize()
+            times.append(time.perf_counter() - t0)
 
+    times.sort()
     params = sum(p.numel() for p in net.parameters())
     bytes_ = sum(p.numel() * p.element_size() for p in net.parameters())
-    return {"device": device, "batch": batch, "latency_ms": dt * 1e3,
+    return {"device": device, "batch": batch, "reps": reps,
+            "latency_ms": times[0] * 1e3,
+            "latency_ms_median": times[len(times) // 2] * 1e3,
+            "latency_ms_p90": times[int(0.9 * (len(times) - 1))] * 1e3,
+            "latency_ms_mean": sum(times) / len(times) * 1e3,
             "parameters": int(params), "size_kb": bytes_ / 1024.0}
 
 

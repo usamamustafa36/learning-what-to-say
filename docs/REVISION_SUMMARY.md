@@ -131,7 +131,19 @@ Floats: 8 before, 8 after — but two tables became figures (Phase 6) and two ta
 | `fig_architecture` replaces the hand-drawn N=2 diagram | it does both jobs: message flow and the observability boundary |
 | Scope paragraph corrected | it called the noiseless message channel and noiseless observation "boundaries", but Section VIII now measures both |
 
-## 6. Known gaps
+## 6. Version control: the manuscript is not in it
+
+The git repository's root is `code/`. `paper/` and `figures/` sit beside it and are **untracked**,
+so `paper/main.tex`, `paper/make_numbers.py`, `paper/numbers.tex`, `paper/audit_literals.py` and
+`figures/*` have no commit history; the commits in `code/` describe changes to some of those files
+without containing them. The manuscript's history is the `.bak` snapshots in `paper/`, of which
+`main.tex.prephases.bak` is this revision's baseline and `main.tex.postphases.bak` its result.
+
+Bringing them under version control means moving `.git` from `code/` to the project root, which is a
+rename of every tracked path on a repository that already has a remote. That is a call for the
+author, not a side effect of this revision.
+
+## 7. Known gaps
 
 - **`\todo{}` macros left: none.** Every macro the manuscript uses resolves from a result file.
 - **`learned_baselines.py` B=12, R=1 (3 runs)** was still training when the manuscript was

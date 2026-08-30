@@ -8,30 +8,30 @@
       1.0
     ],
     "se": [
-      19.29229164123535,
-      20.02403450012207,
-      21.213409423828125,
-      24.041833877563477,
-      26.342254638671875
+      19.29180908203125,
+      20.02049446105957,
+      21.214183807373047,
+      24.04426383972168,
+      26.35367202758789
     ],
     "ee": [
-      195.38070678710938,
-      194.47802734375,
-      188.60049438476562,
-      146.76266479492188,
-      64.97179412841797
+      195.36892700195312,
+      194.46270751953125,
+      188.58053588867188,
+      146.88201904296875,
+      64.86567687988281
     ],
-    "se_max": 26.342254638671875,
-    "ee_max": 195.38070678710938
+    "se_max": 26.35367202758789,
+    "ee_max": 195.36892700195312
   },
-  "oracle_hypervolume": 0.9132984925220081,
+  "oracle_hypervolume": 0.9131097807804582,
   "arms": [
     {
       "arm": "continuous",
       "bits": null,
-      "hypervolume": 0.8476648078100525,
-      "hypervolume_std": 0.00044744741926641994,
-      "fraction_of_oracle": 0.9281355600065506,
+      "hypervolume": 0.8473486558267096,
+      "hypervolume_std": 0.0004472805356259645,
+      "fraction_of_oracle": 0.9279811405617177,
       "front_points": 5.0,
       "se_by_lambda": [
         18.68342399597168,
@@ -51,9 +51,9 @@
     {
       "arm": "learned",
       "bits": 0,
-      "hypervolume": 0.677953936472434,
-      "hypervolume_std": 0.0006058858835746475,
-      "fraction_of_oracle": 0.7423136488491434,
+      "hypervolume": 0.6777010812404415,
+      "hypervolume_std": 0.0006056599074317109,
+      "fraction_of_oracle": 0.7421901457031739,
       "front_points": 5.0,
       "se_by_lambda": [
         16.956554412841797,
@@ -73,9 +73,9 @@
     {
       "arm": "learned",
       "bits": 1,
-      "hypervolume": 0.7264805311405708,
-      "hypervolume_std": 0.0008775747452966886,
-      "fraction_of_oracle": 0.7954469837505665,
+      "hypervolume": 0.7262095770338722,
+      "hypervolume_std": 0.000877247437859111,
+      "fraction_of_oracle": 0.7953146404949932,
       "front_points": 4.666666666666667,
       "se_by_lambda": [
         16.693355560302734,
@@ -95,9 +95,9 @@
     {
       "arm": "learned",
       "bits": 2,
-      "hypervolume": 0.7626385196814779,
-      "hypervolume_std": 0.001869823950045253,
-      "fraction_of_oracle": 0.8350375325546705,
+      "hypervolume": 0.7623540797963376,
+      "hypervolume_std": 0.0018691265652478347,
+      "fraction_of_oracle": 0.8348986023835318,
       "front_points": 5.0,
       "se_by_lambda": [
         17.738197326660156,
@@ -117,9 +117,9 @@
     {
       "arm": "learned",
       "bits": 3,
-      "hypervolume": 0.7969460846828283,
-      "hypervolume_std": 0.0076517719656910895,
-      "fraction_of_oracle": 0.8726019928951366,
+      "hypervolume": 0.7966488491683085,
+      "hypervolume_std": 0.0076489180983831916,
+      "fraction_of_oracle": 0.8724568129008456,
       "front_points": 5.0,
       "se_by_lambda": [
         18.222124099731445,
@@ -139,9 +139,9 @@
     {
       "arm": "learned",
       "bits": 4,
-      "hypervolume": 0.8121792632471704,
-      "hypervolume_std": 0.004594748036897302,
-      "fraction_of_oracle": 0.8892812918199348,
+      "hypervolume": 0.8118763462420766,
+      "hypervolume_std": 0.0045930343421779875,
+      "fraction_of_oracle": 0.8891333367912729,
       "front_points": 5.0,
       "se_by_lambda": [
         18.356746673583984,
@@ -161,9 +161,9 @@
     {
       "arm": "learned",
       "bits": 6,
-      "hypervolume": 0.8324566455293523,
-      "hypervolume_std": 0.0010069892326668405,
-      "fraction_of_oracle": 0.9114836522182174,
+      "hypervolume": 0.8321461657063066,
+      "hypervolume_std": 0.0010066136577458762,
+      "fraction_of_oracle": 0.9113320032505292,
       "front_points": 5.0,
       "se_by_lambda": [
         18.47225570678711,
@@ -183,9 +183,9 @@
     {
       "arm": "learned",
       "bits": 8,
-      "hypervolume": 0.8355284875962957,
-      "hypervolume_std": 0.0010114862500921,
-      "fraction_of_oracle": 0.9148471112538945,
+      "hypervolume": 0.8352168620739674,
+      "hypervolume_std": 0.0010111089979268344,
+      "fraction_of_oracle": 0.91469490268748,
       "front_points": 5.0,
       "se_by_lambda": [
         18.441211700439453,
@@ -205,9 +205,9 @@
     {
       "arm": "quantised",
       "bits": 1,
-      "hypervolume": 0.6968191846236399,
-      "hypervolume_std": 0.0005838774974612233,
-      "fraction_of_oracle": 0.7629698180048714,
+      "hypervolume": 0.6965592932547636,
+      "hypervolume_std": 0.0005836597297455901,
+      "fraction_of_oracle": 0.7628428781689279,
       "front_points": 5.0,
       "se_by_lambda": [
         17.223264694213867,
@@ -227,9 +227,9 @@
     {
       "arm": "quantised",
       "bits": 2,
-      "hypervolume": 0.6976717086450269,
-      "hypervolume_std": 0.0006275377823328565,
-      "fraction_of_oracle": 0.7639032740746748,
+      "hypervolume": 0.6974114993118353,
+      "hypervolume_std": 0.0006273037307210649,
+      "fraction_of_oracle": 0.7637761789340817,
       "front_points": 5.0,
       "se_by_lambda": [
         17.2220516204834,
@@ -249,9 +249,9 @@
     {
       "arm": "quantised",
       "bits": 3,
-      "hypervolume": 0.6967032558055353,
-      "hypervolume_std": 0.0006579067720646738,
-      "fraction_of_oracle": 0.76284288379984,
+      "hypervolume": 0.6964434076744168,
+      "hypervolume_std": 0.0006576613937866645,
+      "fraction_of_oracle": 0.7627159650826967,
       "front_points": 5.0,
       "se_by_lambda": [
         17.229310989379883,
@@ -271,9 +271,9 @@
     {
       "arm": "quantised",
       "bits": 4,
-      "hypervolume": 0.6968311227274123,
-      "hypervolume_std": 0.0005692316695615659,
-      "fraction_of_oracle": 0.7629828894200441,
+      "hypervolume": 0.6965712269060034,
+      "hypervolume_std": 0.0005690193642732903,
+      "fraction_of_oracle": 0.7628559474093314,
       "front_points": 5.0,
       "se_by_lambda": [
         17.208694458007812,
@@ -293,9 +293,9 @@
     {
       "arm": "quantised",
       "bits": 6,
-      "hypervolume": 0.6965630378403729,
-      "hypervolume_std": 0.00039753609981338324,
-      "fraction_of_oracle": 0.762689354623661,
+      "hypervolume": 0.6963032420060911,
+      "hypervolume_std": 0.0003973878315058398,
+      "fraction_of_oracle": 0.7625624614500821,
       "front_points": 5.0,
       "se_by_lambda": [
         17.22369384765625,
@@ -315,9 +315,9 @@
     {
       "arm": "quantised",
       "bits": 8,
-      "hypervolume": 0.6955142503476144,
-      "hypervolume_std": 0.0005698388231248787,
-      "fraction_of_oracle": 0.7615410033438266,
+      "hypervolume": 0.6952548456776734,
+      "hypervolume_std": 0.0005696262913877504,
+      "fraction_of_oracle": 0.761414301228294,
       "front_points": 5.0,
       "se_by_lambda": [
         17.205312728881836,

@@ -84,9 +84,13 @@ class ErasureChannel:
         return torch.where(lost, torch.full_like(sym, int(modal)), sym)
 
 
+SUFFIX = ""            # "_smoke" on a smoke run, so a trial never overwrites a real result
+
+
 def _smoke() -> None:
     """Tiny grid, one seed, short training: proves the code path before the real pool."""
-    global TEST_SIZE, STEPS, BITS, SEEDS, BERS, ERASURES
+    global TEST_SIZE, STEPS, BITS, SEEDS, BERS, ERASURES, SUFFIX
+    SUFFIX = "_smoke"
     TEST_SIZE, STEPS = 64, 200
     BITS, SEEDS, BERS, ERASURES = (6,), (0,), (0.0, 1e-2), (0.0, 0.1)
     print("SMOKE: 64 instances, 200 steps, one seed, one budget", flush=True)
@@ -145,8 +149,8 @@ def main() -> None:
                         print(f"  {arm:>7} B={bits} s={seed} {kind}={v:<7g} "
                               f"{r['mean_ratio']:.4f}  ({time.time()-t0:.0f}s)", flush=True)
                         RESULTS.mkdir(parents=True, exist_ok=True)
-                        (RESULTS / "noisy_channel.json").write_text(json.dumps(rows, indent=2))
-    print(f"wrote {RESULTS / 'noisy_channel.json'} ({len(rows)} rows)")
+                        (RESULTS / f"noisy_channel{SUFFIX}.json").write_text(json.dumps(rows, indent=2))
+    print(f"wrote noisy_channel{SUFFIX}.json ({len(rows)} rows)")
 
 
 if __name__ == "__main__":

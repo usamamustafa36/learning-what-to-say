@@ -71,6 +71,10 @@ def realised_entropy(net, pool, cfg) -> float | None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--arms", default="binary,vq-noent,rounds",
+                    help="comma-separated arms to (re)run. Rows for the selected arms are dropped "
+                         "from the existing file and recomputed; the others are carried over "
+                         "verbatim, so one arm can be fixed without paying for the rest.")
     args = ap.parse_args()
     steps = 200 if args.smoke else 8000
     seeds = (0,) if args.smoke else SEEDS
@@ -86,7 +90,13 @@ def main() -> None:
     te = cached_pool(f"test_N{N_PAIRS}_{te_n}", size=te_n, n_pairs=N_PAIRS, area_m=AREA_M,
                      seed=999, lambdas=LAMBDAS, device=dev)
     out = RESULTS / ("learned_baselines_smoke.json" if args.smoke else "learned_baselines.json")
+    want = tuple(a.strip() for a in args.arms.split(",") if a.strip())
     rows = []
+    if out.exists() and not args.smoke:
+        keep = [r for r in json.loads(out.read_text()) if r["arm"] not in want]
+        rows = keep
+        print(f"carrying {len(keep)} rows for arms not selected; rerunning {', '.join(want)}",
+              flush=True)
 
     skipped = []
 
@@ -121,10 +131,10 @@ def main() -> None:
               f"{r['mean_ratio']:.4f}{ent}  ({time.time()-t0:.0f}s)", flush=True)
 
     # --- Phase 3: how the message is produced -----------------------------------------------
-    for bits in bits_list:
+    for bits in (bits_list if "binary" in want else ()):
         for seed in seeds:
             record(Config(bits=bits, mode="binary", steps=steps, seed=seed), "binary")
-    for bits in (bits_list if args.smoke else (2, 4, 6)):
+    for bits in ((bits_list if args.smoke else (2, 4, 6)) if "vq-noent" in want else ()):
         for seed in (seeds if args.smoke else (0, 1, 2)):
             cfg = Config(bits=bits, mode="vq", steps=steps, seed=seed, usage_bonus=0.0)
             from checkpoints import train_cached
@@ -140,7 +150,7 @@ def main() -> None:
                   f"ent {r['entropy_bits']:.2f}", flush=True)
 
     # --- Phase 4: rounds against bits at matched budget --------------------------------------
-    for (b, rnd) in cells:
+    for (b, rnd) in (cells if "rounds" in want else ()):
         for seed in (seeds if args.smoke else (0, 1, 2)):
             record(Config(bits=b, mode="vq", rounds=rnd, steps=steps, seed=seed,
                           usage_bonus=USAGE_BONUS), "rounds")

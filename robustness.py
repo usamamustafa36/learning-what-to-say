@@ -63,9 +63,13 @@ def perturb_observation(pool: Pool, sigma_db: float, seed: int, shuffle: bool = 
     return replace(pool, gains_obs=pool.gains_obs * (10.0 ** (err / 10.0)))
 
 
+SUFFIX = ""            # "_smoke" on a smoke run, so a trial never overwrites a real result
+
+
 def _smoke() -> None:
     """Tiny grid, one seed, short training: proves the code path before the real pool."""
-    global TEST_SIZE, STEPS, BITS, SEEDS, SIGMAS_DB
+    global TEST_SIZE, STEPS, BITS, SEEDS, SIGMAS_DB, SUFFIX
+    SUFFIX = "_smoke"
     TEST_SIZE, STEPS = 64, 200
     BITS, SEEDS, SIGMAS_DB = (6,), (0,), (0.0, 3.0)
     print("SMOKE: 64 instances, 200 steps, one seed, one budget", flush=True)
@@ -106,7 +110,7 @@ def main() -> None:
                     print(f"  csi B={bits} s={seed} sigma={sigma:.0f}dB {arm:>8}: "
                           f"{r['mean_ratio']:.4f}  ({time.time()-t0:.0f}s)", flush=True)
                     RESULTS.mkdir(parents=True, exist_ok=True)
-                    (RESULTS / "csi_error.json").write_text(json.dumps(rows, indent=2))
+                    (RESULTS / f"csi_error{SUFFIX}.json").write_text(json.dumps(rows, indent=2))
 
     # ---------------------------------------------------------------- 21-point preference grid
     lam21 = tuple(round(float(x), 3) for x in np.linspace(0.0, 1.0, 21))
@@ -133,8 +137,8 @@ def main() -> None:
             print(f"  lam21 B={bits} s={seed}: all {lrows[-1]['mean_all']:.4f} "
                   f"reported {lrows[-1]['mean_reported']:.4f} "
                   f"unseen {lrows[-1]['mean_unseen']:.4f}", flush=True)
-            (RESULTS / "lambda_grid.json").write_text(json.dumps(lrows, indent=2))
-    print("wrote csi_error.json and lambda_grid.json")
+            (RESULTS / f"lambda_grid{SUFFIX}.json").write_text(json.dumps(lrows, indent=2))
+    print(f"wrote csi_error{SUFFIX}.json and lambda_grid{SUFFIX}.json")
 
 
 if __name__ == "__main__":

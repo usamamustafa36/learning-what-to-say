@@ -3,10 +3,10 @@
     "device": "cpu",
     "batch": 1,
     "reps": 200,
-    "latency_ms": 0.3393460065126419,
-    "latency_ms_median": 1.19962400640361,
-    "latency_ms_p90": 1.2909429788123816,
-    "latency_ms_mean": 1.0192237980663776,
+    "latency_ms": 0.3251529997214675,
+    "latency_ms_median": 4.9228120187763125,
+    "latency_ms_p90": 8.966793975559995,
+    "latency_ms_mean": 3.9842868805862968,
     "parameters": 25361,
     "size_kb": 99.06640625
   },
@@ -220,10 +220,10 @@
       "cadence_s": 0.001,
       "reason": "runs once per slot per agent; nothing above the DU is fast enough",
       "within_loop_period": true,
-      "measured_latency_ms": 0.3393460065126419,
+      "measured_latency_ms": 0.3251529997214675,
       "budget_ms": 1.0,
       "fits": true,
-      "slot_utilisation": 0.3393460065126419
+      "slot_utilisation": 0.3251529997214675
     },
     {
       "component": "message validator (symbolic.py)",

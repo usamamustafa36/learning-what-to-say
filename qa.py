@@ -467,20 +467,81 @@ def check_objective_coverage(rep: Report) -> None:
 
 
 def check_results_freshness(rep: Report) -> None:
-    """Results computed before the code that produced them changed are not evidence."""
-    # qa.py is not a dependency of any result -- editing the checker must not invalidate evidence.
-    deps = [p for p in HERE.glob("*.py") if p.name != "qa.py"]
-    code_mtime = max((p.stat().st_mtime for p in deps), default=0)
-    stale = []
-    for f in RESULTS.glob("*.json"):
-        if f.name == "qa_report.json":
+    """Results computed before the code that produced them changed are not evidence.
+
+    Compared against the script that actually produces each file, not against the newest .py in the
+    repository. The global form flagged all forty-odd results whenever any file was touched, which
+    made a check nobody could act on: editing make_numbers.py does not invalidate a channel
+    simulation. A result with no known producer is reported separately rather than silently passing.
+    """
+    # Result file -> the scripts whose edits could change it. A file may have several producers
+    # (a sweep plus the module it drives); the newest of them is what it must be younger than.
+    PRODUCERS = {
+        "pricing_budgeted_variants": ("pricing_variants.py",),
+        "pricing_budget": ("pricing_budget.py",),
+        "price_dynamic_range": ("price_dynamic_range.py",),
+        "per_lambda": ("per_lambda.py", "baselines.py", "standalone_classical.py"),
+        "standalone_classical": ("standalone_classical.py", "baselines.py"),
+        "learned_baselines": ("learned_baselines.py", "train.py", "agents.py"),
+        "pc_sweep": ("pc_sweep.py", "solvers.py"),
+        "oran": ("oran.py", "agents.py"),
+        "bstar": ("bstar.py",),
+        "transfer": ("generalisation.py", "train.py", "agents.py"),
+        "norm_drift": ("generalisation.py",),
+        "noisy_channel": ("noisy_channel.py", "train.py", "agents.py"),
+        "csi_error": ("robustness.py", "train.py", "agents.py"),
+        "lambda_grid": ("robustness.py",),
+        "traffic": ("traffic.py",),
+        "analysis": ("analysis.py",),
+        "symbolic": ("symbolic.py",),
+        "adversarial": ("adversarial.py",),
+        "sensing": ("sensing.py",),
+        "pareto": ("pareto.py",),
+        "params": ("dump_params.py", "regime.py"),
+        # Driven through the experiments.py registry rather than by a script of their own, so the
+        # registry and the model code are what could invalidate them.
+        "bitsweep_v2": ("experiments.py", "train.py", "agents.py"),
+        "bitsweep_fixed": ("experiments.py", "train.py", "agents.py"),
+        "rho_sweep": ("experiments.py", "train.py", "agents.py"),
+        "tasks": ("experiments.py", "train.py", "agents.py"),
+        "prior": ("experiments.py", "prior_methods.py"),
+        "temporal": ("experiments.py", "prior_methods.py"),
+        "intent": ("intent.py",),
+        "llm": ("llm_agent.py",),
+        "llm_tokens": ("llm_agent.py",),
+        "scale_N": ("scale_sweep.py", "train.py", "agents.py"),
+        "overhead": ("oran.py",),
+        "overhead_all": ("oran.py",),
+        "aggregation": ("aggregation.py", "agents.py"),
+    }
+    stale, unknown = [], []
+    for f in sorted(RESULTS.glob("*.json")):
+        stem = f.name[:-5]
+        if stem == "qa_report" or stem.endswith("_smoke") or stem.endswith("_partial"):
             continue
-        if f.stat().st_mtime < code_mtime:
-            age = (code_mtime - f.stat().st_mtime) / 3600
-            stale.append(f"{f.name} ({age:.1f}h older than the code)")
-    rep.add("evidence: stored results are older than the code that makes them", "conceptual",
+        srcs = next((v for k, v in PRODUCERS.items()
+                     if stem == k or stem.startswith(k + "_") or stem.startswith(k)), None)
+        if srcs is None:
+            unknown.append(f.name)
+            continue
+        newest = max((HERE / n).stat().st_mtime for n in srcs if (HERE / n).exists())
+        if f.stat().st_mtime < newest:
+            stale.append(f"{f.name} ({(newest - f.stat().st_mtime) / 3600:.1f}h behind "
+                         + "/".join(srcs) + ")")
+    # This is an mtime comparison, not a semantic one: an edit that cannot change a result still
+    # marks it. Two such edits are in this history -- the symbol_fn fix in agents.py, verified
+    # neutral at 0.0e+00 when no substitution hook is passed, and the OOM guard in
+    # learned_baselines.py -- so a name here is a prompt to check, not proof of a wrong number.
+    detail = []
+    if stale:
+        detail.append(f"{len(stale)} results predate a script they depend on (mtime, not "
+                      "behaviour): " + "; ".join(stale))
+    if unknown:
+        detail.append(f"{len(unknown)} results have no registered producer, so their freshness is "
+                      "unchecked: " + ", ".join(unknown))
+    rep.add("evidence: every result is younger than the script that makes it", "conceptual",
             "PASS" if not stale else "WARN",
-            "; ".join(stale) + ("  -- regenerate before citing" if stale else ""))
+            "; ".join(detail) if detail else f"{len(PRODUCERS)} producers registered, none stale")
 
 
 def check_pricing_sweep_reproduces(rep: Report) -> None:

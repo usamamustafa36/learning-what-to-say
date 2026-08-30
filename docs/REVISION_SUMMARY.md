@@ -207,3 +207,11 @@ author, not a side effect of this revision.
   supersedes it. It is kept as provenance for the superseded claim.
 - **`gu2023airmpnn`** still needs its volume, issue and page range confirmed from IEEE Xplore; see
   `docs/CITATIONS_TO_VERIFY.md`.
+- **`qa.py`'s freshness check is the one standing warning.** It now compares each result against the
+  scripts that actually produce it rather than against the newest `.py` in the repository, which
+  used to flag all forty-odd results whenever anything was touched. Every result has a registered
+  producer, and about twenty predate a dependency. That is an mtime signal, not a semantic one: the
+  two edits driving most of it are the `symbol_fn` fix in `agents.py`, verified neutral at 0.0e+00
+  when no substitution hook is passed, and the OOM guard in `learned_baselines.py`, which changes no
+  computation. Recording a code fingerprint inside each result at write time is the real fix and is
+  not retrofittable to results already on disk.

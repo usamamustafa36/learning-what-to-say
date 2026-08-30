@@ -502,5 +502,117 @@
     "mode": "binary",
     "usage_bonus": 0.0,
     "signalling_bits": 14
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9188072085380554,
+      "0.25": 0.9165058135986328,
+      "0.5": 0.9133667945861816,
+      "0.75": 0.9047024250030518,
+      "1.0": 0.8968134522438049
+    },
+    "mean_ratio": 0.9100391387939453,
+    "se_by_lambda": [
+      17.859163284301758,
+      18.538818359375,
+      19.489742279052734,
+      21.66869354248047,
+      23.882753372192383
+    ],
+    "ee_by_lambda": [
+      181.548828125,
+      180.31605529785156,
+      174.91555786132812,
+      141.39804077148438,
+      54.83424758911133
+    ],
+    "n_instances": 2048,
+    "signalling_bits_per_agent": 14.0,
+    "config": {
+      "bits": 2,
+      "mode": "binary",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.0,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 4,
+      "device": "cuda"
+    },
+    "arm": "binary",
+    "bits": 2,
+    "rounds": 1,
+    "seed": 4,
+    "mode": "binary",
+    "usage_bonus": 0.0,
+    "signalling_bits": 14
+  },
+  {
+    "per_lambda": {
+      "0.0": 0.9403886198997498,
+      "0.25": 0.9395338892936707,
+      "0.5": 0.9369928240776062,
+      "0.75": 0.9284366369247437,
+      "1.0": 0.9160429239273071
+    },
+    "mean_ratio": 0.9322789788246155,
+    "se_by_lambda": [
+      18.275230407714844,
+      18.988109588623047,
+      20.041576385498047,
+      22.31148910522461,
+      24.392654418945312
+    ],
+    "ee_by_lambda": [
+      185.87564086914062,
+      184.90260314941406,
+      179.08370971679688,
+      143.19485473632812,
+      55.06964111328125
+    ],
+    "n_instances": 2048,
+    "signalling_bits_per_agent": 21.0,
+    "config": {
+      "bits": 3,
+      "mode": "binary",
+      "messenger": "learned",
+      "rounds": 1,
+      "hidden": 64,
+      "msg_dim": 16,
+      "steps": 8000,
+      "batch": 512,
+      "lr": 0.001,
+      "temp_start": 2.0,
+      "temp_end": 0.5,
+      "p_max": 0.1,
+      "circuit_power_w": 0.01,
+      "grad_clip": 5.0,
+      "usage_bonus": 0.0,
+      "use_tasks": false,
+      "use_sensing": false,
+      "sensing_noise_db": 3.0,
+      "sensing_shuffle": false,
+      "seed": 0,
+      "device": "cuda"
+    },
+    "arm": "binary",
+    "bits": 3,
+    "rounds": 1,
+    "seed": 0,
+    "mode": "binary",
+    "usage_bonus": 0.0,
+    "signalling_bits": 21
   }
 ]

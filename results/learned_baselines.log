@@ -7,3 +7,5 @@
   binary     B=2 R=1 s=1: 0.9033  (113s)
   binary     B=2 R=1 s=2: 0.9136  (118s)
   binary     B=2 R=1 s=3: 0.9107  (113s)
+  binary     B=2 R=1 s=4: 0.9100  (115s)
+  binary     B=3 R=1 s=0: 0.9323  (117s)

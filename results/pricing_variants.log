@@ -89,3 +89,4 @@
   differential  b=3 T=   672 K=  32.0 -> 0.7458  (20s)
   differential  b=3 T=  1344 K=  64.0 -> 0.7477  (21s)
   differential  b=3 T=  2688 K= 128.0 -> 0.7481  (39s)
+  differential  b=3 T=  5376 K= 256.0 -> 0.7472  (79s)

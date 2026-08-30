@@ -24,7 +24,7 @@ distribution off that operating point immediately, so every round after the firs
 scalar against a stale codebook. That is why more rounds never helped: `b=1` plateaued near 0.56
 whether `K` was 6 or 192.
 
-`pricing_variants.py` re-runs the same budgeted sweep with five ways of coding a moving scalar
+`pricing_variants.py` re-runs the same budgeted sweep (345 cells, complete) with five ways of coding a moving scalar
 (`absolute`, `differential`, `sign` with Jayant step adaptation, `adaptive` log-uniform range
 tracking, `dithered`), price widths to 12 bits and budgets to 22,601 bits. Result:
 
@@ -32,11 +32,14 @@ tracking, `dithered`), price widths to 12 bits and budgets to 22,601 bits. Resul
 |---|---:|---:|---:|
 | absolute (the old baseline's coding) | 0.8723 | 12 | 5,376 |
 | **differential** | **0.9713** | 12 | 10,752 |
-| adaptive-range | 0.7908 | 10 | 5,376 |
+| adaptive-range | 0.8189 | 12 | 10,752 |
 | sign-delta | 0.7073 | 12 | 1,344 |
+| dithered | 0.8739 | 12 | 22,601 |
 
 The learned arm reaches 0.9481 on 42 bits. Differential pricing first passes it at **0.9594 on
-1,344 bits**, 32x the learned budget, and only at price widths of 10 bits or more.
+1,344 bits**, 32x the learned budget, and only at price widths of 10 bits or more. Nine of the
+345 cells reach the learned arm and all nine are differential; no other coding scheme gets there on
+any budget.
 
 **The paper now says that**, in all four places. The claim it makes instead is stronger, because it
 survives a baseline that was given every advantage: the learned symbol is roughly 32x cheaper at the

@@ -516,16 +516,27 @@ def check_sweeps_complete(rep: Report) -> None:
     increasing order, so summarising early understates the strongest baseline and flatters the
     paper's own claim. make_numbers.py withholds the macros; this reports the same fact out loud.
     """
-    for tag, want, script in (("pricing_budgeted_variants", 345, "pricing_variants.py"),
-                              ("learned_baselines", 51, "learned_baselines.py")):
+    # learned_baselines is counted per arm, not as a file total: its (12,1) anchor cannot fit an
+    # 8 GiB card (2 GiB of one-hots over 4096 codewords at evaluation) and the manuscript does not
+    # cite it, so a whole-file count would fail forever on a cell nothing depends on.
+    for tag, want, script in (("pricing_budgeted_variants", {None: 345}, "pricing_variants.py"),
+                              ("learned_baselines",
+                               {"binary": 30, "vq-noent": 9, "rounds": 9}, "learned_baselines.py")):
         path = RESULTS / f"{tag}.json"
         name = f"sweeps: {tag} is a complete grid"
         if not path.exists():
             rep.add(name, "conceptual", None, f"{tag}.json not present -- run {script}")
             continue
-        n = len(json.loads(path.read_text()))
-        rep.add(name, "conceptual", n >= want,
-                f"{n}/{want} cells" + ("" if n >= want else f" -- still running, or rerun {script}"))
+        rows = json.loads(path.read_text())
+        if list(want) == [None]:
+            have = {None: len(rows)}
+        else:
+            have = {a: sum(1 for r in rows if r["arm"] == a) for a in want}
+        short = {a: (have[a], n) for a, n in want.items() if have[a] < n}
+        rep.add(name, "conceptual", not short,
+                (", ".join(f"{a or 'cells'} {h}/{n}" for a, (h, n) in short.items())
+                 + f" -- still running, or rerun {script}") if short
+                else ", ".join(f"{a or 'cells'} {have[a]}/{n}" for a, n in want.items()))
 
 
 def check_single_objective_solvers(rep: Report) -> None:

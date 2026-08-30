@@ -588,6 +588,7 @@ def check_claims_register(rep: Report) -> None:
         "single-objective solvers scored across the preference axis": RESULTS / "per_lambda.json",
         "a learned competitor that is not a codebook, and rounds against bits": (
             RESULTS / "learned_baselines.json"),
+        "the operating point admits a trade-off (Remark 1)": RESULTS / "pc_sweep.json",
     }
     unsupported = [c for c, p in register.items() if not p.exists()]
     rep.add("claims: every headline claim has evidence on disk", "conceptual",

@@ -1,0 +1,5 @@
+  wmmse       lam=0.00 -> 0.4009
+  wmmse       lam=0.25 -> 0.5857
+  wmmse       lam=0.50 -> 0.7853
+  wmmse       lam=0.75 -> 0.9638
+  wmmse       lam=1.00 -> 0.9957

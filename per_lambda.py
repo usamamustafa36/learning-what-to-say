@@ -15,6 +15,10 @@ at lambda = 1 on 200 instances: 0.9712 at one start, 0.9876 at four, 0.9946 at s
 single-start gap is initialisation, not method, and reporting it as if it were the method would
 understate the baseline. This script gives both solvers the reference's restart budget.
 
+Also records the mean (SE, EE) of the winning allocation at each lambda, in the absolute units of
+results/pareto.json, so the classical solvers can be drawn on the same objective plane as the
+learned arms rather than only summarised as ratios.
+
 Emits the per-lambda table and asserts the two sanity conditions: at lambda = 1 WMMSE must be within
 2% of the reference, and at lambda = 0 Dinkelbach likewise. A failure means the reference or a
 solver is broken and the paper's ratios cannot be trusted.
@@ -47,9 +51,14 @@ TOL = 0.02
 
 
 def score(p, a, se_ref, ee_ref, noise, pc, lam):
-    se = float(spectral_efficiency(p, a, noise))
-    ee = float(energy_efficiency(p, a, noise, pc))
+    se, ee = raw(p, a, noise, pc)
     return lam * se / se_ref + (1.0 - lam) * ee / ee_ref
+
+
+def raw(p, a, noise, pc):
+    """Absolute (SE, EE) of an allocation, in the same units as the Pareto pool."""
+    return (float(spectral_efficiency(p, a, noise)),
+            float(energy_efficiency(p, a, noise, pc)))
 
 
 def best_of(fn, a, rng, n_start, p_max):
@@ -77,10 +86,10 @@ def main() -> None:
     rows = {}
     for arm in ("wmmse", "dinkelbach", "pricing"):
         t0 = time.time()
-        per_lam = {}
+        per_lam, se_lam, ee_lam = {}, [], []
         for lam in LAMBDAS:
             rng = np.random.default_rng(11)
-            rs = []
+            rs, ses, ees = [], [], []
             for m in range(size):
                 a = A[m]
                 sr, er = float(se_ref[m]), float(ee_ref[m])
@@ -91,12 +100,19 @@ def main() -> None:
                     cands = best_of(lambda i: dinkelbach(a, noise, P_MAX_W, pc), a, rng, 1, P_MAX_W)
                 else:
                     cands = [interference_pricing(a, noise, P_MAX_W, lam, sr, er, pc)]
-                best = max(score(p, a, sr, er, noise, pc, lam) for p in cands)
-                rs.append(best / float(oracle[lam][m]))
+                # argmax, not max: the winning allocation's own (SE, EE) is what the Pareto
+                # figure plots, so scoring and coordinates must come from the same p.
+                pb = max(cands, key=lambda p: score(p, a, sr, er, noise, pc, lam))
+                rs.append(score(pb, a, sr, er, noise, pc, lam) / float(oracle[lam][m]))
+                se_m, ee_m = raw(pb, a, noise, pc)
+                ses.append(se_m); ees.append(ee_m)
             per_lam[str(lam)] = float(np.mean(rs))
+            se_lam.append(float(np.mean(ses))); ee_lam.append(float(np.mean(ees)))
             print(f"  {arm:11s} lam={lam:.2f} -> {per_lam[str(lam)]:.4f}", flush=True)
         rows[arm] = {"arm": arm, "restarts": restarts if arm == "wmmse" else 1,
                      "n_instances": size, "per_lambda": per_lam,
+                     "lambdas": list(LAMBDAS),
+                     "se_by_lambda": se_lam, "ee_by_lambda": ee_lam,
                      "mean_ratio": float(np.mean(list(per_lam.values()))),
                      "seconds": time.time() - t0}
         RESULTS.mkdir(parents=True, exist_ok=True)

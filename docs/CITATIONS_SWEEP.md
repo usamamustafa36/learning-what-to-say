@@ -33,24 +33,56 @@ ICML 2019) · `wang2020ndq` · `kim2019schedule` (Kim, Moon, Hostallero, Kang, L
 `oord2017vqvae` · `tishby1999ib` · `alemi2017vib` · plus `yin2025quantisation` and
 `farooq2026bandwidth` from round 3.
 
-## Not verifiable from this machine (16)
+## Second pass over the 16 (this round)
 
-IEEE Xplore refuses automated fetches (empty bodies, then HTTP 418) and ScienceDirect returns 403.
-These entries are **unchanged and unconfirmed**:
+Publishers block automated fetching broadly: IEEE Xplore returns HTTP 418, ScienceDirect, INFORMS
+and now publishers all return 403. But six of the sixteen have arXiv versions I had not tried, and
+that is where every error so far has been — authors and titles.
 
-`shi2011wmmse` · `schmidt2009pricing` · `shi2009monotonic` · `gesbert2007adaptation` ·
-`love2008limited` · `jindal2006finite` · `lloyd1982` · `max1960` · `sun2018learning` ·
-`nasir2019drl` · `gu2023airmpnn` · `shen2021gnn` · `eisen2020regnn` · `boyd2011admm` ·
-`dinkelbach1967` · `neely2010lyapunov`
+### One more error found
 
-Most are long-established papers whose details are stable and widely reproduced, which is mildly
-reassuring but is not verification. **Given that three author lists in this bibliography were wrong,
-these sixteen should be checked before submission.** The fastest route is the one that worked for
-[2] and [33]: open the Xplore or publisher page and paste it in.
+| Ref | What was wrong | Source |
+|---|---|---|
+| [24] `sun2018learning` | title read "…for interference management". The published title is "…for **Wireless Resource Management**". Volume, issue, pages and authors were correct | arXiv 1705.09412, whose journal-ref confirms *IEEE Trans. Signal Process.* 66(20):5438–5453 |
 
-Two specific things to look at while you are there:
+### Verified from arXiv (authors and titles confirmed)
 
-- **`gu2023airmpnn`** still has no volume, issue or pages, only a DOI.
-- **`strinati2021beyond`** is printed as "E.~C. Strinati". The surname is *Calvanese Strinati*, so
-  the correct form may be "E. Calvanese Strinati". ScienceDirect was unreachable, so this is
-  unresolved.
+`nasir2019drl` (Nasir, Guo) · `shen2021gnn` (Shen, Shi, Zhang, Letaief) · `eisen2020regnn` (Eisen,
+Ribeiro) · `gu2023airmpnn` (Gu, She, Quan, Qiu, Xu) · `jindal2006finite` (Jindal) ·
+`sun2018learning` (corrected above).
+
+Their IEEE volume/issue/page fields still come only from the existing entry; arXiv records confirm
+the venue via DOI but not always the page range.
+
+### One page-range discrepancy, unresolved
+
+**`jindal2006finite`** prints pp. 5045–**5060**. The author's own arXiv journal-ref for
+cs/0603065 says pp. 5045–**5059**. Both forms appear in the literature. I have not changed it,
+because neither source is IEEE Xplore and guessing between two plausible values is what produced the
+other errors in this bibliography. **Check this one on Xplore.**
+
+### Corroborated by search only — weaker evidence, no contradiction found (4)
+
+`shi2011wmmse` (Shi, Razaviyayn, Luo, He; TSP 59(9):4331–4340, 2011) ·
+`love2008limited` (Love, Heath, Lau, Gesbert, Rao, Andrews; JSAC 26(8):1341–1365, 2008) ·
+`gesbert2007adaptation` (Proc. IEEE 95(12):2393–2409, 2007) ·
+`schmidt2009pricing` (Schmidt, Shi, Berry, Honig, Utschick; IEEE SPM 26(5):53–63, 2009) ·
+`boyd2011admm` (Boyd, Parikh, Chu, Peleato, Eckstein; FnT ML 3(1):1–122, 2011).
+
+Each search independently reproduced the entry as printed. That is corroboration, not verification:
+the sources are aggregators and indexes, and this bibliography has already shown that a plausible
+looking entry can be wrong.
+
+### Still entirely unchecked (5)
+
+`shi2009monotonic` · `lloyd1982` · `max1960` · `dinkelbach1967` · `neely2010lyapunov`
+
+Four of these are foundational papers from 1960–2010 whose details are canonical and stable, and one
+is a book. They are the lowest-risk entries in the bibliography, but they have not been checked
+against anything.
+
+## Running total
+
+**Six entries were wrong out of 37**: four author lists ([2], [3], [4], [7]), one title ([24]), and
+one missing field ([5]), plus [33] upgraded from preprint to journal version. Every one was found by
+checking against a primary source; none would have been caught by reading the manuscript.

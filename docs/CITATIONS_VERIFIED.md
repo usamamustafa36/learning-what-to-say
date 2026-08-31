@@ -34,8 +34,11 @@ confirming the venue and the year through the publisher's own resolver.
 **Entry now reads:** M. K. Abdel-Aziz, M. S. Elbamby, S. Samarakoon, and M. Bennis, "Cooperative
 multi-agent learning for navigation via structured state abstraction," *IEEE Trans. Commun.*, 2024.
 
-**To confirm before submission:** volume, issue and pages. A search result reported 72(6):3454–3462;
-that was not obtainable from a primary source and is therefore not in the paper.
+**RESOLVED.** The author supplied the IEEE Xplore article page (document 10433694), which gives
+*IEEE Trans. Commun.*, vol. 72, no. 6, pp. 3454–3462, June 2024, DOI 10.1109/TCOMM.2024.3365520,
+with the author list confirmed as printed above. The entry is now complete. The value a search
+result had reported matched, but it is now sourced from the publisher rather than from an
+aggregator.
 
 The likely origin of the error is that "Mohamed K." was collapsed to "M. Kim". This entry was
 pre-existing, not added in the recent rounds, and had been cited twice since.
@@ -57,8 +60,10 @@ title search independently identifies as this article in IEEE Journals & Magazin
 **Entry now reads:** M. Lee, G. Yu, and H. Dai, "Decentralized inference with graph neural networks
 in wireless communication systems," *IEEE Trans. Mobile Comput.*, 2023.
 
-**To confirm before submission:** volume, issue and pages. dblp reports 22(5):2582–2598, 2023; dblp
-is an aggregator, so those figures are not in the paper.
+**RESOLVED.** The author supplied the IEEE Xplore article page (document 9606569), which gives
+*IEEE Trans. Mobile Comput.*, vol. 22, no. 5, pp. 2582–2598, 1 May 2023, DOI
+10.1109/TMC.2021.3125793. The entry is now complete. dblp's figures matched, but the fields in the
+paper now come from the publisher.
 
 ## `yin2025quantisation` (reference [34]) — VERIFIED, unchanged
 
@@ -79,31 +84,12 @@ Verified on <https://arxiv.org/abs/2602.02035>:
 
 ---
 
-## To finish by hand before submission (three minutes)
+## Remaining by hand
 
-IEEE Xplore cannot be fetched from this machine — empty bodies, then HTTP 418 — so these are the
-fields no tool here could confirm. Open each URL in a browser and check.
-
-**1. `lee2023decentralised`, `main.tex` line 1123.** Add volume, issue and pages.
-<https://ieeexplore.ieee.org/document/9606569> — dblp reports **22(5):2582–2598, 2023**. If Xplore
-agrees, the entry becomes:
-
-```latex
-\bibitem{lee2023decentralised} M.~Lee, G.~Yu, and H.~Dai, ``Decentralized inference with graph
-neural networks in wireless communication systems,'' \emph{IEEE Trans. Mobile Comput.}, vol.~22,
-no.~5, pp.~2582--2598, 2023.
-```
-
-**2. `abdelaziz2024abstraction`, line 1041.** Same, if you want volume and pages.
-<https://ieeexplore.ieee.org/document/10433694> — a search result reported **72(6):3454–3462,
-2024**, unconfirmed.
-
-**3. Eyeball `yin2025quantisation` and `farooq2026bandwidth` yourself.** Both were verified here
-against their arXiv abstract pages, but the reviewer's advice to check author names and titles by
-eye rather than trust a tool's report is sound, and it is thirty seconds each:
-<https://arxiv.org/abs/2503.08125> and <https://arxiv.org/abs/2602.02035>.
-
----
+**Eyeball `yin2025quantisation` and `farooq2026bandwidth` yourself.** Both were verified here against
+their arXiv abstract pages, but checking author names and titles by eye rather than trusting a tool's
+report is thirty seconds each: <https://arxiv.org/abs/2503.08125> and
+<https://arxiv.org/abs/2602.02035>.
 
 ## Not re-verified
 

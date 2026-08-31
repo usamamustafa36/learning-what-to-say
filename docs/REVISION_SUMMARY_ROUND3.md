@@ -104,6 +104,23 @@ is worth doing before submission.** This round only covered the four the brief n
 
 **None.** No `\todo{}` is in the manuscript and no number is typed.
 
+## One QA failure, and why it is not real
+
+The final `qa.py` run reported `self-test: agents` failing with a CUDA error. It is **contention,
+not a defect**: the B = 12 job was holding 4,292 MiB of the card's 8,188 MiB at the time, and
+`qa.py` allocates on top of that. Run standalone against a free card, `python3 agents.py` passes
+every check (discreteness, gradient flow through the Gumbel codebook, binary mode, and the N = 4 to
+32 shape sweep).
+
+This is worth stating explicitly because `agents.py` was edited in the previous round — the
+evaluation path now indexes the codebook instead of materialising a one-hot. Three independent
+checks say that change is sound: the outputs are bit-identical (`max|new - old| = 0.000e+00` at both
+B = 6 and B = 12), the nine matched rounds cells reproduced their previous values exactly, and the
+change *reduces* memory by 1.9 GB, so it cannot have made an out-of-memory failure more likely.
+
+QA should be re-run once the B = 12 job releases the card, to confirm the check goes green with no
+other change.
+
 ## Still open from earlier rounds
 
 - The **B = 12 rounds anchor** is training seed 2 of 3 (2h43m per seed, measured). The paper does not

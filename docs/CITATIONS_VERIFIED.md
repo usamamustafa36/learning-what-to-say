@@ -79,6 +79,32 @@ Verified on <https://arxiv.org/abs/2602.02035>:
 
 ---
 
+## To finish by hand before submission (three minutes)
+
+IEEE Xplore cannot be fetched from this machine — empty bodies, then HTTP 418 — so these are the
+fields no tool here could confirm. Open each URL in a browser and check.
+
+**1. `lee2023decentralised`, `main.tex` line 1123.** Add volume, issue and pages.
+<https://ieeexplore.ieee.org/document/9606569> — dblp reports **22(5):2582–2598, 2023**. If Xplore
+agrees, the entry becomes:
+
+```latex
+\bibitem{lee2023decentralised} M.~Lee, G.~Yu, and H.~Dai, ``Decentralized inference with graph
+neural networks in wireless communication systems,'' \emph{IEEE Trans. Mobile Comput.}, vol.~22,
+no.~5, pp.~2582--2598, 2023.
+```
+
+**2. `abdelaziz2024abstraction`, line 1041.** Same, if you want volume and pages.
+<https://ieeexplore.ieee.org/document/10433694> — a search result reported **72(6):3454–3462,
+2024**, unconfirmed.
+
+**3. Eyeball `yin2025quantisation` and `farooq2026bandwidth` yourself.** Both were verified here
+against their arXiv abstract pages, but the reviewer's advice to check author names and titles by
+eye rather than trust a tool's report is sound, and it is thirty seconds each:
+<https://arxiv.org/abs/2503.08125> and <https://arxiv.org/abs/2602.02035>.
+
+---
+
 ## Not re-verified
 
 The remaining 33 entries were not checked in this pass. Given that [2] carried a wrong author list

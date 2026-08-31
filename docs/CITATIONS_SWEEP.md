@@ -81,8 +81,53 @@ Four of these are foundational papers from 1960–2010 whose details are canonic
 is a book. They are the lowest-risk entries in the bibliography, but they have not been checked
 against anything.
 
+## Third pass: the remaining ten, via Crossref
+
+IEEE Xplore still refuses automated fetches, but **Crossref** does not — and Crossref is not a
+third-party index. It is the DOI registration agency, and the metadata in it is **deposited by the
+publisher itself**. For an IEEE paper, the Crossref record *is* IEEE's own record. That closed all
+ten.
+
+### Resolved: the page-range discrepancy
+
+**`jindal2006finite`** — Crossref (10.1109/TIT.2006.883550) gives **pp. 5045–5060**. The manuscript
+was **right** and the author-supplied arXiv journal-ref (5059) was wrong. No change; the flag is
+withdrawn.
+
+### Two entries gained missing fields
+
+| Ref | Added | Source |
+|---|---|---|
+| `gu2023airmpnn` | **vol. 22, no. 11, pp. 7551–7564** (it had only a DOI) | Crossref 10.1109/TWC.2023.3253126 |
+| `shi2009monotonic` | **pp. 1619–1623** | Crossref 10.1109/isit.2009.5205801 |
+
+### Verified exact, no change (8)
+
+`shi2011wmmse` 59(9):4331–4340 · `schmidt2009pricing` 26(5):53–63 · `gesbert2007adaptation`
+95(12):2393–2409 · `love2008limited` 26(8):1341–1365 · `lloyd1982` 28(2):129–137 ·
+`max1960` 6(1):7–12 · `dinkelbach1967` 13(7):492–498 · `neely2010lyapunov` (Morgan & Claypool,
+2010) · plus `nasir2019drl` 37(10):2239–2250, `shen2021gnn` 39(1):101–115 and `eisen2020regnn`
+68:2977–2991 confirmed against their DOIs.
+
+### Two deliberate divergences from Crossref
+
+- **`max1960`** — Crossref names the journal *IEEE* Trans. Inf. Theory. In 1960 it was the **IRE**
+  Transactions; IRE became IEEE in 1963, and IEEE lists the back catalogue under the modern name.
+  The manuscript's "IRE" is the historically correct citation and stays.
+- **`schmidt2009pricing`** — Crossref's deposited title is the bare "Distributed resource allocation
+  schemes". The article as printed carries the subtitle "Pricing Algorithms for Power Control and
+  Beamformer Design in Interference Networks". The manuscript prints the full title, which is more
+  informative than the truncated deposit, and stays.
+
 ## Running total
 
-**Six entries were wrong out of 37**: four author lists ([2], [3], [4], [7]), one title ([24]), and
-one missing field ([5]), plus [33] upgraded from preprint to journal version. Every one was found by
-checking against a primary source; none would have been caught by reading the manuscript.
+**Every one of the 37 entries has now been checked against a primary source.**
+
+**Seven were wrong**: four author lists ([2] `abdelaziz2024abstraction`, [3] `bennis2025system2`,
+[4] `chaccour2024lessdata`, [7] `foerster2016dial`), one title ([24] `sun2018learning`), and two
+incomplete ([5] `strinati2021beyond` missing its article number, [26] `gu2023airmpnn` missing volume
+and pages). [33] `lee2023decentralised` was additionally upgraded from preprint to journal version,
+and [15] `shi2009monotonic` gained a page range.
+
+None of these would have been caught by reading the manuscript. Three were fabricated attributions —
+authors who did not write the paper they were credited with.

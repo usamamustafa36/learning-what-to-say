@@ -1,0 +1,11 @@
+carrying 39 rows for arms not selected; rerunning rounds
+  rounds     B=6 R=1 s=0: 0.9483  (25s)
+  rounds     B=6 R=1 s=1: 0.9472  (25s)
+  rounds     B=6 R=1 s=2: 0.9493  (25s)
+  rounds     B=3 R=2 s=0: 0.9539  (33s)
+  rounds     B=3 R=2 s=1: 0.9527  (30s)
+  rounds     B=3 R=2 s=2: 0.9511  (34s)
+  rounds     B=2 R=3 s=0: 0.9469  (42s)
+  rounds     B=2 R=3 s=1: 0.9515  (43s)
+  rounds     B=2 R=3 s=2: 0.9452  (44s)
+  rounds     B=12 R=1 s=0: 0.9455  (9777s)

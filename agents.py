@@ -220,12 +220,16 @@ class MessageChannel(nn.Module):
 
         logits = self.to_logits(x)
         self.last_logits = logits
+        idx = logits.argmax(dim=-1)
         if self.training:
+            # The straight-through path needs the matmul: gradient flows through the soft weights.
             onehot = nn.functional.gumbel_softmax(logits, tau=self.temperature, hard=True, dim=-1)
-        else:
-            idx = logits.argmax(dim=-1)
-            onehot = nn.functional.one_hot(idx, self.n_codes).to(logits.dtype)
-        return onehot @ self.codebook, logits.argmax(dim=-1)
+            return onehot @ self.codebook, idx
+        # At evaluation a one-hot times a matrix IS an embedding lookup, and materialising the
+        # one-hot costs n_codes floats per edge -- 1.9 GB at B = 12 over a 2,048-instance pool,
+        # which is what made the 12-bit cell unrunnable on an 8 GiB card. Index instead. The result
+        # is identical; qa.py's determinism check and the B = 6 replication both cover it.
+        return self.codebook[idx], idx
 
 
 class ProtocolGNN(nn.Module):

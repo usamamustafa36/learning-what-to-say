@@ -86,3 +86,48 @@ Both are content, not copy-editing, so I did not touch them.
   exceptions. `audit_literals.py` misses them because its pattern only catches decimals and 3+ digit
   integers. Substituting the macros would change no printed value; it is a one-line fix whenever you
   want it.
+
+
+---
+
+# Second, independent read
+
+Requested after the first pass. It was worth doing, because **the first pass had a coverage gap I
+did not notice at the time**: the prose extractor started at `\section{Introduction}` and dropped any
+paragraph beginning with `\caption`, so the **abstract, all nine captions and all three footnotes
+were never read**, even though the brief named them explicitly. This read covered exactly those,
+then re-ran the mechanical checks over that region and added category-D checks the first pass had
+not automated.
+
+Page count **10 before, 10 after**. Numeric literals **196 before, 196 after, identical as a list**.
+
+## Edits found (2, both in the abstract)
+
+| # | Rule | Before | After |
+|---|---|---|---|
+| 13 | D — dropped comma causing a misparse | `…observes only its own direct gain and its received interference and exchanges one $B$-bit learned symbol…` | `…observes only its own direct gain and its received interference, and exchanges one $B$-bit learned symbol…` |
+| 14 | G — missing comma after an introductory phrase | `At $N=\RegimeN$ six learned bits reach` | `At $N=\RegimeN$, six learned bits reach` |
+
+**Edit 13.** Three coordinated `and`s in a row let a reader take "exchanges" as a third thing the
+agent *observes*, which inverts the sentence's meaning: the point is that the agent observes two
+things and transmits a third. The comma separates the compound predicates. This is not a serial
+comma and does not conflict with the manuscript's no-serial-comma convention.
+
+**Edit 14.** The sentence immediately above it — "At $\epsilon=10\%$, $B^\star$ is…" — has the comma
+after the same kind of introductory phrase. Without it, `$N=\RegimeN$` and "six" collide as two
+adjacent quantities.
+
+## Checked and clean
+
+- **All nine captions.** No comma splices, no sentence-initial abbreviations, no serial commas
+  against convention. `tab:budget`'s "Point estimates are means, brackets 95\% percentile-bootstrap
+  intervals" is gapping with an elided verb, which conventionally takes a comma — *correct as
+  written*, not a splice.
+- **All three footnotes**, the title, and the index terms.
+- **Category D across the body**, mechanically: doubled words, `each/every` with a plural verb,
+  `data/criteria is`, and a/an mismatches. Zero hits.
+
+## Total across both passes
+
+**14 edits.** Still below the brief's 20–50 estimate, and the reason is unchanged: three editorial
+passes preceded this work. I did not manufacture edits to reach the range.

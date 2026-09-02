@@ -100,8 +100,8 @@ python3 experiments.py bitsweep          # the headline sweep (Figure 2)
 `llm`, `llm_renderings`, `oran`, `temporal`, `prior`, `tasks`, `pareto`, `adversarial`.
 
 `qa.py` checks the self-tests, that every headline claim has evidence on disk, and that stored
-results are not older than the code that produced them. Current state: **27 passed, 1 warning
-(result-file timestamps), 0 failures; 14/14 headline claims supported.**
+results are not older than the code that produced them. Current state: **33 passed, 1 warning
+(result-file timestamps), 0 failures; 26/26 headline claims supported.**
 
 A CUDA-capable GPU is used when available; everything runs on CPU, more slowly.
 

@@ -177,7 +177,7 @@
     "name": "multi-objective: the regime admits a trade-off",
     "kind": "conceptual",
     "status": "PASS",
-    "detail": "oracle moves 35.1% in SE and 66.6% in EE from lambda 0 to 1"
+    "detail": "oracle moves 35.1% in SE and 66.4% in EE from lambda 0 to 1"
   },
   {
     "name": "multi-objective: the policy responds to lambda",
@@ -192,7 +192,7 @@
     "detail": "run with --full"
   },
   {
-    "name": "objectives: advert coverage",
+    "name": "objectives: scope coverage",
     "kind": "conceptual",
     "status": "PASS",
     "detail": "19/19 wired, 0 orphaned, 0 missing\n           "
@@ -201,7 +201,7 @@
     "name": "evidence: every result is younger than the script that makes it",
     "kind": "conceptual",
     "status": "WARN",
-    "detail": "25 results predate a script they depend on (mtime, not behaviour): adversarial.json (0.2h behind adversarial.py); aggregation.json (108.2h behind aggregation.py/agents.py); bitsweep_fixed.json (178.4h behind experiments.py/train.py/agents.py); bitsweep_v2.json (113.1h behind experiments.py/train.py/agents.py); bitsweep_v2_a.json (113.2h behind experiments.py/train.py/agents.py); bitsweep_v2_b.json (113.7h behind experiments.py/train.py/agents.py); bitsweep_v2_summary.json (113.1h behind experiments.py/train.py/agents.py); csi_error.json (11.6h behind robustness.py/train.py/agents.py); llm.json (0.3h behind llm_agent.py); llm_tokens.json (6.5h behind llm_agent.py); noisy_channel.json (11.6h behind noisy_channel.py/train.py/agents.py); noisy_channel_INVALID_priced.json (31.5h behind noisy_channel.py/train.py/agents.py); overhead.json (94.8h behind oran.py); overhead_all.json (94.1h behind oran.py); params.json (1.3h behind dump_params.py/regime.py); prior.json (46.9h behind experiments.py/prior_methods.py); rho_sweep.json (177.7h behind experiments.py/train.py/agents.py); scale_N16.json (32.2h behind scale_sweep.py/train.py/agents.py); scale_N32.json (47.4h behind scale_sweep.py/train.py/agents.py); scale_N4.json (32.0h behind scale_sweep.py/train.py/agents.py); scale_N8.json (33.8h behind scale_sweep.py/train.py/agents.py); symbolic.json (10.0h behind symbolic.py); tasks.json (176.6h behind experiments.py/train.py/agents.py); temporal.json (46.9h behind experiments.py/prior_methods.py); transfer.json (31.6h behind generalisation.py/train.py/agents.py)"
+    "detail": "28 results predate a script they depend on (mtime, not behaviour): adversarial.json (0.2h behind adversarial.py); aggregation.json (108.2h behind aggregation.py/agents.py); analysis.json (229.2h behind analysis.py); bitsweep_fixed.json (178.4h behind experiments.py/train.py/agents.py); bitsweep_v2.json (113.1h behind experiments.py/train.py/agents.py); bitsweep_v2_a.json (113.2h behind experiments.py/train.py/agents.py); bitsweep_v2_b.json (113.7h behind experiments.py/train.py/agents.py); bitsweep_v2_summary.json (113.1h behind experiments.py/train.py/agents.py); csi_error.json (11.6h behind robustness.py/train.py/agents.py); learned_baselines.json (48.2h behind learned_baselines.py/train.py/agents.py); llm.json (212.6h behind llm_agent.py); llm_tokens.json (218.9h behind llm_agent.py); noisy_channel.json (11.6h behind noisy_channel.py/train.py/agents.py); noisy_channel_INVALID_priced.json (31.5h behind noisy_channel.py/train.py/agents.py); overhead.json (94.8h behind oran.py); overhead_all.json (94.1h behind oran.py); params.json (1.3h behind dump_params.py/regime.py); prior.json (46.9h behind experiments.py/prior_methods.py); rho_sweep.json (177.7h behind experiments.py/train.py/agents.py); scale_N16.json (32.2h behind scale_sweep.py/train.py/agents.py); scale_N32.json (47.4h behind scale_sweep.py/train.py/agents.py); scale_N4.json (32.0h behind scale_sweep.py/train.py/agents.py); scale_N8.json (33.8h behind scale_sweep.py/train.py/agents.py); sensing.json (227.7h behind sensing.py); symbolic.json (10.0h behind symbolic.py); tasks.json (176.6h behind experiments.py/train.py/agents.py); temporal.json (46.9h behind experiments.py/prior_methods.py); transfer.json (31.6h behind generalisation.py/train.py/agents.py)"
   },
   {
     "name": "solvers: each matches the reference at its own objective",

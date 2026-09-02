@@ -13,7 +13,7 @@ optimiser, schedule, steps, seeds and budget with the learned arm:
             codebook transmits fewer bits than its budget claims and the comparison is otherwise
             mislabelled.
 
-Phase 4 sweeps rounds against bits at a matched product: (B,R) in {(6,1),(3,2),(2,3)} all cost
+The rounds arm sweeps rounds against bits at a matched product: (B,R) in {(6,1),(3,2),(2,3)} all cost
 B*R*(N-1) = 42 bits per agent per slot, with (12,1) as an unmatched anchor at double the budget.
 R > 1 is otherwise untouched in this study, and the overhead accounting assumes R = 1.
 
@@ -134,7 +134,7 @@ def main() -> None:
         print(f"  {arm:10s} B={cfg.bits} R={cfg.rounds} s={cfg.seed}: "
               f"{r['mean_ratio']:.4f}{ent}  ({time.time()-t0:.0f}s)", flush=True)
 
-    # --- Phase 3: how the message is produced -----------------------------------------------
+    # --- how the message is produced -----------------------------------------------
     for bits in (bits_list if "binary" in want else ()):
         for seed in seeds:
             record(Config(bits=bits, mode="binary", steps=steps, seed=seed), "binary")
@@ -153,7 +153,7 @@ def main() -> None:
             print(f"  vq-noent   B={bits} s={seed}: {r['mean_ratio']:.4f} "
                   f"ent {r['entropy_bits']:.2f}", flush=True)
 
-    # --- Phase 4: rounds against bits at matched budget --------------------------------------
+    # --- rounds against bits at matched budget --------------------------------------
     for (b, rnd) in (cells if "rounds" in want else ()):
         for seed in (seeds if args.smoke else (0, 1, 2)):
             record(Config(bits=b, mode="vq", rounds=rnd, steps=steps, seed=seed,

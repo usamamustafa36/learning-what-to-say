@@ -438,7 +438,7 @@ OBJECTIVES = {
 
 
 def check_objective_coverage(rep: Report) -> None:
-    """Every advertised objective must map to a module that exists AND is wired into the pipeline."""
+    """Every stated objective must map to a module that exists AND is wired into the pipeline."""
     src = {p.name: p.read_text() for p in HERE.glob("*.py")}
     imported = set()
     for name, text in src.items():
@@ -461,7 +461,7 @@ def check_objective_coverage(rep: Report) -> None:
             done += 1
     total = len(OBJECTIVES)
     status = "PASS" if missing == 0 and partial == 0 else "WARN"
-    rep.add("objectives: advert coverage", "conceptual", status,
+    rep.add("objectives: scope coverage", "conceptual", status,
             f"{done}/{total} wired, {partial} orphaned, {missing} missing\n           "
             + "\n           ".join(lines))
 

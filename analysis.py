@@ -1,8 +1,7 @@
 """
 State abstraction: what the agents actually chose to encode.
 
-The advert names state abstraction directly, and it is the difference between a protocol paper and a
-black-box RL paper. A bit-budget curve says coordination needs six bits per edge; it does not say
+State abstraction is what separates a protocol paper from a black-box RL paper. A bit-budget curve says coordination needs six bits per edge; it does not say
 what those six bits are *about*. This module answers that, and the answer has to survive a null.
 
 Everything here is measured on the transmitted symbol -- the integer index actually sent -- not on

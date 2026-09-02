@@ -1,8 +1,8 @@
 """
 The generative-AI arm: an LLM allocating power from a text description of the network.
 
-The advert asks for large language models and generative AI, and the prior repo is where that thread
-starts -- `llm-d2d-resource-allocation` is named for it. It should be said plainly that the repo
+Large language models and generative AI are where the prior repo begins -- `llm-d2d-resource-allocation`
+is named for it. It should be said plainly that the repo
 contains no LLM: no `transformers`, no PEFT, no LoRA, no adapter weights, and the Phi-3 / Llama /
 Mistral figures in its summary are labelled there as "Prior Work: ICC 2025 Paper", i.e. someone
 else's measurements. Those numbers are cited in this project as prior work and are not reproduced as

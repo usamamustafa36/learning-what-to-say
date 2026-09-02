@@ -3,8 +3,8 @@
 # so any of these is resumable by re-running it, and each also takes --smoke (64 instances, one
 # seed) to prove the code path first.
 #
-#   ./run_full.sh pricing     Phase 1: budgeted pricing variants, 345 cells, CPU.        ~4 h
-#   ./run_full.sh perlambda   Phase 2: per-preference breakdown, matched restarts, CPU.  ~7 min
+#   ./run_full.sh pricing     Budgeted pricing variants, 345 cells, CPU.                 ~4 h
+#   ./run_full.sh perlambda   Per-preference breakdown, matched restarts, CPU.           ~7 min
 #   ./run_full.sh learned     Phases 3-4: straight-through arm, entropy ablation,
 #                             rounds vs bits. GPU; the B=12 cell trains a 4096-word
 #                             codebook and dominates the runtime.                        ~3 h+

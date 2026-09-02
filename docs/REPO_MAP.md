@@ -28,7 +28,7 @@ fails if a headline claim has no backing file.
 | `agents.py` | `Normaliser` (frozen feature statistics), `graph_inputs`, `MessageChannel` (the VQ codebook + Gumbel-softmax), `ProtocolGNN` (the learned arm), and the quantised subclasses: `QuantisedCSIGNN` (raw bit-planes), `QuantisedCSIEmbedGNN` (matched representation), `PricedCSIGNN` (quantised interference price), `CentralisedGNN`. |
 | `train.py` | `Config`, `train()` (returns the net), `evaluate()` (accepts any pool; takes an optional `symbol_fn` to substitute transmitted symbols), `run_one()`. |
 | `checkpoints.py` | `train_cached()` / `save_net` / `load_net`, keyed on config **and** a pool fingerprint. Stores `net.norm` explicitly because it is a dataclass attribute, not a registered buffer, and `state_dict()` drops it. |
-| `learned_baselines.py` | Learned competitors that differ in *how* the symbol is made: `binary` (DIAL/CommNet straight-through sigmoid, no codebook) and `vq-noent` (the codebook with the usage-entropy bonus off, reported with its realised entropy). Also the Phase 4 rounds-against-bits cells at a matched B*R*(N-1). -> `results/learned_baselines.json`. |
+| `learned_baselines.py` | Learned competitors that differ in *how* the symbol is made: `binary` (DIAL/CommNet straight-through sigmoid, no codebook) and `vq-noent` (the codebook with the usage-entropy bonus off, reported with its realised entropy). Also the rounds-against-bits cells at a matched B*R*(N-1). -> `results/learned_baselines.json`. |
 
 ## Classical arms
 
@@ -39,7 +39,7 @@ fails if a headline claim has no backing file.
 | `standalone_classical.py` | WMMSE, Dinkelbach and `interference_pricing` run as *algorithms* to convergence, unquantised, on current and stale CSI. -> `results/standalone_classical.json`. |
 | `pricing_budget.py` | The K-round b-bit quantised pricing sweep. `fit_levels` / `quantise` / `priced_rounds`. -> `results/pricing_budget.json`. See the caveat below. |
 | `price_dynamic_range.py` | Measures the dynamic range of the marginal harm and the quantiser's relative error per bit width. -> `results/price_dynamic_range.json`. |
-| `pricing_variants.py` | The Phase 1 replacement for `pricing_budget.py`: the same K-round b-bit sweep, but with five ways of coding a *moving* scalar (`absolute`, `differential`, `sign` with Jayant step adaptation, `adaptive` log-uniform range tracking, `dithered`), b up to 12 and budgets to 22,601 bits. -> `results/pricing_budgeted_variants.json`. |
+| `pricing_variants.py` | The replacement for `pricing_budget.py`: the same K-round b-bit sweep, but with five ways of coding a *moving* scalar (`absolute`, `differential`, `sign` with Jayant step adaptation, `adaptive` log-uniform range tracking, `dithered`), b up to 12 and budgets to 22,601 bits. -> `results/pricing_budgeted_variants.json`. |
 | `per_lambda.py` | The classical solvers scored at each preference weight, with WMMSE given the reference's 16 restarts. Asserts WMMSE(lambda=1) and Dinkelbach(lambda=0) are within 2% of the reference; a failure means the reference or a solver is broken. Also records each winner's own (SE, EE). -> `results/per_lambda.json`. |
 
 ### Caveat on the existing budgeted-pricing quantiser
@@ -67,7 +67,7 @@ survivable, and return `list[dict]`.
 | `run_sweep_a.py` / `run_sweep_b.py` / `run_priced.py` | `bitsweep_v2_*.json` -> Table II |
 | `scale_sweep.py`, `finish_scale.py` | `scale_N{4,8,16,32}.json` |
 | `bstar.py` | `bstar.json` -> the B* figure |
-| `pricing_variants.py` | `pricing_budgeted_variants.json` -> the Phase 1 claim and `figures/fig_pricing_budget_curve.tex` |
+| `pricing_variants.py` | `pricing_budgeted_variants.json` -> the pricing-budget claim and `figures/fig_pricing_budget_curve.tex` |
 | `per_lambda.py` | `per_lambda.json` -> Table IV |
 | `learned_baselines.py` | `learned_baselines.json` -> the learned-ablation table |
 | `generalisation.py` | `transfer.json`, `norm_drift.json` |

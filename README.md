@@ -5,7 +5,7 @@
 Usama Mustafa, Imran Rashid — Department of Information Security, Military College of Signals,
 National University of Sciences and Technology (NUST), Islamabad, Pakistan
 
-Code, experiment logs and the stored result files behind every number in the accompanying
+Code and the stored result files behind every number in the accompanying
 manuscript (in preparation). **Every figure in the paper is generated from `results/*.json`; nothing
 is transcribed by hand.** If an experiment has not been run, its macro renders as a visible
 `[NOT RUN]` marker rather than a plausible number.
@@ -78,11 +78,11 @@ validation — a permutation attack, which preserves the multiset but not the ma
 ## Layout
 
 ```
-*.py                 17 self-testing modules; each runs its own checks under `qa.py`
+*.py                 48 modules; 18 carry self-tests, run under `qa.py`
 results/*.json       stored results — the source of every number in the paper
 results/diagnostics/ investigations that produce no cited number
 diagnostics/         the scripts that produce the above
-figures/            generated figures
+docs/REPO_MAP.md     module-by-module map: what produces which result file
 ```
 
 `regime.py` is the single source of truth for area, circuit power and `p_max`.

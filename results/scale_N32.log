@@ -1,4 +1,0 @@
-N=32 on cuda, 4 threads, pools 4096/1024
-  pools ready in 78s
-  continuous seed 0: 0.9212  (2995s)
-  continuous seed 1: 0.9215  (6636s)

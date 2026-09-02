@@ -1,7 +1,7 @@
 """
 Multimodal sensing: what a position fix is worth when the CSI is stale.
 
-The advert asks for multimodal sensing. The temptation is to bolt a second input onto the observation
+Multimodal sensing is easy to claim: the temptation is to bolt a second input onto the observation
 and declare the box ticked. The question worth asking is narrower and testable:
 
     a stale CSI measurement loses the fading, but it cannot lose the geometry.

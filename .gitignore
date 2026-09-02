@@ -8,3 +8,4 @@ results/scale_auto.log
 results/pools/
 results/classical_smoke.log
 results/checkpoints/
+*.bundle
